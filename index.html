@@ -474,23 +474,29 @@
             box-shadow: 0 6px 16px rgba(43, 108, 176, 0.1);
         }
 
-        /* Footer / Contact */
+        /* Footer / Contact - Centered Alignment Applied */
         footer {
             background: var(--dark-bg);
             color: white;
             padding: 6rem 5% 4rem 5%;
             margin-top: 5rem;
+            text-align: center;
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .footer-content h2 {
             font-size: 3rem;
             font-weight: 400;
             margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         .footer-content p {
@@ -498,12 +504,16 @@
             max-width: 600px;
             margin-bottom: 2rem;
             font-size: 1.05rem;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .footer-actions {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn-light {
@@ -1052,7 +1062,7 @@
         <div class="footer-content">
             <h2>Get In Touch</h2>
             <p>I am always interested in connecting with researchers, academics, and industry professionals working on computational chemistry, structural biology, and therapeutic drug discovery.</p>
-            <p style="font-size: 0.95rem; color: #CBD5E0; margin-bottom: 2.5rem;">My long-term goal is to pioneer computational drug discovery and therapeutics design, focusing specifically on cancer pathways and molecular mechanisms to engineer life-saving medical breakthroughs.</p>
+            <p style="font-size: 0.95rem; color: #CBD5E0; margin-bottom: 2.5rem; text-align: center;">My long-term goal is to pioneer computational drug discovery and therapeutics design, focusing specifically on cancer pathways and molecular mechanisms to engineer life-saving medical breakthroughs.</p>
             <div class="footer-actions">
                 <a href="mailto:adrian.banyamin@gmail.com" class="btn-light">Email Me</a>
                 <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-dark-outline">LinkedIn Profile</a>
