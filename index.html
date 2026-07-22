@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Banyamin | Computational Chemistry & Structural Biology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FAFAF7;
+            --card-bg: #FFFFFF;
+            --text-main: #1A1A1A;
+            --text-muted: #555555;
+            --accent-blue: #2B6CB0;
+            --accent-blue-bg: #EBF8FF;
+            --border-color: #E2E8F0;
+            --dark-bg: #111111;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Newsreader', serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Newsreader', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.01em;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        .cv-top-btn {
+            border: 1px solid var(--border-color);
+            background: white;
+            padding: 0.5rem 1.1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s;
+        }
+
+        .cv-top-btn:hover {
+            border-color: var(--text-main);
+        }
+
+        .contact-btn {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0 6rem 0;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-blue);
+            display: block;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            background-color: var(--accent-blue-bg);
+            color: var(--accent-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Right Stats Card */
+        .stats-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .stats-header h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .stats-header p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-grid-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-box {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .stat-box.full-width {
+            grid-column: span 2;
+        }
+
+        .stat-box .number {
+            font-family: 'Newsreader', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+            color: var(--accent-blue);
+        }
+
+        .stat-box .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .stat-grid-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-box.blue-tint {
+            background-color: var(--accent-blue-bg);
+            border-color: #BEE3F8;
+        }
+
+        .stat-box.blue-tint .label {
+            color: var(--accent-blue);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-blue);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .engineering-focus {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .engineering-focus h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.0rem;
+            color: var(--text-main);
+        }
+
+        .engineering-focus ul {
+            list-style: none;
+        }
+
+        .engineering-focus li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .engineering-focus li::before {
+            content: "→";
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Experience Cards */
+        .exp-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+        }
+
+        .exp-meta {
+            text-align: right;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent-blue-bg);
+            color: var(--accent-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .date-badge {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: #F1F5F9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Certifications Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .cert-card-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+
+        .cert-card-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border-color: #CBD5E0;
+        }
+
+        .cert-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .cert-issuer-pill {
+            display: inline-block;
+            background: #F1F5F9;
+            color: var(--text-muted);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cert-card-box h4 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-main);
+            line-height: 1.4;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 0.4rem;
+        }
+
+        .cert-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #F1F5F9;
+            padding-top: 0.8rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .cert-id {
+            color: var(--accent-blue);
+            font-family: monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-column {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+
+        .skill-column h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .skill-pill {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: all 0.25s ease;
+        }
+
+        .skill-pill:hover {
+            transform: translateY(-3px);
+            background: var(--accent-blue-bg);
+            color: var(--accent-blue);
+            border-color: #BEE3F8;
+            box-shadow: 0 6px 16px rgba(43, 108, 176, 0.1);
+        }
+
+        /* Footer / Contact */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 6rem 5% 4rem 5%;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content h2 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-content p {
+            color: #A0AEC0;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .footer-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--dark-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-dark-outline {
+            border: 1px solid #2D3748;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 1100px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 900px) {
+            .hero, .project-card, .skills-grid, .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AB.</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <a href="https://drive.google.com/file/d/1w_xl20s5B2tyJqcefSkSd8p6GMNHwnQi/view?usp=sharing" class="cv-top-btn" target="_blank">CV ↗</a>
+            <a href="#contact" class="contact-btn">Get in Touch</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="about" style="border-top: none; padding-top: 2rem;">
+            <div class="hero-content">
+                <span class="badge-pill">MSci Chemistry Student at the University of Bristol</span>
+                <h1>Computational Chemistry, <span>Structural Biology.</span></h1>
+                <p>Behind every breakthrough medicine lies a microscopic puzzle of atomic coordinates, thermodynamic forces, and structural conformations. My journey in science is driven by an unwavering fascination with how code can decode life. As an analytical MSci Chemistry student entering my second year at Bristol, I immerse myself in the intersection of high performance computing and biomolecular interaction.</p>
+                <p>Rather than viewing programming and chemistry as separate disciplines, I treat them as a unified language. By leveraging custom Python architecture, structural parsing libraries like Biopython, and sophisticated modelling software tools, I build pipelines that accelerate therapeutic lead identification. My path spans prestigious research environments, taking me from unravelling ruthenium metal DNA interactions at the University of Reading, to engineering robust student architecture back at Bristol, with upcoming summer research internships in Brazil (2027) on the horizon.</p>
+                <div class="hero-actions">
+                    <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-outline">LinkedIn Profile →</a>
+                    <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-outline">GitHub Repositories →</a>
+                </div>
+            </div>
+
+            <!-- Right Column Stats Card -->
+            <div class="stats-card">
+                <div class="stats-header">
+                    <h3>Adrian Banyamin</h3>
+                    <p>MSci Chemistry with Year in Industry</p>
+                </div>
+                <div class="stat-grid-top">
+                    <div class="stat-box">
+                        <div class="number">80%</div>
+                        <div class="label">Year One First Class Average</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">94%</div>
+                        <div class="label">Mathematics Average</div>
+                    </div>
+                </div>
+                <div class="stat-box full-width" style="margin-bottom: 1rem;">
+                    <div class="number">11</div>
+                    <div class="label">Verified Certifications</div>
+                </div>
+                <div class="stat-grid-bottom">
+                    <div class="stat-box blue-tint">
+                        <div class="number" style="font-size: 1.25rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.2rem;">2 Summer</div>
+                        <div class="label">Research Internships</div>
+                    </div>
+                    <div class="stat-box blue-tint">
+                        <div class="number" style="font-size: 1.25rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.2rem;">Cancer</div>
+                        <div class="label">Oncogenic Research Focus</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-header">
+                <span>Independent Portfolio</span>
+                <h2>Haemoglobin Computational Analysis</h2>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Developed independently in my spare time as an exploratory personal research initiative, often collaborating and brainstorming with other friends and peer connections to investigate biomolecular mechanics, structural conformations, and small molecule drug computing interactions.</p>
+            </div>
+
+            <!-- Part 1 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="tag">Repository Part 1</span>
+                    <h3>Haemoglobin Structural Dynamics Analysis</h3>
+                    <p>This initial module evaluates the sub angstrom conformational shifts occurring during the transition from deoxyhaemoglobin (T state) to oxyhaemoglobin (R state). Using Biopython to parse structural PDB coordinates (1A3N, 1HHO) to structural crystal chains, the script quantifies pocket contraction. By calculating 3D Euclidean distances between the proximal and distal histidine centres across individual subunits, the script quantifies pocket contraction. Beta and alpha chains display distinct conformational responses during the quaternary tetrameric shift, reflecting the molecular principles behind oxygen binding cooperation.</p>
+                </div>
+                <div class="engineering-focus">
+                    <h4>Engineering Focus</h4>
+                    <ul>
+                        <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython automation scripts.</li>
+                        <li>Reconstructed symmetric subunit chains across asymmetrical crystal lattices.</li>
+                        <li>Calculated 3D Euclidean distance matrices across proximal and distal histidine residues.</li>
+                        <li>Quantified pocket contraction dynamics during T state to R state quaternary transitions.</li>
+                        <li>Documented mechanical cooperative linkages governing oxygen binding affinity.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Part 2 with Local Image File -->
+            <div class="project-card" style="grid-template-columns: 1fr;">
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; margin-bottom: 2rem;">
+                    <div class="project-info" style="margin-bottom: 0;">
+                        <span class="tag">Repository Part 2</span>
+                        <h3>Haemoglobin Interaction Analysis and Molecular Documentation</h3>
+                        <p>This module investigates the binding mechanism of Voxelotor, an anti-sickling therapeutic agent that stabilises the oxygen bound R state of haemoglobin to prevent polymerisation for drug discovery applications. Custom Python routines target the specific N terminal valine residue on the alpha chain where Voxelotor forms a covalent bond, ensuring docking grids anchor precisely to the biological interaction site rather than relying on broad geometric centroids. PyMOL was utilised in this part to render 3D structural visualisations of these molecular docking poses.</p>
+                    </div>
+                    <div class="engineering-focus" style="margin-bottom: 0;">
+                        <h4>Engineering Focus</h4>
+                        <ul>
+                            <li>Targeted N terminal valine residues on haemoglobin alpha chains for precise ligand anchoring.</li>
+                            <li>Filtered raw atomic contacts to isolate non-covalent networks and eliminate automated redundancy.</li>
+                            <li>Quantified hydrogen bonding, hydrophobic patches, salt bridges, and pi cation interactions.</li>
+                            <li>Integrated empirical scoring models to calculate binding free energy (-12.75 kcal/mol).</li>
+                            <li>Visualised 3D structural docking poses and binding interactions interactively in PyMOL.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Workspace Media Section with Local File -->
+                <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; margin-top: 1rem;">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 1rem;">Workspace Media</span>
+                    <div style="width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: #111;">
+                        <img src="image_9900b6.jpg" alt="Adrian Banyamin Multi-Monitor Computational Workspace and PyMOL Docking" style="width: 100%; height: auto; max-height: 600px; display: block; object-fit: contain; margin: 0 auto;">
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">Multi-monitor computational setup displaying Python scripts, structural coordinate parsing, and interactive PyMOL molecular docking visualisations.</p>
+                </div>
+            </div>
+
+            <!-- Part 3 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="tag">Repository Part 3</span>
+                    <h3>ORCA Computational Workflow & Electronic Structure Analysis</h3>
+                    <p>This advanced module implements ab initio density functional theory calculations using ORCA to examine electronic configurations, orbital distributions, and iron centre spin state energetics relevant to therapeutic drug design. By bridging geometric coordinates with quantum chemical calculations, this workflow evaluates electronic charge transfer phenomena associated with ligand binding and structural reconfiguration.</p>
+                </div>
+                <div class="engineering-focus">
+                    <h4>Engineering Focus</h4>
+                    <ul>
+                        <li>Executed ab initio density functional theory (DFT) calculations using ORCA.</li>
+                        <li>Evaluated iron centre spin state energetics and coordination geometries for drug like candidate complexes.</li>
+                        <li>Mapped molecular orbital distributions and electronic charge transfer phenomena.</li>
+                        <li>Correlated quantum chemical outputs with biomolecular structural changes.</li>
+                        <li>Optimised computational runtime parameters for large coordination complexes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-header">
+                <span>Professional Journey</span>
+                <h2>Research and Engineering Experience</h2>
+            </div>
+
+            <div class="exp-card">
+                <div>
+                    <span class="tag">Upcoming International Research</span>
+                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Cancer Research Intern</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of São Paulo (USP), São Paulo, Brazil</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Prepared to embark on an intensive international research tenure at the University of São Paulo in summer 2027, focusing on identifying the underlying molecular causes of cancer rather than direct drug design. This placement centres on investigating oncogenic mechanisms, mapping abnormal exon expression patterns, and utilising protein biochemistry techniques including Western blotting to dissect cellular abnormalities.</p>
+                </div>
+                <div class="exp-meta">
+                    <span class="date-badge">Summer 2027</span>
+                </div>
+            </div>
+
+            <div class="exp-card">
+                <div>
+                    <span class="tag">Summer Internship 2026</span>
+                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Bioinorganic Research Intern</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Reading, Reading, UK</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">At the University of Reading, my work centred around pioneering the structural characterisation of ruthenium based transition metal complexes to advance our fundamental understanding of metal DNA interactions. Operating at the bench and the spectrometer, I executed high precision data acquisition using NMR spectroscopy and X ray crystallography, applying sophisticated analytical techniques to resolve intricate molecular structures, findings that can be directly applied to inform computational drug discovery protocols for cancer therapeutics.</p>
+                </div>
+                <div class="exp-meta">
+                    <span class="date-badge">Jul 2026 - Sep 2026</span>
+                </div>
+            </div>
+
+            <div class="exp-card">
+                <div>
+                    <span class="tag">Summer Internship 2026</span>
+                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Systems Engineering Intern</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Bristol, Bristol, UK</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Stepping into a systems engineering role within the Science and Engineering Faculty Office at Bristol, I architected and iterated upon a student centred feedback portfolio tool. Utilising Python, I developed a central dashboard enabling granular, cross module, and multi year keyword queries designed to streamline academic data ingestion and drastically optimise user interface performance.</p>
+                </div>
+                <div class="exp-meta">
+                    <span class="date-badge">Jun 2026 - Jul 2026</span>
+                </div>
+            </div>
+
+            <div class="exp-card">
+                <div>
+                    <span class="tag">Leadership & Tutoring</span>
+                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Private Chemistry Tutor</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">Self-Employed, Bristol, UK</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Designed and curated over 200 bespoke practice examination questions to reinforce core chemical principles and improve problem-solving agility. Delivered clear, structured explanations of advanced theoretical concepts, breaking down complex mechanisms into manageable components for enhanced comprehension. Delivered evidence-based feedback on over 100 student inquiries, guiding learners through analytical reasoning processes to achieve accurate solutions.</p>
+                </div>
+                <div class="exp-meta">
+                    <span class="date-badge">Sep 2026 - Present</span>
+                </div>
+            </div>
+
+            <div class="exp-card">
+                <div>
+                    <span class="tag">Campus Leadership</span>
+                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Student Ambassador</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Bristol, Bristol, UK</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Provided dedicated support to prospective students and offer-holders during Open Days, delivering guidance on course curricula, university life, and collegiate accommodation. Facilitated group discussions and interactive networking sessions, engaging diverse visitor groups to cultivate an inclusive institutional atmosphere. Represented the University of Bristol's academic excellence, communicating complex course structures and career pathways to audiences of students and parents.</p>
+                </div>
+                <div class="exp-meta">
+                    <span class="date-badge">Feb 2026 - Mar 2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="section-header">
+                <span>Continuous Professional Development</span>
+                <h2>All 11 Verified Certifications</h2>
+            </div>
+
+            <div class="cert-grid">
+                <!-- Cert 1 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Procter & Gamble</span>
+                        </div>
+                        <h4>P&G Virtual Insight Week</h4>
+                        <p class="cert-desc">Commercial Awareness, Data Analysis, Business Operations</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Jun 2026</span>
+                        <span class="cert-id">ID: 8PSV2S20Z6NK</span>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Genentech</span>
+                        </div>
+                        <h4>Data Sciences in Pharma</h4>
+                        <p class="cert-desc">Patient-Centred Outcomes Research</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: IRV9VB3SY0KP</span>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">University of Cambridge</span>
+                        </div>
+                        <h4>Forensic Science: DNA Analysis</h4>
+                        <p class="cert-desc">Advanced Molecular Diagnostics & Profiling</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: 4JDN7NRUNV9E</span>
+                    </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Johns Hopkins University</span>
+                        </div>
+                        <h4>Introduction to the Biology of Cancer</h4>
+                        <p class="cert-desc">Cellular Proliferation & Oncogenic Mechanisms</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: EU24FMFRJ3BM</span>
+                    </div>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Novartis</span>
+                        </div>
+                        <h4>Introduction to Drug Hunting</h4>
+                        <p class="cert-desc">Pharmaceutical Lead Discovery & Target Validation</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: DKZM6K2GHT4Y</span>
+                    </div>
+                </div>
+
+                <!-- Cert 6 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Imperial College London</span>
+                        </div>
+                        <h4>How Vaccines Work</h4>
+                        <p class="cert-desc">Immunology & Biotherapeutic Delivery</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: GQUZ2AXTKN</span>
+                    </div>
+                </div>
+
+                <!-- Cert 7 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Johns Hopkins University</span>
+                        </div>
+                        <h4>Pillar 4: Drug Safety - Pharmacovigilance</h4>
+                        <p class="cert-desc">Adverse Event Monitoring & Clinical Regulation</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: 35STLKVR21VZ</span>
+                    </div>
+                </div>
+
+                <!-- Cert 8 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">UC San Diego</span>
+                        </div>
+                        <h4>Drug Discovery</h4>
+                        <p class="cert-desc">Pharmacokinetics & Molecular Interactions</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: SVCVTU3SI6F5</span>
+                    </div>
+                </div>
+
+                <!-- Cert 9 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">University of Glasgow</span>
+                        </div>
+                        <h4>Introduction to the Pharmaceutical Industry</h4>
+                        <p class="cert-desc">Industrial Pipeline & Commercial Development</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: BIVDZ1EXFUTW</span>
+                    </div>
+                </div>
+
+                <!-- Cert 10 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Forage</span>
+                        </div>
+                        <h4>Pfizer UK - Molecule to Market Job Simulation</h4>
+                        <p class="cert-desc">Clinical Trial Strategy & Commercialisation</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: wVrqyqly2WFMKKBxdT</span>
+                    </div>
+                </div>
+
+                <!-- Cert 11 -->
+                <div class="cert-card-box">
+                    <div>
+                        <div class="cert-top-row">
+                            <span class="cert-issuer-pill">Springpod / IChemE</span>
+                        </div>
+                        <h4>Engineering a Sustainable World</h4>
+                        <p class="cert-desc">Sustainable Process Engineering & Green Chemistry</p>
+                    </div>
+                    <div class="cert-bottom-row">
+                        <span>Issued Dec 2025</span>
+                        <span class="cert-id">ID: U2R7caStdsral</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <span>Technical Arsenal</span>
+                <h2>Tools and Capabilities</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-column">
+                    <h3>Software, Analysis & Data</h3>
+                    <div class="pill-container">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">MATLAB</span>
+                        <span class="skill-pill">Excel</span>
+                        <span class="skill-pill">Data Analysis</span>
+                        <span class="skill-pill">Data Visualisation</span>
+                        <span class="skill-pill">GitHub</span>
+                        <span class="skill-pill">LaTeX</span>
+                        <span class="skill-pill">Technical Documentation</span>
+                        <span class="skill-pill">Graphing</span>
+                        <span class="skill-pill">Numerical Analysis</span>
+                        <span class="skill-pill">Statistical Interpretation</span>
+                        <span class="skill-pill">Next.js</span>
+                        <span class="skill-pill">TypeScript</span>
+                        <span class="skill-pill">Version Control</span>
+                        <span class="skill-pill">Biopython</span>
+                        <span class="skill-pill">PyMOL</span>
+                        <span class="skill-pill">ORCA</span>
+                        <span class="skill-pill">Google Colab</span>
+                    </div>
+                </div>
+
+                <div class="skill-column">
+                    <h3>Research & Scientific Methodologies</h3>
+                    <div class="pill-container">
+                        <span class="skill-pill">Structural Bioinformatics</span>
+                        <span class="skill-pill">Molecular Modelling</span>
+                        <span class="skill-pill">Quantum Chemical Calculations</span>
+                        <span class="skill-pill">Binding Free Energy Analysis</span>
+                        <span class="skill-pill">Literature Reviews</span>
+                        <span class="skill-pill">Research Methods</span>
+                        <span class="skill-pill">Experimental Design</span>
+                        <span class="skill-pill">Data Acquisition</span>
+                        <span class="skill-pill">Test & Validation</span>
+                        <span class="skill-pill">NMR Spectroscopy</span>
+                        <span class="skill-pill">X-Ray Crystallography</span>
+                        <span class="skill-pill">Technical Reporting</span>
+                        <span class="skill-pill">Scientific Communication</span>
+                        <span class="skill-pill">Evidence-Based Decision Making</span>
+                    </div>
+                </div>
+
+                <div class="skill-column">
+                    <h3>Leadership & Professional Skills</h3>
+                    <div class="pill-container">
+                        <span class="skill-pill">Cross-Functional Communication</span>
+                        <span class="skill-pill">Stakeholder Briefings</span>
+                        <span class="skill-pill">Peer Mentorship</span>
+                        <span class="skill-pill">Collaborative Problem Solving</span>
+                        <span class="skill-pill">Public Speaking</span>
+                        <span class="skill-pill">Active Listening</span>
+                        <span class="skill-pill">Emotional Intelligence</span>
+                        <span class="skill-pill">Conflict Resolution</span>
+                        <span class="skill-pill">Project Management</span>
+                        <span class="skill-pill">Adaptability</span>
+                        <span class="skill-pill">Empathy & Inclusivity</span>
+                        <span class="skill-pill">Constructive Feedback</span>
+                    </div>
+                </div>
+
+                <div class="skill-column">
+                    <h3>University & Academic Competencies</h3>
+                    <div class="pill-container">
+                        <span class="skill-pill">Rigorous Exam Preparation</span>
+                        <span class="skill-pill">Advanced Coursework Execution</span>
+                        <span class="skill-pill">Problem-Solving Agility</span>
+                        <span class="skill-pill">Mathematical Modelling</span>
+                        <span class="skill-pill">Laboratory Technique Mastery</span>
+                        <span class="skill-pill">Critical Analysis</span>
+                        <span class="skill-pill">Time & Project Management</span>
+                        <span class="skill-pill">Academic Writing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="section-header">
+                <span>Academic Background</span>
+                <h2>University of Bristol</h2>
+            </div>
+
+            <div class="project-card" style="grid-template-columns: 1fr;">
+                <div class="project-info" style="margin-bottom: 0;">
+                    <span class="tag">University of Bristol</span>
+                    <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">MSci Chemistry (with Year in Industry)</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1.5rem;">2025 - Present | Bristol, United Kingdom</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="stat-box" style="text-align: left; padding: 1.5rem;">
+                            <div class="number">80%</div>
+                            <div class="label" style="text-align: left;">Year One First Class Average</div>
+                        </div>
+                        <div class="stat-box" style="text-align: left; padding: 1.5rem;">
+                            <div class="number">94%</div>
+                            <div class="label" style="text-align: left;">Mathematics Average</div>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">First Class Honours (Year 1): Achieved an overall average grade of 80%, with specific emphasis on Materials Chemistry, Biochemistry, and Advanced Experimental Laboratory Techniques. Furthermore, achieved an overall average of 94% across all mathematics coursework and examinations.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Get In Touch</h2>
+            <p>I am always interested in connecting with researchers, academics, and industry professionals working on computational chemistry, structural biology, and therapeutic drug discovery.</p>
+            <p style="font-size: 0.95rem; color: #CBD5E0; margin-bottom: 2.5rem;">My long-term goal is to pioneer computational drug discovery and therapeutics design, focusing specifically on cancer pathways and molecular mechanisms to engineer life-saving medical breakthroughs.</p>
+            <div class="footer-actions">
+                <a href="mailto:adrian.banyamin@gmail.com" class="btn-light">Email Me</a>
+                <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-dark-outline">LinkedIn Profile</a>
+                <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-dark-outline">GitHub Repositories</a>
+                <a href="https://drive.google.com/file/d/1w_xl20s5B2tyJqcefSkSd8p6GMNHwnQi/view?usp=sharing" target="_blank" class="btn-dark-outline">View CV ↗</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
