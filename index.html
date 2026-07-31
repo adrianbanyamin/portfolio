@@ -544,6 +544,88 @@
             font-size: 0.9rem;
         }
 
+        /* Lab Notebook Accordion */
+        .lab-notebook {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .lab-notebook summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 1.5rem 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: background 0.2s;
+        }
+
+        .lab-notebook summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .lab-notebook summary:hover {
+            background: #F8FAFC;
+        }
+
+        .lab-notebook-icon {
+            font-size: 1.3rem;
+        }
+
+        .lab-notebook-title {
+            font-family: 'Newsreader', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-main);
+            flex-grow: 1;
+        }
+
+        .lab-notebook-chevron {
+            color: var(--accent-blue);
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .lab-notebook[open] .lab-notebook-chevron {
+            transform: rotate(180deg);
+        }
+
+        .lab-notebook-body {
+            padding: 0 2.5rem 2.5rem 2.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .lab-step {
+            padding-top: 1.5rem;
+        }
+
+        .lab-step h4 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .lab-step p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .lab-photo {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; }
             .project-card { grid-template-columns: 1fr; }
@@ -716,18 +798,56 @@
                 <span class="tag">Summer Internship 2026</span>
                 <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Bioinorganic Research Intern</h3>
                 <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Reading, Reading, UK</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">At the University of Reading, I carried out a bioinorganic chemistry research placement focused on synthesising and characterising novel ruthenium-based transition-metal coordination complexes. The broader aim of the project was to develop ruthenium complexes that could be structurally modified to selectively target DNA — particularly the major and minor grooves — as a potential route to disrupting the uncontrolled cell division characteristic of cancer. Working closely alongside a PhD researcher and senior faculty, I was responsible for the full synthetic and analytical pipeline, from initial synthesis through to structural characterisation and computational modelling.</p>
                 <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Executed chemical synthesis reactions, high-temperature refluxing, and crystallisation to produce novel ruthenium-based coordination complexes, isolating target compounds for cancer therapeutics.</li>
-                    <li>Executed analytical characterisation of ruthenium complexes via UV-Vis spectrophotometry, TLC, multi-nuclear NMR spectroscopy, and X-ray crystallography to resolve molecular structures for drug discovery.</li>
-                    <li>Integrated computational structural modelling using PyMOL and custom Python scripts to analyse ligand geometries, coordinate states, and evaluate structural properties of target compounds.</li>
-                    <li>Collaborated in high-level research briefings with international visiting collaborators Dr. Shuntaro Takahashi and Dr. Hisae Tateishi-Karimata alongside senior faculty, evaluating characterisation data and reaction optimisation strategies.</li>
-                    <li>Presented research findings and structural analysis updates at weekly technical meetings, driving cross-disciplinary project planning with contributions slated for forthcoming peer-reviewed publication.</li>
+                    <li>Synthesised novel ruthenium-based transition-metal coordination complexes utilising advanced techniques including microwave-assisted synthesis, high-temperature refluxing, fractional crystallisation, rotary evaporation, vacuum filtration, and degassing, to isolate intermediate and target ruthenium coordination compounds.</li>
+                    <li>Executed high-precision analytical characterisation of ruthenium complexes using techniques including UV-Vis spectrophotometry, thin-layer chromatography (TLC), high-resolution mass spectrometry (HRMS), multi-nuclear NMR spectroscopy, and X-ray crystallography to resolve intricate molecular structures and bonding configurations informing metal-DNA interaction studies.</li>
+                    <li>Integrated computational structural modelling using PyMOL and custom Python scripts to analyse ligand geometries, coordinate states, and evaluate structural properties of synthesised ruthenium compounds to establish foundations for cancer therapeutics.</li>
+                    <li>Collaborated in high-level research briefings with distinguished visiting Japanese collaborators Dr. Shuntaro Takahashi and Dr. Hisae Tateishi-Karimata, alongside internal PhD researchers and senior faculty, critically evaluating ruthenium-complex characterisation data and reaction optimisation strategies to advance foundational cancer research.</li>
+                    <li>Presented comprehensive research findings and structural analysis updates at weekly technical meetings with senior professors and peers, driving cross-disciplinary project planning and troubleshooting, with contributions slated for forthcoming peer-reviewed publication.</li>
                 </ul>
             </div>
             <div class="exp-meta">
                 <span class="date-badge">Jul 2026 - Sep 2026</span>
             </div>
         </div>
+
+        <!-- Lab Notebook Accordion -->
+        <details class="lab-notebook">
+            <summary>
+                <span class="lab-notebook-icon">🧪</span>
+                <span class="lab-notebook-title">Lab Notebook: Ruthenium Complex Synthesis</span>
+                <span class="lab-notebook-chevron">▾</span>
+            </summary>
+            <div class="lab-notebook-body">
+                <div class="lab-step">
+                    <span class="tag">Step 1</span>
+                    <h4>Synthesis of Ru(DMSO)₄Cl₂</h4>
+                    <p>3.01 g of RuCl₃·H₂O was weighed out. DMSO (15 mL) was degassed for 3 minutes. The mixture was reacted and refluxed for 15 minutes at approximately 160°C. Reflux was stopped and the solution left open for 15 minutes to evaporate excess DMSO, yielding a dark black solution with a tint of orange around the meniscus.</p>
+                    <img src="images/ru-dmso-reflux.jpg" alt="Reflux of RuCl3.H2O in DMSO producing a dark black solution" class="lab-photo">
+                    <p>Acetone (50 mL) was added and the solution left to crystallise. The product was filtered under reduced pressure and washed with acetone followed by diethyl ether, yielding a yellow precipitate of Ru(DMSO)₄Cl₂.</p>
+                    <img src="images/ru-dmso-precipitate.jpg" alt="Yellow precipitate of Ru(DMSO)4Cl2 during vacuum filtration" class="lab-photo">
+                    <p>1.76 g of Ru(DMSO)₄Cl₂ was collected.</p>
+                    <img src="images/ru-dmso-vial.jpg" alt="Vial containing 1.76g of collected Ru(DMSO)4Cl2" class="lab-photo">
+                </div>
+
+                <div class="lab-step">
+                    <span class="tag">Step 2</span>
+                    <h4>Synthesis of Ru(Phen)₂Cl₂</h4>
+                    <p>Ru(DMSO)₄Cl₂ (0.336 g), 1,10-phenanthroline (0.455 g), and LiCl (0.447 g) were combined and dissolved in DMA (20 mL), producing Ru(Phen)₂Cl₂. The solution was left to evaporate under heat until roughly half the DMA had evaporated, then cooled to room temperature. Acetone (50 mL) was added and the solution left in the fridge overnight to crystallise.</p>
+                    <p>Crystals were filtered and washed with acetone and then water (~30 mL each), leaving a black solid of Ru(Phen)₂Cl₂.</p>
+                    <img src="images/ru-phen-filtration.jpg" alt="Filtration of black solid Ru(Phen)2Cl2 crystals" class="lab-photo">
+                    <p>A mass of approximately 0.140 g was recorded.</p>
+                    <img src="images/ru-phen-vial.jpg" alt="Vial containing 0.140g of collected Ru(Phen)2Cl2" class="lab-photo">
+                </div>
+
+                <div class="lab-step">
+                    <span class="tag">Step 3</span>
+                    <h4>Microwave-Assisted Synthesis</h4>
+                    <p>0.077 g of Ru(Phen)₂Cl₂ was weighed and added to a microwave reaction vessel, along with 0.0423 g of dppz (dipyrido[3,2-a:2′,3′-c]phenazine). Water and ethanol (35 mL each) were added, and the mixture was degassed with argon to remove oxygen. The reaction was run in the microwave for 50 minutes at 150 W and 140°C. The product was isolated as a dark red-orange solution, consistent with the target [Ru(phen)₂(dppz)]²⁺ complex.</p>
+                </div>
+            </div>
+        </details>
 
         <div class="exp-card">
             <div>
