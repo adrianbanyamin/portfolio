@@ -534,151 +534,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
-        }
-
-        @media(max-width: 1100px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media(max-width: 900px) {
-            .hero, .project-card, .skills-grid, .cert-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            nav {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">AB.</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <a href="https://drive.google.com/file/d/1w_xl20s5B2tyJqcefSkSd8p6GMNHwnQi/view?usp=sharing" class="cv-top-btn" target="_blank">CV ↗</a>
-            <a href="#contact" class="contact-btn">Get in Touch</a>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="about" style="border-top: none; padding-top: 2rem;">
-            <div class="hero-content">
-                <span class="badge-pill">MSci Chemistry Student at the University of Bristol</span>
-                <h1>Computational Chemistry, <span>Structural Biology.</span></h1>
-                <p>Behind every breakthrough medicine lies a microscopic puzzle of atomic coordinates, thermodynamic forces, and structural conformations. My journey in science is driven by an unwavering fascination with how code can decode life. As an analytical MSci Chemistry student entering my second year at Bristol, I immerse myself in the intersection of high performance computing and biomolecular interaction.</p>
-                <p>Rather than viewing programming and chemistry as separate disciplines, I treat them as a unified language. By leveraging custom Python architecture, structural parsing libraries like Biopython, and sophisticated modelling software tools, I build pipelines that accelerate therapeutic lead identification. My path spans prestigious research environments, taking me from unravelling ruthenium metal DNA interactions at the University of Reading, to engineering robust student architecture back at Bristol, with upcoming summer research internships in Brazil (2027) on the horizon.</p>
-                <div class="hero-actions">
-                    <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-outline">LinkedIn Profile →</a>
-                    <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-outline">GitHub Repositories →</a>
-                </div>
-            </div>
-
-            <!-- Right Column Stats Card -->
-            <div class="stats-card">
-                <div class="stats-header">
-                    <h3>Adrian Banyamin</h3>
-                    <p>MSci Chemistry with Year in Industry</p>
-                </div>
-                <div class="stat-grid-top">
-                    <div class="stat-box">
-                        <div class="number">80%</div>
-                        <div class="label">Year One First Class Average</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="number">94%</div>
-                        <div class="label">Mathematics Average</div>
-                    </div>
-                </div>
-                <div class="stat-box full-width" style="margin-bottom: 1rem;">
-                    <div class="number">11</div>
-                    <div class="label">Verified Certifications</div>
-                </div>
-                <div class="stat-grid-bottom">
-                    <div class="stat-box blue-tint">
-                        <div class="number" style="font-size: 1.25rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.2rem;">2 Summer</div>
-                        <div class="label">Research Internships</div>
-                    </div>
-                    <div class="stat-box blue-tint">
-                        <div class="number" style="font-size: 1.25rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.2rem;">Cancer</div>
-                        <div class="label">Oncogenic Research Focus</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="section-header">
-                <span>Independent Portfolio</span>
-                <h2>Haemoglobin Computational Analysis</h2>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">Developed independently in my spare time as an exploratory personal research initiative, often collaborating and brainstorming with other friends and peer connections to investigate biomolecular mechanics, structural conformations, and small molecule drug computing interactions.</p>
-            </div>
-
-            <!-- Part 1 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <span class="tag">Repository Part 1</span>
-                    <h3>Haemoglobin Structural Dynamics Analysis</h3>
-                    <p>This initial module evaluates the sub angstrom conformational shifts occurring during the transition from deoxyhaemoglobin (T state) to oxyhaemoglobin (R state). Using Biopython to parse structural PDB coordinates (1A3N, 1HHO) to structural crystal chains, the script quantifies pocket contraction. By calculating 3D Euclidean distances between the proximal and distal histidine centres across individual subunits, the script quantifies pocket contraction. Beta and alpha chains display distinct conformational responses during the quaternary tetrameric shift, reflecting the molecular principles behind oxygen binding cooperation.</p>
-                </div>
-                <div class="engineering-focus">
-                    <h4>Engineering Focus</h4>
-                    <ul>
-                        <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython automation scripts.</li>
-                        <li>Reconstructed symmetric subunit chains across asymmetrical crystal lattices.</li>
-                        <li>Calculated 3D Euclidean distance matrices across proximal and distal histidine residues.</li>
-                        <li>Quantified pocket contraction dynamics during T state to R state quaternary transitions.</li>
-                        <li>Documented mechanical cooperative linkages governing oxygen binding affinity.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Part 2 with Local Image File -->
-            <div class="project-card" style="grid-template-columns: 1fr;">
-                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; margin-bottom: 2rem;">
-                    <div class="project-info" style="margin-bottom: 0;">
-                        <span class="tag">Repository Part 2</span>
-                        <h3>Haemoglobin Interaction Analysis and Molecular Documentation</h3>
-                        <p>This module investigates the binding mechanism of Voxelotor, an anti-sickling therapeutic agent that stabilises the oxygen bound R state of haemoglobin to prevent polymerisation for drug discovery applications. Custom Python routines target the specific N terminal valine residue on the alpha chain where Voxelotor forms a covalent bond, ensuring docking grids anchor precisely to the biological interaction site rather than relying on broad geometric centroids. PyMOL was utilised in this part to render 3D structural visualisations of these molecular docking poses.</p>
-                    </div>
-                    <div class="engineering-focus" style="margin-bottom: 0;">
-                        <h4>Engineering Focus</h4>
-                        <ul>
-                            <li>Targeted N terminal valine residues on haemoglobin alpha chains for precise ligand anchoring.</li>
-                            <li>Filtered raw atomic contacts to isolate non-covalent networks and eliminate automated redundancy.</li>
-                            <li>Quantified hydrogen bonding, hydrophobic patches, salt bridges, and pi cation interactions.</li>
-                            <li>Integrated empirical scoring models to calculate binding free energy (-12.75 kcal/mol).</li>
-                            <li>Visualised 3D structural docking poses and binding interactions interactively in PyMOL.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Workspace Media Section with Local File -->
-                <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; margin-top: 1rem;">
-                    <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 1rem;">Workspace Media</span>
-                    <div style="width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: #111;">
-                        <img src="image_9900b6.jpg" alt="Adrian Banyamin Multi-Monitor Computational Workspace and PyMOL Docking" style="width: 100%; height: auto; max-height: 600px; display: block; object-fit: contain; margin: 0 auto;">
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">Multi-monitor computational setup displaying Python scripts, structural coordinate parsing, and interactive PyMOL molecular docking visualisations.</p>
-                </div>
-            </div>
-
-            <!-- Part 3 -->
+<!-- Part 3 -->
             <div class="project-card">
                 <div class="project-info">
                     <span class="tag">Repository Part 3</span>
@@ -698,8 +554,7 @@
             </div>
         </section>
 
-HTML
-      <!-- Experience Section -->
+        <!-- Experience Section -->
         <section id="experience">
             <div class="section-header">
                 <span>Professional Journey</span>
@@ -718,7 +573,7 @@ HTML
                 </div>
             </div>
 
-<div class="exp-card">
+            <div class="exp-card">
                 <div>
                     <span class="tag">Summer Internship 2026</span>
                     <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Bioinorganic Research Intern</h3>
@@ -729,7 +584,7 @@ HTML
                         <p style="color: var(--text-main); font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem;">Key Contributions & Accomplishments:</p>
                         <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
                             <li>Synthesised novel ruthenium-based transition-metal coordination complexes utilising advanced synthetic methodologies, including microwave-assisted mixing, precision high-temperature refluxing, inert-atmosphere argon degassing, fractional crystallisation, rotary evaporation, and vacuum filtration to isolate intermediate and target compounds.</li>
-                            <li>Executed high-precision analytical characterisation of various ruthenium complexes using techniques including UV-Vis spectrophotometry, thin-layer chromatography (TLC), high-resolution mass spectrometry (HRMS), multi-nuclear NMR spectroscopy, and X-ray crystallography to resolve intricate molecular structures and bonding configurations.</li>
+                            <li>Executed high-precision analytical characterisation of various ruthenium complexes using techniques including UV-Vis spectrophotometry, thin-layer chromatography (TLC), high-resolution mass spectrometry (HRMS), multi-nuclear NMR spectroscopy, and X-ray crystallography to resolve intricate molecular structures and bonding configurations across diverse coordination states.</li>
                             <li>Integrated computational structural modelling using PyMOL and custom Python scripts to analyse ligand geometries, coordinate states, and evaluate structural properties of synthesised ruthenium compounds to establish robust foundational models.</li>
                             <li>Collaborated in high-level research briefings with distinguished visiting Japanese collaborators Dr. Shuntaro Takahashi and Dr. Hisae Tateishi-Karimata, alongside internal PhD researchers and senior faculty, critically evaluating characterisation data and reaction optimisation strategies.</li>
                             <li>Presented comprehensive research findings and structural analysis updates at weekly technical meetings with senior professors and peers, driving cross-disciplinary project planning and troubleshooting, with contributions slated for forthcoming peer-reviewed publication.</li>
@@ -740,64 +595,6 @@ HTML
                     <span class="date-badge">Jul 2026 - Sep 2026</span>
                 </div>
             </div>
-
-            <div class="exp-card">
-                <div>
-                    <span class="tag">Summer Internship 2026</span>
-                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Systems Engineering Intern</h3>
-                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Bristol, Bristol, UK</p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Stepping into a systems engineering role within the Science and Engineering Faculty Office at Bristol, I architected and iterated upon a student centred feedback portfolio tool. Utilising Python, I developed a central dashboard enabling granular, cross module, and multi year keyword queries designed to streamline academic data ingestion and drastically optimise user interface performance.</p>
-                </div>
-                <div class="exp-meta">
-                    <span class="date-badge">Jun 2026 - Jul 2026</span>
-                </div>
-            </div>
-
-            <div class="exp-card">
-                <div>
-                    <span class="tag">Leadership & Tutoring</span>
-                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Private Chemistry Tutor</h3>
-                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">Self-Employed, Bristol, UK</p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Designed and curated over 200 bespoke practice examination questions to reinforce core chemical principles and improve problem-solving agility. Delivered clear, structured explanations of advanced theoretical concepts, breaking down complex mechanisms into manageable components for enhanced comprehension. Delivered evidence-based feedback on over 100 student inquiries, guiding learners through analytical reasoning processes to achieve accurate solutions.</p>
-                </div>
-                <div class="exp-meta">
-                    <span class="date-badge">Sep 2026 - Present</span>
-                </div>
-            </div>
-
-            <div class="exp-card">
-                <div>
-                    <span class="tag">Campus Leadership</span>
-                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Student Ambassador</h3>
-                    <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Bristol, Bristol, UK</p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Provided dedicated support to prospective students and offer-holders during Open Days, delivering guidance on course curricula, university life, and collegiate accommodation. Facilitated group discussions and interactive networking sessions, engaging diverse visitor groups to cultivate an inclusive institutional atmosphere. Represented the University of Bristol's academic excellence, communicating complex course structures and career pathways to audiences of students and parents.</p>
-                </div>
-                <div class="exp-meta">
-                    <span class="date-badge">Feb 2026 - Mar 2026</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <div class="section-header">
-                <span>Continuous Professional Development</span>
-                <h2>All 11 Verified Certifications</h2>
-            </div>
-
-            <div class="cert-grid">
-                <!-- Cert 1 -->
-                <div class="cert-card-box">
-                    <div>
-                        <div class="cert-top-row">
-                            <span class="cert-issuer-pill">Procter & Gamble</span>
-                        </div>
-                        <h4>P&G Virtual Insight Week</h4>
-                        <p class="cert-desc">Commercial Awareness, Data Analysis, Business Operations</p>
-                    </div>
-                    <div class="cert-bottom-row">
-                        <span>Issued Jun 2026</span>
-                        <span class="cert-id">ID: 8PSV2S20Z6NK</span>
                     </div>
                 </div>
 
