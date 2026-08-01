@@ -421,6 +421,108 @@
             transform: translateY(-1px);
         }
 
+        /* Haemoglobin Project Box */
+        .haem-banner {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            object-position: center 30%;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        .haem-outer-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .haem-tile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .haem-tile {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .haem-tile-title {
+            font-family: 'Newsreader', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .haem-tile-keywords {
+            color: var(--accent-blue);
+            font-family: monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .haem-tile-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .haem-tile-subhead {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+        }
+
+        .haem-tile-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .haem-tile-list li {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .haem-tile-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .haem-photo-tile {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .haem-tile-photo {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+        }
+
         .tag {
             display: inline-block;
             background: var(--accent-blue-bg);
@@ -833,6 +935,7 @@
             .exp-meta { text-align: left; }
             .cert-grid { grid-template-columns: 1fr 1fr; }
             .skills-grid { grid-template-columns: 1fr; }
+            .haem-tile-grid { grid-template-columns: 1fr; }
             nav { display: none; }
         }
         @media (max-width: 640px) {
@@ -917,60 +1020,73 @@
             <p class="section-desc">Developed independently in my spare time as an exploratory personal research initiative, often collaborating and brainstorming with other friends and peer connections to investigate biomolecular mechanics, structural conformations, and small molecule drug computing interactions.</p>
         </div>
 
-        <!-- Part 1 -->
-        <div class="project-card">
-            <div class="project-info">
-                <span class="tag">Repository Part 1</span>
-                <h3>Haemoglobin Structural Dynamics Analysis</h3>
-                <p>This initial module evaluates the sub angstrom conformational shifts occurring during the transition from deoxyhaemoglobin (T state) to oxyhaemoglobin (R state). Using Biopython to parse structural PDB coordinates (1A3N, 1HHO) to structural crystal chains, the script quantifies pocket contraction. By calculating 3D Euclidean distances between the proximal and distal histidine centres across individual subunits, the script quantifies pocket contraction. Beta and alpha chains display distinct conformational responses during the quaternary tetrameric shift, reflecting the molecular principles behind oxygen binding cooperation.</p>
-            </div>
-            <div class="engineering-focus">
-                <h4>Engineering Focus</h4>
-                <ul>
-                    <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython automation scripts.</li>
-                    <li>Reconstructed symmetric subunit chains across asymmetrical crystal lattices.</li>
-                    <li>Calculated 3D Euclidean distance matrices across proximal and distal histidine residues.</li>
-                    <li>Quantified pocket contraction dynamics during T state to R state quaternary transitions.</li>
-                    <li>Documented mechanical cooperative linkages governing oxygen binding affinity.</li>
-                </ul>
-            </div>
+        <div class="exp-keywords" style="margin-bottom: 2rem;">
+            <span class="exp-keywords-track">HAEMOGLOBIN &nbsp;·&nbsp; BIOPYTHON &nbsp;·&nbsp; PDB STRUCTURAL ANALYSIS &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; DRUG DISCOVERY &nbsp;·&nbsp; ORCA DFT &nbsp;·&nbsp; SICKLE CELL THERAPEUTICS &nbsp;·&nbsp; OXYGEN BINDING COOPERATIVITY &nbsp;·&nbsp; QUANTUM CHEMISTRY</span>
         </div>
 
-        <!-- Part 2 -->
-        <div class="project-card">
-            <div class="project-info">
-                <span class="tag">Repository Part 2</span>
-                <h3>Haemoglobin Interaction Analysis and Molecular Documentation</h3>
-                <p>This module investigates the binding mechanism of Voxelotor, an anti-sickling therapeutic agent that stabilises the oxygen bound R state of haemoglobin to prevent polymerisation for drug discovery applications. Custom Python routines target the specific N terminal valine residue on the alpha chain where Voxelotor forms a covalent bond, ensuring docking grids anchor precisely to the biological interaction site rather than relying on broad geometric centroids. PyMOL was utilised in this part to render 3D structural visualisations of these molecular docking poses.</p>
-            </div>
-            <div class="engineering-focus">
-                <h4>Engineering Focus</h4>
-                <ul>
-                    <li>Targeted N terminal valine residues on haemoglobin alpha chains for precise ligand anchoring.</li>
-                    <li>Filtered raw atomic contacts to isolate non-covalent networks and eliminate automated redundancy.</li>
-                    <li>Quantified hydrogen bonding, hydrophobic patches, salt bridges, and pi cation interactions.</li>
-                    <li>Integrated empirical scoring models to calculate binding free energy (-12.75 kcal/mol).</li>
-                    <li>Visualised 3D structural docking poses and binding interactions interactively in PyMOL.</li>
-                </ul>
-            </div>
-        </div>
+        <div class="haem-outer-box">
+            <div class="haem-tile-grid">
+                <!-- Part 1 -->
+                <div class="haem-tile">
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                        <span class="tag">Repository Part 1</span>
+                        <span class="tag tag-outline">Structural Bioinformatics</span>
+                    </div>
+                    <h4 class="haem-tile-title">Haemoglobin Structural Dynamics Analysis</h4>
+                    <p class="haem-tile-keywords">Biopython &nbsp;·&nbsp; PDB 1A3N/1HHO &nbsp;·&nbsp; Python</p>
+                    <p class="haem-tile-desc">This initial module evaluates the sub angstrom conformational shifts occurring during the transition from deoxyhaemoglobin (T state) to oxyhaemoglobin (R state). Using Biopython to parse structural PDB coordinates (1A3N, 1HHO) to structural crystal chains, the script quantifies pocket contraction. By calculating 3D Euclidean distances between the proximal and distal histidine centres across individual subunits, the script quantifies pocket contraction. Beta and alpha chains display distinct conformational responses during the quaternary tetrameric shift, reflecting the molecular principles behind oxygen binding cooperation.</p>
+                    <h5 class="haem-tile-subhead">Key Contributions</h5>
+                    <ul class="haem-tile-list">
+                        <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython automation scripts.</li>
+                        <li>Reconstructed symmetric subunit chains across asymmetrical crystal lattices.</li>
+                        <li>Calculated 3D Euclidean distance matrices across proximal and distal histidine residues.</li>
+                        <li>Quantified pocket contraction dynamics during T state to R state quaternary transitions.</li>
+                        <li>Documented mechanical cooperative linkages governing oxygen binding affinity.</li>
+                    </ul>
+                </div>
 
-        <!-- Part 3 -->
-        <div class="project-card">
-            <div class="project-info">
-                <span class="tag">Repository Part 3</span>
-                <h3>ORCA Computational Workflow & Electronic Structure Analysis</h3>
-                <p>This advanced module implements ab initio density functional theory calculations using ORCA to examine electronic configurations, orbital distributions, and iron centre spin state energetics relevant to therapeutic drug design. By bridging geometric coordinates with quantum chemical calculations, this workflow evaluates electronic charge transfer phenomena associated with ligand binding and structural reconfiguration.</p>
-            </div>
-            <div class="engineering-focus">
-                <h4>Engineering Focus</h4>
-                <ul>
-                    <li>Executed ab initio density functional theory (DFT) calculations using ORCA.</li>
-                    <li>Evaluated iron centre spin state energetics and coordination geometries for drug like candidate complexes.</li>
-                    <li>Mapped molecular orbital distributions and electronic charge transfer phenomena.</li>
-                    <li>Correlated quantum chemical outputs with biomolecular structural changes.</li>
-                    <li>Optimised computational runtime parameters for large coordination complexes.</li>
-                </ul>
+                <!-- Part 2 -->
+                <div class="haem-tile">
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                        <span class="tag">Repository Part 2</span>
+                        <span class="tag tag-outline">Molecular Docking</span>
+                    </div>
+                    <h4 class="haem-tile-title">Haemoglobin Interaction Analysis and Molecular Documentation</h4>
+                    <p class="haem-tile-keywords">PyMOL &nbsp;·&nbsp; Voxelotor &nbsp;·&nbsp; Binding Free Energy</p>
+                    <p class="haem-tile-desc">This module investigates the binding mechanism of Voxelotor, an anti-sickling therapeutic agent that stabilises the oxygen bound R state of haemoglobin to prevent polymerisation for drug discovery applications. Custom Python routines target the specific N terminal valine residue on the alpha chain where Voxelotor forms a covalent bond, ensuring docking grids anchor precisely to the biological interaction site rather than relying on broad geometric centroids. PyMOL was utilised in this part to render 3D structural visualisations of these molecular docking poses.</p>
+                    <h5 class="haem-tile-subhead">Key Contributions</h5>
+                    <ul class="haem-tile-list">
+                        <li>Targeted N terminal valine residues on haemoglobin alpha chains for precise ligand anchoring.</li>
+                        <li>Filtered raw atomic contacts to isolate non-covalent networks and eliminate automated redundancy.</li>
+                        <li>Quantified hydrogen bonding, hydrophobic patches, salt bridges, and pi cation interactions.</li>
+                        <li>Integrated empirical scoring models to calculate binding free energy (-12.75 kcal/mol).</li>
+                        <li>Visualised 3D structural docking poses and binding interactions interactively in PyMOL.</li>
+                    </ul>
+                </div>
+
+                <!-- Part 3 -->
+                <div class="haem-tile">
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                        <span class="tag">Repository Part 3</span>
+                        <span class="tag tag-outline">Quantum Chemistry</span>
+                    </div>
+                    <h4 class="haem-tile-title">ORCA Computational Workflow & Electronic Structure Analysis</h4>
+                    <p class="haem-tile-keywords">ORCA &nbsp;·&nbsp; DFT &nbsp;·&nbsp; Spin State Energetics</p>
+                    <p class="haem-tile-desc">This advanced module implements ab initio density functional theory calculations using ORCA to examine electronic configurations, orbital distributions, and iron centre spin state energetics relevant to therapeutic drug design. By bridging geometric coordinates with quantum chemical calculations, this workflow evaluates electronic charge transfer phenomena associated with ligand binding and structural reconfiguration.</p>
+                    <h5 class="haem-tile-subhead">Key Contributions</h5>
+                    <ul class="haem-tile-list">
+                        <li>Executed ab initio density functional theory (DFT) calculations using ORCA.</li>
+                        <li>Evaluated iron centre spin state energetics and coordination geometries for drug like candidate complexes.</li>
+                        <li>Mapped molecular orbital distributions and electronic charge transfer phenomena.</li>
+                        <li>Correlated quantum chemical outputs with biomolecular structural changes.</li>
+                        <li>Optimised computational runtime parameters for large coordination complexes.</li>
+                    </ul>
+                </div>
+
+                <!-- Photo tile -->
+                <div class="haem-tile haem-photo-tile">
+                    <img src="images/workstation.jpg" alt="Adrian's workstation showing PyMOL molecular visualisations and structural analysis code" class="haem-tile-photo">
+                </div>
             </div>
         </div>
     </section>
@@ -1275,23 +1391,18 @@
                 <h3>Software, Analysis & Data</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Python</span>
-                    <span class="skill-pill">MATLAB</span>
                     <span class="skill-pill">Excel</span>
                     <span class="skill-pill">Data Analysis</span>
                     <span class="skill-pill">Data Visualisation</span>
                     <span class="skill-pill">GitHub</span>
-                    <span class="skill-pill">LaTeX</span>
                     <span class="skill-pill">Technical Documentation</span>
                     <span class="skill-pill">Graphing</span>
                     <span class="skill-pill">Numerical Analysis</span>
                     <span class="skill-pill">Statistical Interpretation</span>
-                    <span class="skill-pill">Next.js</span>
-                    <span class="skill-pill">TypeScript</span>
                     <span class="skill-pill">Version Control</span>
                     <span class="skill-pill">Biopython</span>
                     <span class="skill-pill">PyMOL</span>
                     <span class="skill-pill">ORCA</span>
-                    <span class="skill-pill">Google Colab</span>
                     <span class="skill-pill">NumPy</span>
                     <span class="skill-pill">Command-Line Interfaces</span>
                 </div>
@@ -1425,6 +1536,27 @@
     </div>
 </div>
 
+<!-- Haemoglobin Project Modal -->
+<div class="modal-overlay" id="haemModalOverlay" onclick="if(event.target===this) closeHaemModal()">
+    <div class="modal-box">
+        <div class="modal-top-row">
+            <div class="modal-tags">
+                <span class="tag">Independent Portfolio</span>
+                <span class="tag tag-outline">Haemoglobin Computational Analysis</span>
+            </div>
+            <button class="modal-close" onclick="closeHaemModal()">×</button>
+        </div>
+        <h3 class="modal-title">Haemoglobin Computational Analysis</h3>
+        <p class="modal-subtitle">Personal Research Project</p>
+        <div class="modal-body" id="haemModalBody"></div>
+        <div class="modal-pagination">
+            <button class="page-arrow" id="haemPrevBtn" onclick="haemPrevPage()">←</button>
+            <span id="haemPageIndicator">Page 1 of 3</span>
+            <button class="page-arrow" id="haemNextBtn" onclick="haemNextPage()">→</button>
+        </div>
+    </div>
+</div>
+
 <script>
     const labPages = [
         `<h4>Synthesis of Ru(DMSO)₄Cl₂</h4>
@@ -1504,6 +1636,85 @@
         if (e.key === 'Escape') closeLabNotebook();
         if (e.key === 'ArrowLeft') labPrevPage();
         if (e.key === 'ArrowRight') labNextPage();
+    });
+
+    const haemPages = [
+        `<h4>Haemoglobin Structural Dynamics Analysis</h4>
+         <p>This initial module evaluates the sub angstrom conformational shifts occurring during the transition from deoxyhaemoglobin (T state) to oxyhaemoglobin (R state). Using Biopython to parse structural PDB coordinates (1A3N, 1HHO) to structural crystal chains, the script quantifies pocket contraction. By calculating 3D Euclidean distances between the proximal and distal histidine centres across individual subunits, the script quantifies pocket contraction. Beta and alpha chains display distinct conformational responses during the quaternary tetrameric shift, reflecting the molecular principles behind oxygen binding cooperation.</p>
+         <h4>Key Contributions</h4>
+         <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython automation scripts.</li>
+            <li>Reconstructed symmetric subunit chains across asymmetrical crystal lattices.</li>
+            <li>Calculated 3D Euclidean distance matrices across proximal and distal histidine residues.</li>
+            <li>Quantified pocket contraction dynamics during T state to R state quaternary transitions.</li>
+            <li>Documented mechanical cooperative linkages governing oxygen binding affinity.</li>
+         </ul>`,
+
+        `<h4>Haemoglobin Interaction Analysis and Molecular Documentation</h4>
+         <p>This module investigates the binding mechanism of Voxelotor, an anti-sickling therapeutic agent that stabilises the oxygen bound R state of haemoglobin to prevent polymerisation for drug discovery applications. Custom Python routines target the specific N terminal valine residue on the alpha chain where Voxelotor forms a covalent bond, ensuring docking grids anchor precisely to the biological interaction site rather than relying on broad geometric centroids. PyMOL was utilised in this part to render 3D structural visualisations of these molecular docking poses.</p>
+         <h4>Key Contributions</h4>
+         <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>Targeted N terminal valine residues on haemoglobin alpha chains for precise ligand anchoring.</li>
+            <li>Filtered raw atomic contacts to isolate non-covalent networks and eliminate automated redundancy.</li>
+            <li>Quantified hydrogen bonding, hydrophobic patches, salt bridges, and pi cation interactions.</li>
+            <li>Integrated empirical scoring models to calculate binding free energy (-12.75 kcal/mol).</li>
+            <li>Visualised 3D structural docking poses and binding interactions interactively in PyMOL.</li>
+         </ul>`,
+
+        `<h4>ORCA Computational Workflow & Electronic Structure Analysis</h4>
+         <p>This advanced module implements ab initio density functional theory calculations using ORCA to examine electronic configurations, orbital distributions, and iron centre spin state energetics relevant to therapeutic drug design. By bridging geometric coordinates with quantum chemical calculations, this workflow evaluates electronic charge transfer phenomena associated with ligand binding and structural reconfiguration.</p>
+         <h4>Key Contributions</h4>
+         <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>Executed ab initio density functional theory (DFT) calculations using ORCA.</li>
+            <li>Evaluated iron centre spin state energetics and coordination geometries for drug like candidate complexes.</li>
+            <li>Mapped molecular orbital distributions and electronic charge transfer phenomena.</li>
+            <li>Correlated quantum chemical outputs with biomolecular structural changes.</li>
+            <li>Optimised computational runtime parameters for large coordination complexes.</li>
+         </ul>`
+    ];
+
+    let haemCurrentPage = 0;
+
+    function renderHaemPage() {
+        document.getElementById('haemModalBody').innerHTML = haemPages[haemCurrentPage];
+        document.getElementById('haemPageIndicator').textContent = `Page ${haemCurrentPage + 1} of ${haemPages.length}`;
+        document.getElementById('haemPrevBtn').disabled = haemCurrentPage === 0;
+        document.getElementById('haemNextBtn').disabled = haemCurrentPage === haemPages.length - 1;
+        document.querySelector('#haemModalOverlay .modal-box').scrollTop = 0;
+    }
+
+    function openHaemPart(n) {
+        haemCurrentPage = n - 1;
+        renderHaemPage();
+        document.getElementById('haemModalOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeHaemModal() {
+        document.getElementById('haemModalOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function haemPrevPage() {
+        if (haemCurrentPage > 0) {
+            haemCurrentPage--;
+            renderHaemPage();
+        }
+    }
+
+    function haemNextPage() {
+        if (haemCurrentPage < haemPages.length - 1) {
+            haemCurrentPage++;
+            renderHaemPage();
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        const overlay = document.getElementById('haemModalOverlay');
+        if (!overlay.classList.contains('active')) return;
+        if (e.key === 'Escape') closeHaemModal();
+        if (e.key === 'ArrowLeft') haemPrevPage();
+        if (e.key === 'ArrowRight') haemNextPage();
     });
 </script>
 
