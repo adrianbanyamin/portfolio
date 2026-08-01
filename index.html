@@ -11,8 +11,8 @@
             --card-bg: #FFFFFF;
             --text-main: #1A1A1A;
             --text-muted: #555555;
-            --accent-blue: #2B6CB0;
-            --accent-blue-bg: #EBF8FF;
+            --accent-blue: #B8734F;
+            --accent-blue-bg: #F5EEDF;
             --border-color: #E2E8F0;
             --dark-bg: #111111;
         }
@@ -228,7 +228,7 @@
 
         .stat-box.blue-tint {
             background-color: var(--accent-blue-bg);
-            border-color: #BEE3F8;
+            border-color: #E8DCC3;
         }
 
         .stat-box.blue-tint .label {
@@ -251,8 +251,18 @@
             letter-spacing: 0.1em;
             color: var(--accent-blue);
             font-weight: 600;
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
             margin-bottom: 0.5rem;
+        }
+
+        .section-header span::before {
+            content: "";
+            display: inline-block;
+            width: 1.5rem;
+            height: 1px;
+            background: var(--accent-blue);
         }
 
         .section-header h2 {
@@ -271,6 +281,7 @@
         .project-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-blue);
             border-radius: 20px;
             padding: 2.5rem;
             margin-bottom: 2rem;
@@ -329,6 +340,7 @@
         .exp-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-blue);
             border-radius: 20px;
             padding: 2.5rem;
             margin-bottom: 1.5rem;
@@ -341,15 +353,86 @@
             text-align: right;
         }
 
+        .exp-intro-box {
+            background: #F5EEDF;
+            border: 1px solid #E8DCC3;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .exp-intro-box p {
+            margin-bottom: 0 !important;
+        }
+
+        .tag-outline {
+            background: white;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .exp-body-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-keywords {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0.4rem 0 1.25rem 0;
+        }
+
+        .exp-keywords-track {
+            display: inline-block;
+            font-family: monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            animation: keywordSlide 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes keywordSlide {
+            from { transform: translateX(0); }
+            to { transform: translateX(-18%); }
+        }
+
+        .exp-nested-trigger {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .exp-nested-trigger:hover {
+            border-color: #CBD5E0;
+            transform: translateY(-1px);
+        }
+
         .tag {
             display: inline-block;
             background: var(--accent-blue-bg);
             color: var(--accent-blue);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
             margin-bottom: 0.5rem;
+        }
+
+        .modal-tags .tag:nth-of-type(2) {
+            background: white;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
         }
 
         .date-badge {
@@ -359,6 +442,8 @@
             padding: 0.25rem 0.75rem;
             border-radius: 50px;
             display: inline-block;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         /* Certifications Grid */
@@ -478,8 +563,8 @@
             transform: translateY(-3px);
             background: var(--accent-blue-bg);
             color: var(--accent-blue);
-            border-color: #BEE3F8;
-            box-shadow: 0 6px 16px rgba(43, 108, 176, 0.1);
+            border-color: #E8DCC3;
+            box-shadow: 0 6px 16px rgba(184, 115, 79, 0.15);
         }
 
         /* Footer / Contact - Centered Alignment Applied */
@@ -745,6 +830,9 @@
             .skills-grid { grid-template-columns: 1fr; }
             nav { display: none; }
         }
+        @media (max-width: 640px) {
+            .exp-body-grid { grid-template-columns: 1fr; }
+        }
         @media (max-width: 600px) {
             .cert-grid { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 2.6rem; }
@@ -903,12 +991,22 @@
             </div>
         </div>
 
-        <div class="exp-card">
-            <div>
-                <span class="tag">Summer Internship 2026</span>
-                <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Bioinorganic Research Intern</h3>
-                <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Reading, Reading, UK</p>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">At the University of Reading, I carried out a bioinorganic chemistry research placement focused on synthesising and characterising novel ruthenium-based transition-metal coordination complexes. The broader aim of the project was to develop ruthenium complexes that could be structurally modified to selectively target DNA — particularly the major and minor grooves — as a potential route to disrupting the uncontrolled cell division characteristic of cancer. Working closely alongside a PhD researcher and senior faculty, I was responsible for the full synthetic and analytical pipeline, from initial synthesis through to structural characterisation and computational modelling.</p>
+        <div class="exp-card" style="display: block;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span class="tag">Summer Internship 2026</span>
+                    <span class="tag tag-outline">Bioinorganic Chemistry</span>
+                    <span class="tag tag-outline">Ruthenium Complexes</span>
+                </div>
+                <span class="date-badge">Jul 2026 - Sep 2026</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Bioinorganic Research Intern</h3>
+            <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 0.3rem;">University of Reading, Reading, UK</p>
+            <div class="exp-keywords">
+                <span class="exp-keywords-track">RuCl₃·H₂O &nbsp;·&nbsp; DMSO &nbsp;·&nbsp; 1,10-PHENANTHROLINE &nbsp;·&nbsp; UV-VIS &nbsp;·&nbsp; NMR &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; METAL-DNA INTERACTIONS &nbsp;·&nbsp; CANCER THERAPEUTICS</span>
+            </div>
+
+            <div class="exp-body-grid">
                 <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
                     <li>Synthesised novel ruthenium-based transition-metal coordination complexes utilising advanced techniques including microwave-assisted synthesis, high-temperature refluxing, fractional crystallisation, rotary evaporation, vacuum filtration, and degassing, to isolate intermediate and target ruthenium coordination compounds.</li>
                     <li>Executed high-precision analytical characterisation of ruthenium complexes using techniques including UV-Vis spectrophotometry, thin-layer chromatography (TLC), high-resolution mass spectrometry (HRMS), multi-nuclear NMR spectroscopy, and X-ray crystallography to resolve intricate molecular structures and bonding configurations informing metal-DNA interaction studies.</li>
@@ -916,20 +1014,19 @@
                     <li>Collaborated in high-level research briefings with distinguished visiting Japanese collaborators Dr. Shuntaro Takahashi and Dr. Hisae Tateishi-Karimata, alongside internal PhD researchers and senior faculty, critically evaluating ruthenium-complex characterisation data and reaction optimisation strategies to advance foundational cancer research.</li>
                     <li>Presented comprehensive research findings and structural analysis updates at weekly technical meetings with senior professors and peers, driving cross-disciplinary project planning and troubleshooting, with contributions slated for forthcoming peer-reviewed publication.</li>
                 </ul>
+                <div class="exp-intro-box">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">At the University of Reading, I carried out a bioinorganic chemistry research placement focused on synthesising and characterising novel ruthenium-based transition-metal coordination complexes. The broader aim of the project was to develop ruthenium complexes that could be structurally modified to selectively target DNA, particularly the major and minor grooves, as a potential route to disrupting the uncontrolled cell division characteristic of cancer. Working closely alongside a PhD researcher and senior faculty, I was responsible for the full synthetic and analytical pipeline, from initial synthesis through to structural characterisation and computational modelling.</p>
+                </div>
             </div>
-            <div class="exp-meta">
-                <span class="date-badge">Jul 2026 - Sep 2026</span>
-            </div>
-        </div>
 
-        <!-- Experimental Log Trigger -->
-        <div class="lab-notebook-trigger" onclick="openLabNotebook()">
-            <span class="lab-notebook-icon">📓</span>
-            <div class="lab-notebook-trigger-text">
-                <div class="lab-notebook-trigger-title">Experimental Log</div>
-                <div class="lab-notebook-trigger-sub">Ruthenium complex synthesis — click to open</div>
+            <div class="exp-nested-trigger" onclick="openLabNotebook()">
+                <span class="lab-notebook-icon">📓</span>
+                <div class="lab-notebook-trigger-text">
+                    <div class="lab-notebook-trigger-title">Experimental Log</div>
+                    <div class="lab-notebook-trigger-sub">Ruthenium complex synthesis — click to open</div>
+                </div>
+                <span class="lab-notebook-arrow">→</span>
             </div>
-            <span class="lab-notebook-arrow">→</span>
         </div>
 
         <div class="exp-card">
@@ -1353,7 +1450,7 @@
          </div>`,
 
         `<h4>Microwave-Assisted Synthesis</h4>
-         <p>0.077 g of Ru(Phen)₂Cl₂ was weighed and added to a microwave reaction vessel, along with 0.0423 g of dppz (dipyrido[3,2-a:2′,3′-c]phenazine). Water (3.5 mL) and ethanol (3.5 mL) were added, and the mixture was degassed with argon for 3 minutes to remove oxygen. The reaction was run in the microwave for 40 minutes at 150 W and 140°C. The product was isolated as a dark red-orange solution, consistent with the target [Ru(phen)₂(dppz)]²⁺ complex.</p>
+         <p>0.077 g of Ru(Phen)₂Cl₂ was weighed and added to a microwave reaction vessel, along with 0.0423 g of dppz (dipyrido[3,2-a:2',3'-c]phenazine). Water (3.5 mL) and ethanol (3.5 mL) were added, and the mixture was degassed with argon for 3 minutes to remove oxygen. The reaction was run in the microwave for 40 minutes at 150 W and 140°C. The product was isolated as a dark red-orange solution, consistent with the target [Ru(phen)₂(dppz)]²⁺ complex.</p>
          <p class="lab-caption" style="font-style: italic;">More entries will be added here as the internship continues.</p>`
     ];
 
