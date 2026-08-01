@@ -984,7 +984,7 @@
 <body>
 
 <header>
-    <div class="logo">AB. <span style="font-weight: 400; font-size: 1rem; color: var(--text-muted);">Adrian Banyamin</span></div>
+    <div class="logo">AB.</div>
     <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -1005,7 +1005,7 @@
             <div class="exp-keywords" style="margin-bottom: 1.25rem;">
                 <span class="exp-keywords-track">MOLECULAR MODELLING &nbsp;·&nbsp; QUANTUM CHEMICAL CALCULATIONS &nbsp;·&nbsp; STRUCTURE-BASED DRUG DESIGN &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; CHEMINFORMATICS &nbsp;·&nbsp; SYNTHETIC INORGANIC CHEMISTRY &nbsp;·&nbsp; REACTION OPTIMISATION &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; MASS SPECTROMETRY &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; ORCA &nbsp;·&nbsp; STRUCTURAL BIOINFORMATICS &nbsp;·&nbsp; METAL-DNA INTERACTIONS</span>
             </div>
-            <span class="badge-pill">MSci Chemistry Student at the University of Bristol</span>
+            <span class="badge-pill">MSci Chemistry Student · Computational Chemistry & Structural Biology</span>
             <h1>Computational Chemistry,<span>Structural Biology.</span></h1>
             <p>Behind every breakthrough medicine lies a microscopic puzzle of atomic coordinates, thermodynamic forces, and structural conformations. My journey in science is driven by an unwavering fascination with how code can decode life. As an analytical MSci Chemistry student entering my second year at Bristol, I immerse myself in the intersection of high performance computing and biomolecular interaction.</p>
             <p>Rather than viewing programming and chemistry as separate disciplines, I treat them as a unified language. By leveraging custom Python architecture, structural parsing libraries like Biopython, and sophisticated modelling software tools, I build pipelines that accelerate therapeutic lead identification. My path spans prestigious research environments, taking me from unravelling ruthenium metal DNA interactions at the University of Reading, to engineering robust student architecture back at Bristol, with upcoming summer research internships in Brazil (2027) on the horizon.</p>
@@ -1039,8 +1039,8 @@
                     <div class="label">Research Internships</div>
                 </div>
                 <div class="stat-box blue-tint">
-                    <div class="number">Cancer</div>
-                    <div class="label">Oncogenic Research Focus</div>
+                    <div class="number" style="font-size: 1.6rem;">Drug Discovery</div>
+                    <div class="label">Research Interest</div>
                 </div>
             </div>
         </div>
@@ -1066,16 +1066,16 @@
                         <span class="tag tag-outline">Structural Bioinformatics</span>
                     </div>
                     <h4 class="haem-tile-title">Haemoglobin Structural Dynamics Analysis</h4>
-                    <p class="haem-tile-keywords">Biopython &nbsp;·&nbsp; PDB 1A3N/1HHO &nbsp;·&nbsp; Python</p>
-                    <p class="haem-tile-desc">This initial module evaluates the sub angstrom conformational shifts occurring during the transition from deoxyhaemoglobin (T state) to oxyhaemoglobin (R state). Using Biopython to parse structural PDB coordinates (1A3N, 1HHO) to structural crystal chains, the script quantifies pocket contraction. By calculating 3D Euclidean distances between the proximal and distal histidine centres across individual subunits, the script quantifies pocket contraction. Beta and alpha chains display distinct conformational responses during the quaternary tetrameric shift, reflecting the molecular principles behind oxygen binding cooperation.</p>
+                    <p class="haem-tile-keywords">Biopython &nbsp;·&nbsp; PDB 1A3N/1HHO &nbsp;·&nbsp; 3D Euclidean Distance</p>
+                    <p class="haem-tile-desc">This module contains the computational pipeline developed to quantify the conformational transition of haemoglobin upon oxygen binding. By processing PDB structural data (1A3N deoxyhaemoglobin baseline and 1HHO oxyhaemoglobin), the pipeline maps precise sub-angstrom movements within the haem pocket, providing a quantitative bridge between static crystal structures and dynamic biophysical transitions. A key data engineering challenge involved incomplete coordinate data in 1HHO.pdb, which only explicitly records chains A and B; a dynamic routine was implemented to synthesise coordinate data for the C and D chains using the protein's internal symmetry relationships, ensuring a complete tetrameric analysis despite gaps in the raw structural data.</p>
                     <div class="haem-contributions-box">
                         <h5 class="haem-tile-subhead">Key Contributions</h5>
                         <ul class="haem-tile-list">
-                            <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython automation scripts.</li>
-                            <li>Reconstructed symmetric subunit chains across asymmetrical crystal lattices.</li>
-                            <li>Calculated 3D Euclidean distance matrices across proximal and distal histidine residues.</li>
-                            <li>Quantified pocket contraction dynamics during T state to R state quaternary transitions.</li>
-                            <li>Documented mechanical cooperative linkages governing oxygen binding affinity.</li>
+                            <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython to extract proximal histidine, distal histidine, haem ring, and iron atom geometries.</li>
+                            <li>Resolved incomplete 1HHO chain data by synthesising C and D subunit coordinates from the protein's internal symmetry.</li>
+                            <li>Calculated 3D Euclidean distances between proximal and distal histidine centres across all four subunits.</li>
+                            <li>Quantified significant structural contraction in three of four subunits (up to -0.37 Å), against one subunit falling below threshold.</li>
+                            <li>Related the measured contraction to the mechanical linkage driving the T-to-R quaternary transition.</li>
                         </ul>
                     </div>
                     <span class="haem-full-link" onclick="openHaemPart(1)">📖 View full repository breakdown →</span>
@@ -1084,9 +1084,8 @@
                 <!-- Project Overview -->
                 <div class="haem-tile">
                     <h4 class="haem-tile-title">Project Overview</h4>
-                    <p class="haem-tile-desc">Developed independently in my spare time as an exploratory personal research initiative, often collaborating and brainstorming with other friends and peer connections to investigate biomolecular mechanics, structural conformations, and small molecule drug computing interactions. This repository serves as a central hub for the computational modelling of haemoglobin structural dynamics, using Python to investigate the biophysical properties and conformational states of this essential protein across three linked modules.</p>
-                    <p class="haem-tile-desc">Part 1 focuses on structural analysis of haemoglobin to quantify conformational transitions between the deoxy and oxy states, detailing the geometric extraction of critical pocket parameters. Part 2 investigates the interaction between haemoglobin and the therapeutic agent Voxelotor, used in the treatment of sickle cell anaemia, encompassing binding site identification, molecular visualisation, and empirical evaluation of Gibbs free energy to determine binding affinity. Part 3 extends this into quantum chemistry, applying ab initio density functional theory calculations in ORCA to examine electronic configurations and iron centre spin state energetics relevant to therapeutic drug design.</p>
-                    <p class="haem-tile-desc" style="margin-bottom: 0;">Together, these three modules provide a comprehensive approach to understanding protein behaviour through structural bioinformatics, molecular docking, and computational modelling.</p>
+                    <p class="haem-tile-desc">My interest in structural biology and computational chemistry started with a simple question: how does a protein's shape encode its function? Haemoglobin became my way of exploring that hands-on, developed independently in my spare time alongside friends and peer connections. I began by quantifying the sub-angstrom mechanical shifts that drive haemoglobin's cooperative oxygen binding, then moved into structure-based drug design by mapping exactly how a real sickle cell therapeutic locks onto its target, before extending the analysis into ab initio quantum chemistry to examine the iron centre's electronic behaviour during ligand binding.</p>
+                    <p class="haem-tile-desc" style="margin-bottom: 0;">Together, this progression reflects the kind of end-to-end computational chemistry and structural biology work I want to bring to a research or industry placement: parsing raw structural data, building rigorous quantitative pipelines, and connecting the results back to real therapeutic relevance.</p>
                 </div>
 
                 <!-- Part 2 -->
@@ -1097,15 +1096,15 @@
                     </div>
                     <h4 class="haem-tile-title">Haemoglobin Interaction Analysis and Molecular Documentation</h4>
                     <p class="haem-tile-keywords">PyMOL &nbsp;·&nbsp; Voxelotor &nbsp;·&nbsp; Binding Free Energy</p>
-                    <p class="haem-tile-desc">This module investigates the binding mechanism of Voxelotor, an anti-sickling therapeutic agent that stabilises the oxygen bound R state of haemoglobin to prevent polymerisation for drug discovery applications. Custom Python routines target the specific N terminal valine residue on the alpha chain where Voxelotor forms a covalent bond, ensuring docking grids anchor precisely to the biological interaction site rather than relying on broad geometric centroids. PyMOL was utilised in this part to render 3D structural visualisations of these molecular docking poses.</p>
+                    <p class="haem-tile-desc">Voxelotor treats sickle cell anaemia by increasing haemoglobin's affinity for oxygen, stabilising the R state and inhibiting the polymerisation of deoxygenated haemoglobin responsible for red blood cell sickling. This module develops a systematic computational workflow to quantify the structural dynamics of the haemoglobin-Voxelotor interaction. Rather than relying on a broad geometric centroid, the docking grid was anchored precisely to the biological binding site, the nitrogen atom of the N-terminal valine on the alpha chain, where Voxelotor forms its covalent bond. Raw atomic contacts were condensed into unique, non-redundant residue-level interaction networks and evaluated using an empirical scoring function to calculate the Gibbs free energy of binding.</p>
                     <div class="haem-contributions-box">
                         <h5 class="haem-tile-subhead">Key Contributions</h5>
                         <ul class="haem-tile-list">
-                            <li>Targeted N terminal valine residues on haemoglobin alpha chains for precise ligand anchoring.</li>
-                            <li>Filtered raw atomic contacts to isolate non-covalent networks and eliminate automated redundancy.</li>
-                            <li>Quantified hydrogen bonding, hydrophobic patches, salt bridges, and pi cation interactions.</li>
-                            <li>Integrated empirical scoring models to calculate binding free energy (-12.75 kcal/mol).</li>
-                            <li>Visualised 3D structural docking poses and binding interactions interactively in PyMOL.</li>
+                            <li>Developed custom Biopython scripts to parse structural data from the 1HHO protein and the Voxelotor ligand.</li>
+                            <li>Programmatically identified the exact N-terminal valine binding site rather than a general pocket centroid.</li>
+                            <li>Rendered 3D docking visualisations of the Voxelotor-haemoglobin interaction in PyMOL.</li>
+                            <li>Condensed raw atomic contacts into unique residue networks (5 hydrogen bonds, 5 hydrophobic contacts, 2 salt bridges, 1 pi-cation interaction), removing double-counting from automated overestimation.</li>
+                            <li>Calculated a binding free energy of -12.75 kcal/mol using an empirical scoring function, confirming a thermodynamically favourable, high-affinity binding event.</li>
                         </ul>
                     </div>
                     <span class="haem-full-link" onclick="openHaemPart(2)">📖 View full repository breakdown →</span>
@@ -1685,25 +1684,25 @@
 
     const haemPages = [
         `<h4>Haemoglobin Structural Dynamics Analysis</h4>
-         <p>This initial module evaluates the sub angstrom conformational shifts occurring during the transition from deoxyhaemoglobin (T state) to oxyhaemoglobin (R state). Using Biopython to parse structural PDB coordinates (1A3N, 1HHO) to structural crystal chains, the script quantifies pocket contraction. By calculating 3D Euclidean distances between the proximal and distal histidine centres across individual subunits, the script quantifies pocket contraction. Beta and alpha chains display distinct conformational responses during the quaternary tetrameric shift, reflecting the molecular principles behind oxygen binding cooperation.</p>
+         <p>This module contains the computational pipeline developed to quantify the conformational transition of haemoglobin upon oxygen binding. By processing PDB structural data (1A3N deoxyhaemoglobin baseline and 1HHO oxyhaemoglobin), the pipeline maps precise sub-angstrom movements within the haem pocket, providing a quantitative bridge between static crystal structures and dynamic biophysical transitions. A key data engineering challenge involved incomplete coordinate data in 1HHO.pdb, which only explicitly records chains A and B; a dynamic routine was implemented to synthesise coordinate data for the C and D chains using the protein's internal symmetry relationships, ensuring a complete tetrameric analysis despite gaps in the raw structural data.</p>
          <h4>Key Contributions</h4>
          <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython automation scripts.</li>
-            <li>Reconstructed symmetric subunit chains across asymmetrical crystal lattices.</li>
-            <li>Calculated 3D Euclidean distance matrices across proximal and distal histidine residues.</li>
-            <li>Quantified pocket contraction dynamics during T state to R state quaternary transitions.</li>
-            <li>Documented mechanical cooperative linkages governing oxygen binding affinity.</li>
+            <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython to extract proximal histidine, distal histidine, haem ring, and iron atom geometries.</li>
+            <li>Resolved incomplete 1HHO chain data by synthesising C and D subunit coordinates from the protein's internal symmetry.</li>
+            <li>Calculated 3D Euclidean distances between proximal and distal histidine centres across all four subunits.</li>
+            <li>Quantified significant structural contraction in three of four subunits (up to -0.37 Å), against one subunit falling below threshold.</li>
+            <li>Related the measured contraction to the mechanical linkage driving the T-to-R quaternary transition.</li>
          </ul>`,
 
         `<h4>Haemoglobin Interaction Analysis and Molecular Documentation</h4>
-         <p>This module investigates the binding mechanism of Voxelotor, an anti-sickling therapeutic agent that stabilises the oxygen bound R state of haemoglobin to prevent polymerisation for drug discovery applications. Custom Python routines target the specific N terminal valine residue on the alpha chain where Voxelotor forms a covalent bond, ensuring docking grids anchor precisely to the biological interaction site rather than relying on broad geometric centroids. PyMOL was utilised in this part to render 3D structural visualisations of these molecular docking poses.</p>
+         <p>Voxelotor treats sickle cell anaemia by increasing haemoglobin's affinity for oxygen, stabilising the R state and inhibiting the polymerisation of deoxygenated haemoglobin responsible for red blood cell sickling. This module develops a systematic computational workflow to quantify the structural dynamics of the haemoglobin-Voxelotor interaction. Rather than relying on a broad geometric centroid, the docking grid was anchored precisely to the biological binding site, the nitrogen atom of the N-terminal valine on the alpha chain, where Voxelotor forms its covalent bond. Raw atomic contacts were condensed into unique, non-redundant residue-level interaction networks and evaluated using an empirical scoring function to calculate the Gibbs free energy of binding.</p>
          <h4>Key Contributions</h4>
          <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li>Targeted N terminal valine residues on haemoglobin alpha chains for precise ligand anchoring.</li>
-            <li>Filtered raw atomic contacts to isolate non-covalent networks and eliminate automated redundancy.</li>
-            <li>Quantified hydrogen bonding, hydrophobic patches, salt bridges, and pi cation interactions.</li>
-            <li>Integrated empirical scoring models to calculate binding free energy (-12.75 kcal/mol).</li>
-            <li>Visualised 3D structural docking poses and binding interactions interactively in PyMOL.</li>
+            <li>Developed custom Biopython scripts to parse structural data from the 1HHO protein and the Voxelotor ligand.</li>
+            <li>Programmatically identified the exact N-terminal valine binding site rather than a general pocket centroid.</li>
+            <li>Rendered 3D docking visualisations of the Voxelotor-haemoglobin interaction in PyMOL.</li>
+            <li>Condensed raw atomic contacts into unique residue networks (5 hydrogen bonds, 5 hydrophobic contacts, 2 salt bridges, 1 pi-cation interaction), removing double-counting from automated overestimation.</li>
+            <li>Calculated a binding free energy of -12.75 kcal/mol using an empirical scoring function, confirming a thermodynamically favourable, high-affinity binding event.</li>
          </ul>`,
 
         `<h4>ORCA Computational Workflow & Electronic Structure Analysis</h4>
