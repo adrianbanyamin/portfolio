@@ -11,7 +11,7 @@
             --card-bg: #FFFFFF;
             --text-main: #1A1A1A;
             --text-muted: #555555;
-            --accent-blue: #B8734F;
+            --accent-blue: #9C6B2E;
             --accent-blue-bg: #F5EEDF;
             --border-color: #E2E8F0;
             --dark-bg: #111111;
@@ -111,6 +111,10 @@
             gap: 4rem;
             align-items: center;
             padding: 4rem 0 6rem 0;
+        }
+
+        .hero > * {
+            min-width: 0;
         }
 
         .hero-content h1 {
@@ -354,8 +358,8 @@
         }
 
         .exp-intro-box {
-            background: #F5EEDF;
-            border: 1px solid #E8DCC3;
+            background: #F0E2C2;
+            border: 1px solid #D9BD82;
             border-radius: 14px;
             padding: 1.25rem 1.5rem;
         }
@@ -366,8 +370,8 @@
 
         .tag-outline {
             background: white;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
+            border: 1px solid #D9BD82;
+            color: var(--accent-blue);
         }
 
         .exp-body-grid {
@@ -381,6 +385,7 @@
         .exp-keywords {
             overflow: hidden;
             white-space: nowrap;
+            width: 100%;
             margin: 0.4rem 0 1.25rem 0;
         }
 
@@ -842,7 +847,7 @@
 <body>
 
 <header>
-    <div class="logo">AB.</div>
+    <div class="logo">AB. <span style="font-weight: 400; font-size: 1rem; color: var(--text-muted);">Adrian Banyamin</span></div>
     <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -860,6 +865,9 @@
     <!-- Hero / About Section -->
     <section class="hero" id="about" style="border-top: none; padding-top: 1rem;">
         <div class="hero-content">
+            <div class="exp-keywords" style="margin-bottom: 1.25rem;">
+                <span class="exp-keywords-track">MOLECULAR MODELLING &nbsp;·&nbsp; QUANTUM CHEMICAL CALCULATIONS &nbsp;·&nbsp; STRUCTURE-BASED DRUG DESIGN &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; CHEMINFORMATICS &nbsp;·&nbsp; SYNTHETIC INORGANIC CHEMISTRY &nbsp;·&nbsp; REACTION OPTIMISATION &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; MASS SPECTROMETRY &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; ORCA &nbsp;·&nbsp; STRUCTURAL BIOINFORMATICS &nbsp;·&nbsp; METAL-DNA INTERACTIONS</span>
+            </div>
             <span class="badge-pill">MSci Chemistry Student at the University of Bristol</span>
             <h1>Computational Chemistry,<span>Structural Biology.</span></h1>
             <p>Behind every breakthrough medicine lies a microscopic puzzle of atomic coordinates, thermodynamic forces, and structural conformations. My journey in science is driven by an unwavering fascination with how code can decode life. As an analytical MSci Chemistry student entering my second year at Bristol, I immerse myself in the intersection of high performance computing and biomolecular interaction.</p>
@@ -1003,7 +1011,7 @@
             <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Bioinorganic Research Intern</h3>
             <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 0.3rem;">University of Reading, Reading, UK</p>
             <div class="exp-keywords">
-                <span class="exp-keywords-track">RuCl₃·H₂O &nbsp;·&nbsp; DMSO &nbsp;·&nbsp; 1,10-PHENANTHROLINE &nbsp;·&nbsp; UV-VIS &nbsp;·&nbsp; NMR &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; METAL-DNA INTERACTIONS &nbsp;·&nbsp; CANCER THERAPEUTICS</span>
+                <span class="exp-keywords-track">CANCER RESEARCH &nbsp;·&nbsp; METAL-DNA INTERACTIONS &nbsp;·&nbsp; DRUG DISCOVERY &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; COMPUTATIONAL MODELLING &nbsp;·&nbsp; THERAPEUTIC DESIGN &nbsp;·&nbsp; BIOINORGANIC CHEMISTRY</span>
             </div>
 
             <div class="exp-body-grid">
@@ -1294,18 +1302,18 @@
                 <div class="pill-container">
                     <span class="skill-pill">Structural Bioinformatics</span>
                     <span class="skill-pill">Molecular Modelling</span>
-                    <span class="skill-pill">Quantum Chemical Calculations</span>
+                    <span class="skill-pill">Quantum Chemical Calculations (DFT)</span>
+                    <span class="skill-pill">Molecular Docking</span>
                     <span class="skill-pill">Binding Free Energy Analysis</span>
-                    <span class="skill-pill">Literature Reviews</span>
-                    <span class="skill-pill">Research Methods</span>
-                    <span class="skill-pill">Experimental Design</span>
-                    <span class="skill-pill">Data Acquisition</span>
-                    <span class="skill-pill">Test & Validation</span>
+                    <span class="skill-pill">Structure-Based Drug Design</span>
+                    <span class="skill-pill">Cheminformatics</span>
+                    <span class="skill-pill">Metal-Ligand Coordination Chemistry</span>
+                    <span class="skill-pill">Synthetic Inorganic Chemistry</span>
+                    <span class="skill-pill">Reaction Optimisation</span>
                     <span class="skill-pill">NMR Spectroscopy</span>
                     <span class="skill-pill">X-Ray Crystallography</span>
-                    <span class="skill-pill">Technical Reporting</span>
-                    <span class="skill-pill">Scientific Communication</span>
-                    <span class="skill-pill">Evidence-Based Decision Making</span>
+                    <span class="skill-pill">Mass Spectrometry (HRMS)</span>
+                    <span class="skill-pill">Structure Elucidation</span>
                 </div>
             </div>
 
