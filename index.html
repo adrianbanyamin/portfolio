@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FAFAF7;
+            --bg-color: #F3EDE0;
             --card-bg: #FFFFFF;
             --text-main: #1A1A1A;
             --text-muted: #555555;
@@ -26,7 +26,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Ctext x='15' y='60' font-family='monospace' font-size='26' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.05' transform='rotate(-12 15 60)'%3EPYTHON%3C/text%3E%3Ctext x='280' y='150' font-family='monospace' font-size='22' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.05' transform='rotate(8 280 150)'%3EPYMOL%3C/text%3E%3Ctext x='50' y='270' font-family='monospace' font-size='18' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.05' transform='rotate(-6 50 270)'%3EBIOPYTHON%3C/text%3E%3Ctext x='310' y='340' font-family='monospace' font-size='24' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.05' transform='rotate(10 310 340)'%3EORCA%3C/text%3E%3Ctext x='150' y='440' font-family='monospace' font-size='22' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.05' transform='rotate(-8 150 440)'%3EDFT%3C/text%3E%3Ctext x='370' y='480' font-family='monospace' font-size='20' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.05' transform='rotate(6 370 480)'%3ENMR%3C/text%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Ctext x='15' y='60' font-family='monospace' font-size='26' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.11' transform='rotate(-12 15 60)'%3EPYTHON%3C/text%3E%3Ctext x='280' y='150' font-family='monospace' font-size='22' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.11' transform='rotate(8 280 150)'%3EPYMOL%3C/text%3E%3Ctext x='50' y='270' font-family='monospace' font-size='18' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.11' transform='rotate(-6 50 270)'%3EBIOPYTHON%3C/text%3E%3Ctext x='310' y='340' font-family='monospace' font-size='24' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.11' transform='rotate(10 310 340)'%3EORCA%3C/text%3E%3Ctext x='150' y='440' font-family='monospace' font-size='22' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.11' transform='rotate(-8 150 440)'%3EDFT%3C/text%3E%3Ctext x='370' y='480' font-family='monospace' font-size='20' font-weight='700' fill='rgb(156,107,46)' fill-opacity='0.11' transform='rotate(6 370 480)'%3ENMR%3C/text%3E%3C/svg%3E");
             background-repeat: repeat;
             background-attachment: fixed;
             color: var(--text-main);
@@ -550,9 +550,10 @@
 
         .haem-tile-photo {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
-            object-position: center;
+            height: auto;
+            max-height: 380px;
+            object-fit: contain;
+            background: #1a1a1a;
             display: block;
         }
 
