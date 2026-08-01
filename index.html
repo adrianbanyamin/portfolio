@@ -1296,5 +1296,108 @@
     </div>
 </footer>
 
+<!-- Experimental Log Modal -->
+<div class="modal-overlay" id="labModalOverlay" onclick="if(event.target===this) closeLabNotebook()">
+    <div class="modal-box">
+        <div class="modal-top-row">
+            <div class="modal-tags">
+                <span class="tag">Bioinorganic Chemistry</span>
+                <span class="tag">Ruthenium Complexes</span>
+            </div>
+            <button class="modal-close" onclick="closeLabNotebook()">×</button>
+        </div>
+        <h3 class="modal-title">Experimental Log</h3>
+        <p class="modal-subtitle">University of Reading — Bioinorganic Research Internship</p>
+        <div class="modal-body" id="labModalBody"></div>
+        <div class="modal-pagination">
+            <button class="page-arrow" id="labPrevBtn" onclick="labPrevPage()">←</button>
+            <span id="labPageIndicator">Page 1 of 4</span>
+            <button class="page-arrow" id="labNextBtn" onclick="labNextPage()">→</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const labPages = [
+        `<h4>Synthesis of Ru(DMSO)₄Cl₂</h4>
+         <p>3.01 g of RuCl₃·H₂O was weighed out. DMSO (15 mL) was degassed for 3 minutes. The mixture was reacted and refluxed for 15 minutes at approximately 160°C. Reflux was stopped and the solution left open for 15 minutes to evaporate excess DMSO, yielding a dark black solution with a tint of orange around the meniscus.</p>
+         <img class="lab-photo" src="images/ru-dmso-reflux.jpg" alt="Reflux of RuCl3.H2O in DMSO producing a dark black solution">
+         <p class="lab-caption">Reflux of RuCl₃·H₂O in DMSO, producing a dark black solution with a tint of orange around the meniscus.</p>`,
+
+        `<p>Acetone (50 mL) was added to the cooled solution and left to crystallise. The product was filtered under reduced pressure and washed with acetone followed by diethyl ether, yielding a yellow precipitate of Ru(DMSO)₄Cl₂.</p>
+         <div class="lab-photo-row">
+             <div>
+                 <img class="lab-photo" src="images/ru-dmso-precipitate.jpg" alt="Yellow precipitate of Ru(DMSO)4Cl2 during vacuum filtration">
+                 <p class="lab-caption">Yellow precipitate during vacuum filtration.</p>
+             </div>
+             <div>
+                 <img class="lab-photo" src="images/ru-dmso-vial.jpg" alt="Vial containing 1.76g of collected Ru(DMSO)4Cl2">
+                 <p class="lab-caption">1.76 g of Ru(DMSO)₄Cl₂ collected, 30 July 2026.</p>
+             </div>
+         </div>`,
+
+        `<h4>Synthesis of Ru(Phen)₂Cl₂</h4>
+         <p>Ru(DMSO)₄Cl₂ (0.336 g), 1,10-phenanthroline (0.455 g), and LiCl (0.447 g) were combined and dissolved in DMA (20 mL), producing Ru(Phen)₂Cl₂. The solution was left to evaporate under heat until roughly half the DMA had evaporated, then cooled to room temperature. Acetone (50 mL) was added and the solution left in the fridge overnight to crystallise. Crystals were filtered and washed with acetone and then water (~30 mL each), leaving a black solid.</p>
+         <div class="lab-photo-row">
+             <div>
+                 <img class="lab-photo" src="images/ru-phen-filtration.jpg" alt="Filtration of black solid Ru(Phen)2Cl2 crystals">
+                 <p class="lab-caption">Filtration of the black Ru(Phen)₂Cl₂ solid.</p>
+             </div>
+             <div>
+                 <img class="lab-photo" src="images/ru-phen-vial.jpg" alt="Vial containing 0.140g of collected Ru(Phen)2Cl2">
+                 <p class="lab-caption">0.140 g collected, 31 July 2026.</p>
+             </div>
+         </div>`,
+
+        `<h4>Microwave-Assisted Synthesis</h4>
+         <p>0.077 g of Ru(Phen)₂Cl₂ was weighed and added to a microwave reaction vessel, along with 0.0423 g of dppz (dipyrido[3,2-a:2′,3′-c]phenazine). Water (3.5 mL) and ethanol (3.5 mL) were added, and the mixture was degassed with argon for 3 minutes to remove oxygen. The reaction was run in the microwave for 40 minutes at 150 W and 140°C. The product was isolated as a dark red-orange solution, consistent with the target [Ru(phen)₂(dppz)]²⁺ complex.</p>
+         <p class="lab-caption" style="font-style: italic;">More entries will be added here as the internship continues.</p>`
+    ];
+
+    let labCurrentPage = 0;
+
+    function renderLabPage() {
+        document.getElementById('labModalBody').innerHTML = labPages[labCurrentPage];
+        document.getElementById('labPageIndicator').textContent = `Page ${labCurrentPage + 1} of ${labPages.length}`;
+        document.getElementById('labPrevBtn').disabled = labCurrentPage === 0;
+        document.getElementById('labNextBtn').disabled = labCurrentPage === labPages.length - 1;
+        document.querySelector('.modal-box').scrollTop = 0;
+    }
+
+    function openLabNotebook() {
+        labCurrentPage = 0;
+        renderLabPage();
+        document.getElementById('labModalOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLabNotebook() {
+        document.getElementById('labModalOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function labPrevPage() {
+        if (labCurrentPage > 0) {
+            labCurrentPage--;
+            renderLabPage();
+        }
+    }
+
+    function labNextPage() {
+        if (labCurrentPage < labPages.length - 1) {
+            labCurrentPage++;
+            renderLabPage();
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        const overlay = document.getElementById('labModalOverlay');
+        if (!overlay.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLabNotebook();
+        if (e.key === 'ArrowLeft') labPrevPage();
+        if (e.key === 'ArrowRight') labNextPage();
+    });
+</script>
+
 </body>
 </html>
