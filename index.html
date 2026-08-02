@@ -903,6 +903,44 @@
             margin-bottom: 1rem;
         }
 
+        .modal-body ul {
+            margin-bottom: 1.25rem;
+        }
+
+        .modal-body li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .modal-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.25rem;
+            font-size: 0.78rem;
+        }
+
+        .modal-body th, .modal-body td {
+            text-align: left;
+            padding: 0.5rem 0.65rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+            color: var(--text-muted);
+        }
+
+        .modal-body th {
+            background: var(--accent-blue-bg);
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.66rem;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .modal-body tr:last-child td {
+            border-bottom: none;
+        }
+
         .lab-photo-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1088,7 +1126,8 @@
                 <div class="haem-tile">
                     <h4 class="haem-tile-title">Project Overview</h4>
                     <p class="haem-tile-desc">My interest in structural biology and computational chemistry started with a simple question: how does a protein's shape encode its function? Haemoglobin became my way of exploring that hands-on, developed independently in my spare time alongside friends and peer connections. I began by quantifying the sub-angstrom mechanical shifts that drive haemoglobin's cooperative oxygen binding, then moved into structure-based drug design by mapping exactly how a real sickle cell therapeutic locks onto its target, before extending the analysis into ab initio quantum chemistry to examine the iron centre's electronic behaviour during ligand binding.</p>
-                    <p class="haem-tile-desc" style="margin-bottom: 0;">Together, this progression reflects the kind of end-to-end computational chemistry and structural biology work I want to bring to a research or industry placement: parsing raw structural data, building rigorous quantitative pipelines, and connecting the results back to real therapeutic relevance.</p>
+                    <p class="haem-tile-desc">Together, this progression reflects the kind of end-to-end computational chemistry and structural biology work I want to bring to a research or industry placement: parsing raw structural data, building rigorous quantitative pipelines, and connecting the results back to real therapeutic relevance.</p>
+                    <p class="haem-tile-desc" style="margin-bottom: 0;">What keeps me returning to this kind of work is the belief that publicly available structural data, freely deposited Protein Data Bank files that anyone can download, still holds enormous untapped potential when paired with careful computational analysis. I wanted to prove to myself that a single motivated student, working independently without a formal laboratory, could take that open data all the way from raw atomic coordinates through to a genuine drug discovery insight. That conviction is what drives my ambition to work in computational chemistry and structural biology within the pharmaceutical industry, where the same rigour and curiosity could be applied to real therapeutic pipelines at a much larger scale.</p>
                 </div>
 
                 <!-- Part 2 -->
@@ -1122,6 +1161,7 @@
                     <h4 class="haem-tile-title">ORCA Computational Workflow & Electronic Structure Analysis</h4>
                     <p class="haem-tile-keywords">ORCA &nbsp;·&nbsp; DFT &nbsp;·&nbsp; Spin State Energetics</p>
                     <p class="haem-tile-desc">This advanced module implements ab initio density functional theory calculations using ORCA to examine electronic configurations, orbital distributions, and iron centre spin state energetics relevant to therapeutic drug design. By bridging geometric coordinates with quantum chemical calculations, this workflow evaluates electronic charge transfer phenomena associated with ligand binding and structural reconfiguration.</p>
+                    <p class="haem-tile-desc">Classical docking treats atoms as fixed spheres, but the real chemistry governing how oxygen and small molecules interact with the iron centre happens at the electronic level, where spin state changes and orbital rearrangements drive binding behaviour that an empirical scoring function cannot fully capture. Extending the analysis into ORCA let me move from a geometric picture of binding towards a genuinely quantum mechanical one, tracking how the electronic environment around the iron atom shifts as the coordination sphere changes. This part of the project is still ongoing, and further entries will be added here as more calculations are completed.</p>
                     <div class="haem-contributions-box">
                         <h5 class="haem-tile-subhead">Key Contributions</h5>
                         <ul class="haem-tile-list">
@@ -1685,53 +1725,128 @@
         if (e.key === 'ArrowRight') labNextPage();
     });
 
-    const haemPages = [
-        `<h4>Haemoglobin Structural Dynamics Analysis</h4>
-         <p>This module contains the computational pipeline developed to quantify the conformational transition of haemoglobin upon oxygen binding. By processing PDB structural data (1A3N deoxyhaemoglobin baseline and 1HHO oxyhaemoglobin), the pipeline maps precise sub-angstrom movements within the haem pocket, providing a quantitative bridge between static crystal structures and dynamic biophysical transitions. A key data engineering challenge involved incomplete coordinate data in 1HHO.pdb, which only explicitly records chains A and B; a dynamic routine was implemented to synthesise coordinate data for the C and D chains using the protein's internal symmetry relationships, ensuring a complete tetrameric analysis despite gaps in the raw structural data.</p>
-         <h4>Key Contributions</h4>
-         <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython to extract proximal histidine, distal histidine, haem ring, and iron atom geometries.</li>
-            <li>Resolved incomplete 1HHO chain data by synthesising C and D subunit coordinates from the protein's internal symmetry.</li>
-            <li>Calculated 3D Euclidean distances between proximal and distal histidine centres across all four subunits.</li>
-            <li>Quantified significant structural contraction in three of four subunits (up to -0.37 Å), against one subunit falling below threshold.</li>
-            <li>Related the measured contraction to the mechanical linkage driving the T-to-R quaternary transition.</li>
-         </ul>`,
+    const haemBooks = {
+        1: [
+            `<h4>Haemoglobin Structural Dynamics Analysis</h4>
+             <p>This repository holds the computational pipeline I built to quantify what actually happens inside a haemoglobin molecule when it picks up an oxygen molecule. Rather than treating two published crystal structures as static pictures, the pipeline processes their raw atomic coordinates and measures, in fractions of an angstrom, how the haem pocket physically contracts as the protein switches from its deoxygenated T state to its oxygenated R state.</p>
+             <p>I chose this as my first structural biology project because it forced me to work with real, imperfect experimental data rather than a clean textbook example. The two structures used, 1A3N and 1HHO, were solved years apart, at different resolutions, and were not deposited in a way that made a direct comparison simple. Getting a fair, tetramer wide comparison out of that mismatch was most of the actual engineering work.</p>
 
-        `<h4>Haemoglobin Interaction Analysis and Molecular Documentation</h4>
-         <p>Voxelotor treats sickle cell anaemia by increasing haemoglobin's affinity for oxygen, stabilising the R state and inhibiting the polymerisation of deoxygenated haemoglobin responsible for red blood cell sickling. This module develops a systematic computational workflow to quantify the structural dynamics of the haemoglobin-Voxelotor interaction. Rather than relying on a broad geometric centroid, the docking grid was anchored precisely to the biological binding site, the nitrogen atom of the N-terminal valine on the alpha chain, where Voxelotor forms its covalent bond. Raw atomic contacts were condensed into unique, non-redundant residue-level interaction networks and evaluated using an empirical scoring function to calculate the Gibbs free energy of binding.</p>
-         <h4>Key Contributions</h4>
-         <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li>Developed custom Biopython scripts to parse structural data from the 1HHO protein and the Voxelotor ligand.</li>
-            <li>Programmatically identified the exact N-terminal valine binding site rather than a general pocket centroid.</li>
-            <li>Rendered 3D docking visualisations of the Voxelotor-haemoglobin interaction in PyMOL.</li>
-            <li>Condensed raw atomic contacts into unique residue networks (5 hydrogen bonds, 5 hydrophobic contacts, 2 salt bridges, 1 pi-cation interaction), removing double-counting from automated overestimation.</li>
-            <li>Calculated a binding free energy of -12.75 kcal/mol using an empirical scoring function, confirming a thermodynamically favourable, high-affinity binding event.</li>
-         </ul>`,
+             <h4>Project Scope</h4>
+             <p>The objective was to determine, quantitatively rather than by eye, how much the haem pocket contracts in each of the four subunits when comparing the deoxyhaemoglobin baseline structure to the oxyhaemoglobin structure. I wanted a single, defensible number per subunit rather than a general description of the protein changing shape.</p>`,
 
-        `<h4>ORCA Computational Workflow & Electronic Structure Analysis</h4>
-         <p>This advanced module implements ab initio density functional theory calculations using ORCA to examine electronic configurations, orbital distributions, and iron centre spin state energetics relevant to therapeutic drug design. By bridging geometric coordinates with quantum chemical calculations, this workflow evaluates electronic charge transfer phenomena associated with ligand binding and structural reconfiguration.</p>
-         <h4>Key Contributions</h4>
-         <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li>Executed ab initio density functional theory (DFT) calculations using ORCA.</li>
-            <li>Evaluated iron centre spin state energetics and coordination geometries for drug like candidate complexes.</li>
-            <li>Mapped molecular orbital distributions and electronic charge transfer phenomena.</li>
-            <li>Correlated quantum chemical outputs with biomolecular structural changes.</li>
-            <li>Optimised computational runtime parameters for large coordination complexes.</li>
-         </ul>`
-    ];
+            `<h4>Computational Methodology</h4>
+             <p>The analysis is written in Python and uses Biopython's PDBParser to read structural coordinate data directly from two Protein Data Bank files:</p>
+             <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>1A3N.pdb, deoxyhaemoglobin, representing the unliganded T state baseline.</li>
+                <li>1HHO.pdb, oxyhaemoglobin, representing the oxygen bound R state.</li>
+             </ul>
 
+             <h4>Handling Missing Structural Data</h4>
+             <p>The first real obstacle was that 1HHO.pdb only explicitly records chains A and B. Chains C and D, which complete the biological tetramer, are simply absent from the file. My routine detects this at parse time and, for those two chains, substitutes the coordinate data already extracted from chain A for C and chain B for D.</p>
+             <p>I want to be precise about what that actually means, since it would be easy to describe it more grandly than it deserves. This is not a formal crystallographic symmetry operation with a rotation and translation matrix applied to generate new, independent coordinates. It is a direct substitution, based on the accepted biological assumption that the two alpha beta dimers making up the tetramer are structurally equivalent to one another. That assumption is reasonable and widely used, but it does mean the C and D results for the oxygen bound state are not independent measurements, they are copies. I have kept that limitation visible here rather than presenting it as more sophisticated than it is.</p>`,
+
+            `<h4>Geometric Extraction</h4>
+             <p>To describe the pocket without relying on a single atom, the pipeline calculates four reference points per subunit, each the mean position of a small set of named atoms rather than a single coordinate:</p>
+             <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Proximal histidine centre: the mean position of five imidazole ring atoms (CG, ND1, CD2, CE1, NE2) on the histidine that directly coordinates the iron from the F helix side.</li>
+                <li>Distal histidine centre: the same five atom average, taken instead for the histidine on the E helix side of the pocket, which sits close to the binding site without ever bonding the iron directly.</li>
+                <li>Haem ring centre: the mean position of the four porphyrin nitrogen atoms (NA, NB, NC, ND) that hold the iron within the plane of the ring.</li>
+                <li>Iron atom: read directly, with no averaging required.</li>
+             </ul>
+             <p>The distance between the proximal and distal histidine centres is what the pipeline reports as the pocket width. It is a proxy for pocket geometry rather than a direct energetic measurement, but it is a genuinely computed 3D Euclidean distance, not an estimate.</p>
+
+             <h4>Key Contributions</h4>
+             <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython to extract proximal histidine, distal histidine, haem ring, and iron atom geometries.</li>
+                <li>Resolved incomplete 1HHO chain data by substituting C and D subunit coordinates from the equivalent alpha beta dimer, with that assumption stated explicitly rather than hidden.</li>
+                <li>Calculated 3D Euclidean distances between proximal and distal histidine centres across all four subunits.</li>
+                <li>Quantified significant structural contraction in three of four subunits, up to 0.37 Å, against one subunit falling below threshold.</li>
+                <li>Related the measured contraction to the mechanical linkage driving the T to R quaternary transition.</li>
+             </ul>`,
+
+            `<h4>Full Pipeline Output</h4>
+             <p>Everything below is the real, unedited output produced by running the script against the two downloaded PDB files, with coordinates rounded to three decimal places for readability.</p>
+             <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">Deoxyhaemoglobin baseline, 1A3N.pdb</p>
+             <table>
+                <tr><th>Chain</th><th>Proximal His (Å)</th><th>Distal His (Å)</th><th>Haem Ring (Å)</th><th>Iron (Å)</th><th>Pocket Width (Å)</th></tr>
+                <tr><td>A</td><td>11.591, 13.611, 27.094</td><td>4.669, 10.838, 30.621</td><td>8.292, 11.931, 27.674</td><td>8.657, 12.035, 27.628</td><td>8.2491</td></tr>
+                <tr><td>B</td><td>5.358, -8.667, -2.695</td><td>-0.724, -3.981, -5.943</td><td>2.438, -6.363, -2.944</td><td>2.699, -6.580, -2.893</td><td>8.3366</td></tr>
+                <tr><td>C</td><td>20.348, 9.616, -2.742</td><td>26.073, 4.024, -5.673</td><td>22.980, 6.756, -2.935</td><td>22.670, 7.002, -2.912</td><td>8.5220</td></tr>
+                <tr><td>D</td><td>20.253, -7.935, 30.907</td><td>27.322, -4.300, 33.149</td><td>23.742, -6.662, 30.848</td><td>23.422, -6.796, 30.821</td><td>8.2590</td></tr>
+             </table>
+             <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">Oxyhaemoglobin, 1HHO.pdb</p>
+             <table>
+                <tr><th>Chain</th><th>Proximal His (Å)</th><th>Distal His (Å)</th><th>Haem Ring (Å)</th><th>Iron (Å)</th><th>Pocket Width (Å)</th></tr>
+                <tr><td>A</td><td>42.539, 29.567, 13.112</td><td>39.964, 28.087, 20.701</td><td>40.426, 29.331, 15.542</td><td>40.513, 29.278, 15.451</td><td>8.1496</td></tr>
+                <tr><td>B</td><td>9.840, 31.799, -2.096</td><td>6.923, 38.667, 0.967</td><td>9.968, 34.277, -0.165</td><td>9.879, 34.359, -0.092</td><td>8.0659</td></tr>
+                <tr><td>C*</td><td colspan="5">Chain missing from file, values copied from chain A above</td></tr>
+                <tr><td>D*</td><td colspan="5">Chain missing from file, values copied from chain B above</td></tr>
+             </table>
+             <p style="font-size: 0.78rem;">*See Handling Missing Structural Data on an earlier page for what this substitution does and does not represent.</p>`,
+
+            `<h4>Results</h4>
+             <table>
+                <tr><th>Chain</th><th>Subunit Type</th><th>Displacement (Δ Å)</th><th>Result Significance</th></tr>
+                <tr><td>A</td><td>Alpha</td><td>-0.0995</td><td>Below threshold</td></tr>
+                <tr><td>B</td><td>Beta</td><td>-0.2707</td><td>Significant contraction</td></tr>
+                <tr><td>C</td><td>Alpha</td><td>-0.3724</td><td>Significant contraction</td></tr>
+                <tr><td>D</td><td>Beta</td><td>-0.1931</td><td>Significant contraction</td></tr>
+             </table>
+
+             <h4>Interpreting the Results</h4>
+             <p>Three of the four subunits show a clear contraction in pocket width once oxygen binds, consistent with the accepted mechanism in which the iron moves from a high spin to a low spin state on ligand binding, pulling the proximal histidine and the F helix with it, the first mechanical step in the wider T to R quaternary shift of the whole tetramer.</p>
+             <p>Chain A is the exception, sitting below the threshold I set for calling a change significant. I have not hidden that result. Small, chain specific deviations like this are a known feature of single crystal structures rather than of the underlying biology, since each chain in the asymmetric unit sits in a slightly different local packing environment that can subtly restrain or exaggerate its measured movement. Reporting the honest number for chain A alongside the other three, rather than only reporting the subunits that fit the expected story, felt like the more scientifically sound choice, even though it is the less tidy one.</p>`,
+
+            `<h4>Limitations</h4>
+             <p>It is worth being upfront about what this analysis is and is not. It compares two static crystal structures, so it captures the end points of the T to R transition rather than the pathway between them, and it says nothing about timescales. It relies on the chain C and D substitution described earlier, which assumes rather than proves subunit equivalence. It also uses a single structure pair rather than multiple independent depositions, so the numbers on the previous page should be read as a clear, real signal rather than a statistically validated result.</p>
+
+             <h4>What This Project Demonstrates</h4>
+             <p>Beyond the specific result, this was where I taught myself to work with the Biopython structure object model, to reason about atomic coordinate geometry in three dimensions, and to handle the kind of incomplete, real world data that textbook exercises rarely include. It is also where I learned that being transparent about a script's limitations makes the underlying result more credible, not less, a lesson I carried into the two projects that follow it.</p>`
+        ],
+
+        2: [
+            `<h4>Haemoglobin Interaction Analysis and Molecular Documentation</h4>
+             <p>Voxelotor treats sickle cell anaemia by increasing haemoglobin's affinity for oxygen, stabilising the R state and inhibiting the polymerisation of deoxygenated haemoglobin responsible for red blood cell sickling. This module develops a systematic computational workflow to quantify the structural dynamics of the haemoglobin-Voxelotor interaction. Rather than relying on a broad geometric centroid, the docking grid was anchored precisely to the biological binding site, the nitrogen atom of the N-terminal valine on the alpha chain, where Voxelotor forms its covalent bond. Raw atomic contacts were condensed into unique, non-redundant residue-level interaction networks and evaluated using an empirical scoring function to calculate the Gibbs free energy of binding.</p>
+             <h4>Key Contributions</h4>
+             <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Developed custom Biopython scripts to parse structural data from the 1HHO protein and the Voxelotor ligand.</li>
+                <li>Programmatically identified the exact N-terminal valine binding site rather than a general pocket centroid.</li>
+                <li>Rendered 3D docking visualisations of the Voxelotor-haemoglobin interaction in PyMOL.</li>
+                <li>Condensed raw atomic contacts into unique residue networks (5 hydrogen bonds, 5 hydrophobic contacts, 2 salt bridges, 1 pi-cation interaction), removing double-counting from automated overestimation.</li>
+                <li>Calculated a binding free energy of -12.75 kcal/mol using an empirical scoring function, confirming a thermodynamically favourable, high-affinity binding event.</li>
+             </ul>`
+        ],
+
+        3: [
+            `<h4>ORCA Computational Workflow & Electronic Structure Analysis</h4>
+             <p>This advanced module implements ab initio density functional theory calculations using ORCA to examine electronic configurations, orbital distributions, and iron centre spin state energetics relevant to therapeutic drug design. By bridging geometric coordinates with quantum chemical calculations, this workflow evaluates electronic charge transfer phenomena associated with ligand binding and structural reconfiguration.</p>
+             <p>Classical docking treats atoms as fixed spheres, but the real chemistry governing how oxygen and small molecules interact with the iron centre happens at the electronic level, where spin state changes and orbital rearrangements drive binding behaviour that an empirical scoring function cannot fully capture. Extending the analysis into ORCA let me move from a geometric picture of binding towards a genuinely quantum mechanical one, tracking how the electronic environment around the iron atom shifts as the coordination sphere changes. This part of the project is still ongoing, and further entries will be added here as more calculations are completed.</p>
+             <h4>Key Contributions</h4>
+             <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Executed ab initio density functional theory (DFT) calculations using ORCA.</li>
+                <li>Evaluated iron centre spin state energetics and coordination geometries for drug like candidate complexes.</li>
+                <li>Mapped molecular orbital distributions and electronic charge transfer phenomena.</li>
+                <li>Correlated quantum chemical outputs with biomolecular structural changes.</li>
+                <li>Optimised computational runtime parameters for large coordination complexes.</li>
+             </ul>`
+        ]
+    };
+
+    let currentHaemPart = 1;
     let haemCurrentPage = 0;
 
     function renderHaemPage() {
-        document.getElementById('haemModalBody').innerHTML = haemPages[haemCurrentPage];
-        document.getElementById('haemPageIndicator').textContent = `Page ${haemCurrentPage + 1} of ${haemPages.length}`;
+        const pages = haemBooks[currentHaemPart];
+        document.getElementById('haemModalBody').innerHTML = pages[haemCurrentPage];
+        document.getElementById('haemPageIndicator').textContent = `Part ${currentHaemPart} · Page ${haemCurrentPage + 1} of ${pages.length}`;
         document.getElementById('haemPrevBtn').disabled = haemCurrentPage === 0;
-        document.getElementById('haemNextBtn').disabled = haemCurrentPage === haemPages.length - 1;
+        document.getElementById('haemNextBtn').disabled = haemCurrentPage === pages.length - 1;
         document.querySelector('#haemModalOverlay .modal-box').scrollTop = 0;
     }
 
     function openHaemPart(n) {
-        haemCurrentPage = n - 1;
+        currentHaemPart = n;
+        haemCurrentPage = 0;
         renderHaemPage();
         document.getElementById('haemModalOverlay').classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -1750,7 +1865,8 @@
     }
 
     function haemNextPage() {
-        if (haemCurrentPage < haemPages.length - 1) {
+        const pages = haemBooks[currentHaemPart];
+        if (haemCurrentPage < pages.length - 1) {
             haemCurrentPage++;
             renderHaemPage();
         }
