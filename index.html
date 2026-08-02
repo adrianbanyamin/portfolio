@@ -63,6 +63,33 @@
             50% { transform: translate(18px, -26px) rotate(var(--wr, 0deg)); }
         }
 
+        @keyframes floatWordB {
+            0%, 100% { transform: translate(0, 0) rotate(var(--wr, 0deg)); }
+            50% { transform: translate(-18px, -22px) rotate(var(--wr, 0deg)); }
+        }
+
+        @keyframes floatWordC {
+            0%, 100% { transform: translate(0, 0) rotate(var(--wr, 0deg)); }
+            50% { transform: translate(-16px, 20px) rotate(var(--wr, 0deg)); }
+        }
+
+        @keyframes floatWordD {
+            0%, 100% { transform: translate(0, 0) rotate(var(--wr, 0deg)); }
+            50% { transform: translate(16px, 18px) rotate(var(--wr, 0deg)); }
+        }
+
+        .bg-word:nth-of-type(4n+2) {
+            animation-name: floatWordB;
+        }
+
+        .bg-word:nth-of-type(4n+3) {
+            animation-name: floatWordC;
+        }
+
+        .bg-word:nth-of-type(4n) {
+            animation-name: floatWordD;
+        }
+
         h1, h2, h3, .serif-font {
             font-family: 'Newsreader', serif;
         }
@@ -887,7 +914,7 @@
 
         /* Footer / Contact - Centered Alignment Applied */
         footer {
-            background: var(--dark-bg);
+            background: var(--navy-bg);
             color: white;
             padding: 6rem 5% 4rem 5%;
             margin-top: 5rem;
@@ -1230,7 +1257,6 @@
     <span class="bg-word" style="top:53%; left:55%; font-size:15px; --wr:-9deg; animation-duration:12s; animation-delay:1.9s;">MOLECULAR DOCKING</span>
     <span class="bg-word" style="top:58%; left:82%; font-size:13px; --wr:11deg; animation-duration:14s; animation-delay:0.2s;">COORDINATION CHEMISTRY</span>
     <span class="bg-word" style="top:63%; left:33%; font-size:15px; --wr:-7deg; animation-duration:9s; animation-delay:3.3s;">QUANTUM CHEMISTRY</span>
-    <span class="bg-word" style="top:68%; left:92%; font-size:22px; --wr:8deg; animation-duration:11s; animation-delay:2s;">DFT</span>
     <span class="bg-word" style="top:6%; left:40%; font-size:14px; --wr:-10deg; animation-duration:13s; animation-delay:4.5s;">CANCER THERAPEUTICS</span>
     <span class="bg-word" style="top:72%; left:15%; font-size:12px; --wr:6deg; animation-duration:10s; animation-delay:1.3s;">METAL-DNA INTERACTIONS</span>
     <span class="bg-word" style="top:77%; left:60%; font-size:15px; --wr:-8deg; animation-duration:12s; animation-delay:2.5s;">RUTHENIUM COMPLEXES</span>
@@ -1252,7 +1278,6 @@
     <span class="bg-word" style="top:22%; left:92%; font-size:12px; --wr:-9deg; animation-duration:14s; animation-delay:3.7s;">PROTEIN EXPRESSION ANALYSIS</span>
     <span class="bg-word" style="top:31%; left:16%; font-size:14px; --wr:5deg; animation-duration:9s; animation-delay:1.8s;">UV-VIS SPECTROPHOTOMETRY</span>
     <span class="bg-word" style="top:45%; left:24%; font-size:13px; --wr:-11deg; animation-duration:13s; animation-delay:2.3s;">THIN LAYER CHROMATOGRAPHY</span>
-    <span class="bg-word" style="top:52%; left:8%; font-size:18px; --wr:7deg; animation-duration:11s; animation-delay:4.1s;">GITHUB</span>
     <span class="bg-word" style="top:61%; left:44%; font-size:16px; --wr:-8deg; animation-duration:10s; animation-delay:0.7s;">PYTHON</span>
     <span class="bg-word" style="top:74%; left:78%; font-size:13px; --wr:6deg; animation-duration:12s; animation-delay:3.9s;">THERAPEUTIC LEAD IDENTIFICATION</span>
     <span class="bg-word" style="top:88%; left:58%; font-size:14px; --wr:-7deg; animation-duration:14s; animation-delay:1.7s;">CELLULAR SIGNALLING</span>
@@ -1418,7 +1443,7 @@
     <section id="experience">
         <div class="section-header">
             <span>Professional Journey</span>
-            <h2>Research and Engineering Experience</h2>
+            <h2>Experience</h2>
         </div>
 
         <div class="exp-card" style="display: block;">
@@ -1455,8 +1480,8 @@
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                     <span class="tag">Summer Internship 2026</span>
-                    <span class="tag tag-outline">Bioinorganic Chemistry</span>
-                    <span class="tag tag-outline">Ruthenium Complexes</span>
+                    <span class="tag tag-outline">Full Synthetic To Computational Pipeline</span>
+                    <span class="tag tag-outline">Publication In Progress</span>
                 </div>
                 <span class="date-badge">Jul 2026 - Sep 2026</span>
             </div>
@@ -1489,23 +1514,34 @@
             </div>
         </div>
 
-        <div class="exp-card">
-            <div>
-                <span class="tag">Summer Internship 2026</span>
-                <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Systems Architecting Intern</h3>
-                <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Bristol, Bristol, UK</p>
+        <div class="exp-card" style="display: block;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span class="tag">Summer Internship 2026</span>
+                    <span class="tag tag-outline">Full Stack Prototype</span>
+                    <span class="tag tag-outline">Built Independently</span>
+                </div>
+                <span class="date-badge">Jun 2026 - Jul 2026</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Systems Architecting Intern</h3>
+            <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 0.3rem;">University of Bristol, Bristol, UK</p>
+            <div class="exp-keywords">
+                <span class="exp-keywords-track">PYTHON &nbsp;·&nbsp; DATA INDEXING &nbsp;·&nbsp; SEARCH TOOLING &nbsp;·&nbsp; PROTOTYPING &nbsp;·&nbsp; UI DESIGN &nbsp;·&nbsp; STAKEHOLDER REQUIREMENTS &nbsp;·&nbsp; STUDENT ENGAGEMENT &nbsp;·&nbsp; GITHUB &nbsp;·&nbsp; PRESENTATIONS</span>
+            </div>
+
+            <div class="exp-body-grid">
                 <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Architected a central Python-powered Blackboard search dashboard that enabled students to query multi-year departmental feedback records via a keyword toolbar, reducing feedback retrieval time by 75% compared to manual folder navigation.</li>
-                    <li>Built the underlying Python indexing engine from scratch, processing several years of departmental feedback documents into a searchable structure so staff could retrieve any past record by keyword in seconds rather than opening folders manually.</li>
+                    <li>Designed a prototype Python powered search dashboard for departmental feedback, built and tested against an example data set I created myself, to demonstrate how a keyword toolbar could let students find relevant feedback far faster than manually opening folders.</li>
+                    <li>Built the underlying Python indexing engine from scratch, using a representative example data set modelled on how real departmental feedback is structured, as a proof of concept for a possible future central tool for Blackboard or another Bristol SU platform.</li>
                     <li>Designed and developed interactive tutorial games aimed at improving student engagement and participation during departmental tutor group meetings.</li>
-                    <li>Worked directly with departmental staff to scope requirements, translating a general request for easier feedback access into a concrete toolbar interface built to sit alongside the existing Blackboard environment.</li>
+                    <li>Worked directly with departmental staff to scope requirements, translating a general request for easier feedback access into a concrete toolbar interface concept built to sit alongside the existing Blackboard environment.</li>
                     <li>Attended weekly tutorial meetings with team professors, presenting live research code, GitHub repositories, and structured PowerPoint presentations to demonstrate Python development progress and data-driven recommendations.</li>
                     <li>Tested early versions of the dashboard with real staff members and iterated on the interface based on their feedback, prioritising something non technical colleagues could pick up without training.</li>
                     <li>Collaborated with team members to test, debug, and refine tutorial engagement strategies, translating student feedback metrics into actionable UI/UX improvements.</li>
                 </ul>
-            </div>
-            <div class="exp-meta">
-                <span class="date-badge">Jun 2026 - Jul 2026</span>
+                <div class="exp-intro-box">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">I wanted this internship because building a tool that indexes, searches, and surfaces the right information from a large body of data is close to the same underlying problem as computational drug discovery, where the challenge is also finding the meaningful signal inside a large body of structural or experimental data. Working in Python on real indexing and search logic, rather than just following a tutorial, was a chance to practise exactly the kind of data tooling that computational chemistry pipelines depend on, while contributing something genuinely useful to my own department.</p>
+                </div>
             </div>
         </div>
 
@@ -1728,7 +1764,7 @@
         </div>
 
         <div class="skills-grid">
-            <div class="skill-column gold-leaf-accent leaf-br">
+            <div class="skill-column">
                 <h3>Software, Analysis & Data</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Python</span>
@@ -1749,7 +1785,7 @@
                 </div>
             </div>
 
-            <div class="skill-column gold-leaf-accent">
+            <div class="skill-column">
                 <h3>Research & Scientific Methodologies</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Structural Bioinformatics</span>
@@ -1769,7 +1805,7 @@
                 </div>
             </div>
 
-            <div class="skill-column gold-leaf-accent leaf-tl">
+            <div class="skill-column">
                 <h3>Leadership & Professional Skills</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Cross-Functional Communication</span>
@@ -1787,7 +1823,7 @@
                 </div>
             </div>
 
-            <div class="skill-column gold-leaf-accent leaf-br">
+            <div class="skill-column">
                 <h3>University & Academic Competencies</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Rigorous Exam Preparation</span>
@@ -1846,7 +1882,7 @@
     <div class="footer-content">
         <h2>Get In Touch</h2>
         <p>I am always interested in connecting with researchers, academics, and industry professionals working on computational chemistry, structural biology, and therapeutic drug discovery.</p>
-        <p style="font-size: 0.95rem; color: #CBD5E0; margin-bottom: 2.5rem; text-align: center;">My long-term goal is to pioneer computational drug discovery and therapeutics design, focusing specifically on cancer pathways and molecular mechanisms to engineer life-saving medical breakthroughs.</p>
+        <p style="font-size: 0.95rem; color: #CBD5E0; margin-bottom: 2.5rem; text-align: center;">Right now my focus is securing a strong year in industry placement, and building genuine experience wherever that path within therapeutics and drug discovery leads.</p>
         <div class="footer-actions">
             <a href="mailto:adrian.banyamin@gmail.com" class="btn-light">Email Me</a>
             <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-dark-outline">LinkedIn Profile</a>
