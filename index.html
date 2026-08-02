@@ -250,11 +250,11 @@
 
         /* Big Name Hero */
         .big-name {
-            font-size: 6rem;
-            line-height: 0.98;
+            font-size: 7rem;
+            line-height: 0.96;
             font-weight: 400;
             letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
         }
 
         .big-name span {
@@ -278,9 +278,21 @@
         }
 
         .hero-pills .tag,
-        .hero-pills .tag-outline {
+        .hero-pills .tag-outline,
+        .hero-pills .tag-navy,
+        .hero-pills .tag-bronze {
             border-radius: 50px;
             padding: 0.45rem 1rem;
+        }
+
+        .tag-navy {
+            background: var(--navy-bg);
+            color: #F5EFE3;
+        }
+
+        .tag-bronze {
+            background: var(--accent-blue);
+            color: white;
         }
 
         .badge-pill {
@@ -330,7 +342,7 @@
 
         .photo-card img {
             width: 100%;
-            height: 320px;
+            height: 420px;
             object-fit: cover;
             display: block;
         }
@@ -1372,11 +1384,12 @@
             <span>Chemistry · Computation · Structural Biology</span>
         </div>
         <h1 class="big-name">Adrian<span>Banyamin</span></h1>
-        <p class="hero-tagline">Combining computational modelling and synthetic chemistry to understand how molecules work.</p>
+        <p class="hero-tagline" style="margin-bottom: 2.25rem;">Combining computational modelling and synthetic chemistry to understand how molecules work, and how that understanding feeds into drug discovery.</p>
         <div class="hero-pills">
-            <span class="tag">University of Bristol · MSci Chemistry</span>
-            <span class="tag tag-outline">Reading · Bioinorganic Research</span>
+            <span class="tag tag-navy">University of Bristol · MSci Chemistry</span>
+            <span class="tag tag-bronze">Reading · Bioinorganic Research</span>
             <span class="tag tag-outline">São Paulo · Cancer Research (2027)</span>
+            <span class="tag tag-outline">Haemoglobin Docking · Personal Project</span>
         </div>
         <div class="hero-actions" style="margin-bottom: 1rem;">
             <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-outline">LinkedIn Profile →</a>
@@ -1392,7 +1405,8 @@
             <span class="badge-pill">About Me</span>
             <h2 style="font-size: 2.2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15;">MSci Chemistry Student<span style="display: block; font-style: italic; color: var(--accent-blue);">Interests in Computational Chemistry & Structural Biology</span></h2>
             <p>Behind every breakthrough medicine lies a microscopic puzzle of atomic coordinates, thermodynamic forces, and structural conformations. My journey in science is driven by an unwavering fascination with how code can decode life. As an analytical chemistry student entering my second year at Bristol, I immerse myself in the intersection of high performance computing and biomolecular interaction.</p>
-            <p>Rather than viewing programming and chemistry as separate disciplines, I treat them as a unified language. By leveraging custom Python architecture, structural parsing libraries like Biopython, and sophisticated modelling software tools, I build pipelines that accelerate therapeutic lead identification. My path spans prestigious research environments, taking me from unravelling ruthenium metal DNA interactions at the University of Reading, to engineering robust student architecture back at Bristol, with upcoming summer research internships in Brazil (2027) on the horizon.</p>
+            <p>Rather than treating programming and chemistry as separate disciplines, I use them as a single language. Outside of my formal placements, I built a full computational analysis of haemoglobin from scratch, starting by mapping its quaternary structure and allosteric transitions in PyMOL, before extending the project to dock the drug Voxelotor into its binding site using Python, to see first hand how a molecule's structure dictates whether it can actually treat sickle cell disease, rather than just reading about it in a textbook.</p>
+            <p>That same pull toward cancer research runs through my placements: unravelling ruthenium metal-DNA interactions built for cancer therapeutics at the University of Reading, an upcoming cancer biology placement at the University of São Paulo, and engineering a feedback search tool back at Bristol in between. My long-term goal is to help push computational chemistry further into actually shaping drug discovery, building on the ground it has already made rather than just describing it after the fact.</p>
         </div>
         <div>
             <div class="photo-card">
@@ -1420,11 +1434,11 @@
                 <div class="stat-grid-bottom">
                     <div class="stat-box blue-tint">
                         <div class="number">2 Summer</div>
-                        <div class="label">Research Internships (2026)</div>
+                        <div class="label">Cancer Research Internships (2026)</div>
                     </div>
                     <div class="stat-box blue-tint">
-                        <div class="number" style="font-size: 1.4rem;">São Paulo, Brazil</div>
-                        <div class="label">Confirmed Cancer Research Internship</div>
+                        <div class="number" style="font-size: 1.4rem;">Confirmed Incoming</div>
+                        <div class="label">São Paulo, Brazil · Cancer Research</div>
                     </div>
                 </div>
             </div>
