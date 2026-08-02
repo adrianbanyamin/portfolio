@@ -1150,14 +1150,14 @@
                         <span class="tag tag-outline">Molecular Docking</span>
                     </div>
                     <h4 class="haem-tile-title">Haemoglobin Interaction Analysis and Molecular Documentation</h4>
-                    <p class="haem-tile-keywords">PyMOL &nbsp;·&nbsp; Voxelotor &nbsp;·&nbsp; Binding Free Energy</p>
-                    <p class="haem-tile-desc">Voxelotor treats sickle cell anaemia by increasing haemoglobin's affinity for oxygen, stabilising the R state and inhibiting the polymerisation of deoxygenated haemoglobin responsible for red blood cell sickling. This module develops a computational workflow to dock Voxelotor against haemoglobin and characterise how it genuinely binds. Rather than relying on a broad geometric centroid, the docking grid was anchored precisely to the biological binding site, the nitrogen atom of the N-terminal valine on the alpha chain, where Voxelotor forms its covalent bond.</p>
+                    <p class="haem-tile-keywords">PyMOL &nbsp;·&nbsp; Voxelotor &nbsp;·&nbsp; AutoDock Vina &nbsp;·&nbsp; PLIP</p>
+                    <p class="haem-tile-desc">Voxelotor treats sickle cell anaemia by increasing haemoglobin's affinity for oxygen, stabilising the R state and inhibiting the polymerisation of deoxygenated haemoglobin responsible for red blood cell sickling. This module develops a computational workflow to dock Voxelotor against haemoglobin and characterise how it genuinely binds. Rather than relying on a broad geometric centroid, the docking grid was anchored precisely to the biological binding site, the nitrogen atom of the N terminal valine on the alpha chain, where Voxelotor forms its covalent bond.</p>
                     <div class="haem-contributions-box">
                         <h5 class="haem-tile-subhead">Key Contributions</h5>
                         <ul class="haem-tile-list">
                             <li>Developed custom Biopython scripts to parse structural data from the 1HHO protein and the Voxelotor ligand.</li>
-                            <li>Programmatically identified the exact N-terminal valine binding site rather than a general pocket centroid.</li>
-                            <li>Rendered 3D docking visualisations of the Voxelotor-haemoglobin interaction in PyMOL.</li>
+                            <li>Programmatically identified the exact N terminal valine binding site rather than a general pocket centroid.</li>
+                            <li>Rendered 3D docking visualisations of the Voxelotor haemoglobin interaction in PyMOL.</li>
                             <li>Docked Voxelotor with AutoDock Vina, obtaining a best pose binding affinity of -6.9 kcal/mol across nine candidate poses.</li>
                             <li>Profiled the resulting complex with PLIP, identifying six hydrogen bonding residues, five hydrophobic contacts, and one pi cation interaction.</li>
                         </ul>
@@ -1821,8 +1821,8 @@
             `<h4>Haemoglobin Interaction Analysis and Molecular Documentation</h4>
              <p>Voxelotor treats sickle cell anaemia by increasing the affinity of haemoglobin for oxygen, which stabilises the R state of the protein. This stabilisation prevents the transition to the T state, thereby inhibiting the polymerisation of deoxygenated haemoglobin, maintaining normal red blood cell shape, and reducing haemolysis.</p>
              <p>Part 1 established that oxygen binding physically contracts the haem pocket. The natural next question was whether a real, approved drug actually exploits that same mechanism, and if so, exactly how tightly and where. This part of the repository docks Voxelotor against haemoglobin using real computational chemistry tools, AutoDock Vina and PLIP, rather than relying on assumption or a textbook description of its mechanism.</p>
-             <img src="images/voxelotor-workstation-setup.jpg" alt="Workstation set up for the Voxelotor docking run" class="lab-photo">
-             <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: -1rem; margin-bottom: 1.25rem;">My working setup during the docking and profiling stage of this project.</p>`,
+             <img src="images/voxelotor-workstation-setup.jpg" alt="Workstation set up for the Voxelotor docking run" class="lab-photo" style="margin-bottom: 1.25rem;">
+             <p class="lab-caption" style="margin-bottom: 1.25rem;">My working setup during the docking and profiling stage of this project.</p>`,
 
             `<h4>Computational Foundation: Data Parsing</h4>
              <p><strong>What I did:</strong> I developed custom Python scripts to parse the structural data from the 1HHO protein structure and the Voxelotor ligand.</p>
@@ -1830,7 +1830,7 @@
              <p><strong>Why it was needed:</strong> Parsing was essential to strip away irrelevant structural information and isolate the specific ligand and protein data points necessary for the geometric analysis that followed.</p>
              <h4>Structural Interrogation: Binding Site Identification</h4>
              <p><strong>What I did:</strong> I moved away from calculating a general geometric centroid and instead programmatically identified the exact biological binding site for Voxelotor.</p>
-             <p><strong>How I did it:</strong> I wrote a script to parse the 1HHO.pdb file, instructing it to navigate to the alpha chain and extract the coordinates of the nitrogen atom on the N-terminal valine.</p>
+             <p><strong>How I did it:</strong> I wrote a script to parse the 1HHO.pdb file, instructing it to navigate to the alpha chain and extract the coordinates of the nitrogen atom on the N terminal valine.</p>
              <pre>from Bio.PDB import PDBParser
 
 def get_site(f):
@@ -1841,24 +1841,24 @@ def get_site(f):
 
 coords = get_site('1HHO.pdb')
 print("Anchor point:", coords)</pre>
-             <p><strong>Why it was needed:</strong> Voxelotor forms a covalent bond specifically with this N-terminal valine. By isolating the coordinates of this exact residue rather than a broad pocket centroid, I ensured the docking grid was anchored to the site where the drug genuinely binds, not just somewhere nearby.</p>`,
+             <p><strong>Why it was needed:</strong> Voxelotor forms a covalent bond specifically with this N terminal valine. By isolating the coordinates of this exact residue rather than a broad pocket centroid, I ensured the docking grid was anchored to the site where the drug genuinely binds, not just somewhere nearby.</p>`,
 
             `<h4>Molecular Visualisation: 3D Binding Analysis</h4>
              <p><strong>What I did:</strong> I used PyMOL to render the interaction between the Voxelotor ligand and the haemoglobin molecule in three dimensions.</p>
              <p><strong>How I did it:</strong> I imported the coordinate data into PyMOL to build a visual representation of the docking result.</p>
              <p><strong>Why it was needed:</strong> Visualisation was required to inspect the docking of the drug into the haemoglobin structure directly rather than relying on coordinates alone. It allows a real check of how the ligand occupies the binding site relative to the surrounding residues.</p>
-             <img src="images/voxelotor-docking-closeup.jpg" alt="Close up render of Voxelotor docked into the haemoglobin binding site" class="lab-photo">
-             <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: -1rem; margin-bottom: 1.25rem;">Voxelotor docked at the N-terminal valine site on the alpha chain, rendered in PyMOL.</p>
+             <img src="images/voxelotor-docking-closeup.jpg" alt="Close up render of Voxelotor docked into the haemoglobin binding site" class="lab-photo" style="margin-bottom: 1.25rem;">
+             <p class="lab-caption" style="margin-bottom: 1.25rem;">Voxelotor docked at the N terminal valine site on the alpha chain, rendered in PyMOL.</p>
              <h4>Key Contributions</h4>
              <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
                 <li>Developed custom Biopython scripts to parse structural data from the 1HHO protein and the Voxelotor ligand.</li>
-                <li>Programmatically identified the exact N-terminal valine binding site rather than a general pocket centroid.</li>
-                <li>Rendered 3D docking visualisations of the Voxelotor-haemoglobin interaction in PyMOL.</li>
+                <li>Programmatically identified the exact N terminal valine binding site rather than a general pocket centroid.</li>
+                <li>Rendered 3D docking visualisations of the Voxelotor haemoglobin interaction in PyMOL.</li>
                 <li>Docked Voxelotor with AutoDock Vina and profiled the resulting complex with PLIP to characterise the genuine binding interactions.</li>
              </ul>`,
 
             `<h4>Full Pipeline Output: Docking Results</h4>
-             <p>Below are the real, unedited results returned by AutoDock Vina once the search grid was anchored to the N-terminal valine site, all nine poses it generated, ranked by predicted binding affinity.</p>
+             <p>Below are the real, unedited results returned by AutoDock Vina once the search grid was anchored to the N terminal valine site, all nine poses it generated, ranked by predicted binding affinity.</p>
              <table>
                 <tr><th>Pose</th><th>Affinity (kcal/mol)</th><th>RMSD Lower Bound (Å)</th><th>RMSD Upper Bound (Å)</th></tr>
                 <tr><td>1</td><td>-6.9</td><td>0.000</td><td>0.000</td></tr>
@@ -1874,7 +1874,7 @@ print("Anchor point:", coords)</pre>
              <p>The top pose, at -6.9 kcal/mol, is the pose carried forward into the interaction profiling on the next page. It also has zero root mean square deviation against itself, which is expected, since it is the reference pose the others are measured against.</p>`,
 
             `<h4>Full Pipeline Output: Interaction Profiling</h4>
-             <p>Running PLIP on the top scoring pose produced the following genuine, non-covalent contact map between Voxelotor and haemoglobin.</p>
+             <p>Running PLIP on the top scoring pose produced the following genuine, non covalent contact map between Voxelotor and haemoglobin.</p>
              <table>
                 <tr><th>Interaction Type</th><th>Residues</th><th>Count</th></tr>
                 <tr><td>Hydrogen Bonds</td><td>LYS 40, LEU 48, HIS 50 on one chain; ALA 76, HIS 77, ASP 79 on the neighbouring chain</td><td>6</td></tr>
