@@ -846,7 +846,8 @@
             overflow: hidden;
         }
 
-        .navy-section::before {
+        .navy-section::before,
+        footer::before {
             content: "";
             position: absolute;
             inset: 0;
@@ -919,9 +920,12 @@
             padding: 6rem 5% 4rem 5%;
             margin-top: 5rem;
             text-align: center;
+            overflow: hidden;
         }
 
         .footer-content {
+            position: relative;
+            z-index: 1;
             max-width: 1400px;
             margin: 0 auto;
             display: flex;
@@ -1289,7 +1293,8 @@
     <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
+        <a href="#experience">Internships</a>
+        <a href="#beyond-lab">Beyond the Lab</a>
         <a href="#certifications">Certifications</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
@@ -1442,8 +1447,8 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="section-header">
-            <span>Professional Journey</span>
-            <h2>Experience</h2>
+            <span>Placements & Research</span>
+            <h2>Research Internships</h2>
         </div>
 
         <div class="exp-card" style="display: block;">
@@ -1543,6 +1548,14 @@
                     <p style="color: var(--text-muted); font-size: 0.9rem;">I wanted this internship because building a tool that indexes, searches, and surfaces the right information from a large body of data is close to the same underlying problem as computational drug discovery, where the challenge is also finding the meaningful signal inside a large body of structural or experimental data. Working in Python on real indexing and search logic, rather than just following a tutorial, was a chance to practise exactly the kind of data tooling that computational chemistry pipelines depend on, while contributing something genuinely useful to my own department.</p>
                 </div>
             </div>
+        </div>
+
+    </section>
+
+    <section id="beyond-lab">
+        <div class="section-header">
+            <span>In My Own Time</span>
+            <h2>Beyond the Lab</h2>
         </div>
 
         <div class="exp-card">
