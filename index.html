@@ -60,7 +60,7 @@
 
         @keyframes floatWord {
             0%, 100% { transform: translate(0, 0) rotate(var(--wr, 0deg)); }
-            50% { transform: translate(9px, -15px) rotate(var(--wr, 0deg)); }
+            50% { transform: translate(18px, -26px) rotate(var(--wr, 0deg)); }
         }
 
         h1, h2, h3, .serif-font {
@@ -400,6 +400,7 @@
         .exp-intro-box {
             background: #F5EEDF;
             border: 1px solid #E8DCC3;
+            border-top: 3px solid rgba(156,107,46,0.4);
             border-radius: 14px;
             padding: 1.25rem 1.5rem;
         }
@@ -1324,20 +1325,30 @@
             <h2>Research and Engineering Experience</h2>
         </div>
 
-        <div class="exp-card">
-            <div>
-                <span class="tag">Upcoming International Research</span>
-                <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Cancer Research Intern</h3>
-                <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of São Paulo (USP), São Paulo, Brazil</p>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Confirmed incoming 3-month computational and biochemistry research placement focusing on molecular mechanisms of cellular abnormalities and therapeutic pathways under the supervision of Prof. Alexandre Bruni-Cardoso.</p>
+        <div class="exp-card" style="display: block;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span class="tag">Upcoming International Research</span>
+                    <span class="tag tag-outline">Cancer Biology</span>
+                    <span class="tag tag-outline">Biomedicine</span>
+                </div>
+                <span class="date-badge">Jun 2027 - Aug 2027</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Cancer Research Intern</h3>
+            <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 0.3rem;">University of São Paulo (USP), São Paulo, Brazil</p>
+            <div class="exp-keywords">
+                <span class="exp-keywords-track">CANCER BIOLOGY &nbsp;·&nbsp; WESTERN BLOTTING &nbsp;·&nbsp; PROTEIN EXPRESSION ANALYSIS &nbsp;·&nbsp; COMPUTATIONAL BIOIMAGING &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; BIOPYTHON &nbsp;·&nbsp; CELLULAR SIGNALLING &nbsp;·&nbsp; THERAPEUTIC PATHWAYS &nbsp;·&nbsp; BIOMEDICINE</span>
+            </div>
+
+            <div class="exp-body-grid">
                 <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Applying computational bioimage analysis, biophysical data processing, and Python-based quantitative modelling frameworks to investigate cellular structural changes.</li>
+                    <li>Applying computational bioimage analysis, biophysical data processing, and Python based quantitative modelling frameworks to investigate cellular structural changes.</li>
                     <li>Integrating structural bioinformatics pipelines (PyMOL, Biopython) to evaluate macromolecular interactions and support targeted mechanistic studies in cancer biology.</li>
                     <li>Executing core biochemical laboratory workflows including protein expression analysis, quantitative assay evaluations, and Western blotting to validate computational predictions and map cellular signalling targets.</li>
                 </ul>
-            </div>
-            <div class="exp-meta">
-                <span class="date-badge">Jun 2027 - Aug 2027</span>
+                <div class="exp-intro-box">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">I chose this placement because I wanted genuine exposure to the biomedicine side of drug discovery, the practical, hands on biochemistry that my chemistry degree does not really give me. My bioinorganic placement at Reading offered a first taste of applying chemistry directly to cancer research through the ruthenium and DNA work, and it left me wanting more of that connection between molecular science and disease biology, but this time from the biomedical rather than the synthetic side. This placement in São Paulo involves real biomedicine techniques such as Western blotting and protein expression analysis, alongside the computational and Python based work I already enjoy, which is exactly the kind of breadth I am looking for. I want to be thorough across the different fields that feed into drug discovery rather than staying narrowly in one lane, so I can properly work out where my strengths and interests sit before committing to a specific direction. Cancer research in particular is something I keep being drawn back to, and this placement is my chance to explore it properly from a biomedical angle.</p>
+                </div>
             </div>
         </div>
 
