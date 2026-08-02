@@ -148,6 +148,7 @@
             padding: 2.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
+            gap: 1.5rem;
         }
 
         .logo {
@@ -155,21 +156,26 @@
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: -0.02em;
+            flex-shrink: 0;
+            margin-right: 0.5rem;
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 2.2rem;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s;
             letter-spacing: 0.01em;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         nav a:hover {
@@ -189,6 +195,8 @@
             align-items: center;
             gap: 0.4rem;
             transition: all 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .cv-top-btn:hover {
@@ -203,6 +211,8 @@
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         main {
@@ -1357,12 +1367,12 @@
 
 <main>
     <!-- Hero / About Section -->
-    <section id="about" style="border-top: none; padding-top: 1rem; padding-bottom: 0;">
+    <section id="about" style="border-top: none; padding-top: 3rem; padding-bottom: 7rem;">
         <div class="section-header" style="margin-bottom: 2rem;">
-            <span>Chemistry · Computation · Drug Discovery</span>
+            <span>Chemistry · Computation · Structural Biology</span>
         </div>
         <h1 class="big-name">Adrian<span>Banyamin</span></h1>
-        <p class="hero-tagline">Decoding molecular structure to help accelerate the discovery of new medicines.</p>
+        <p class="hero-tagline">Combining computational modelling and synthetic chemistry to understand how molecules work.</p>
         <div class="hero-pills">
             <span class="tag">University of Bristol · MSci Chemistry</span>
             <span class="tag tag-outline">Reading · Bioinorganic Research</span>
@@ -1374,7 +1384,7 @@
         </div>
     </section>
 
-    <section class="hero" style="border-top: none; padding-top: 2rem;">
+    <section class="hero" style="border-top: none; padding-top: 3rem;">
         <div class="hero-content">
             <div class="exp-keywords" style="margin-bottom: 1.25rem;">
                 <span class="exp-keywords-track">MOLECULAR MODELLING &nbsp;·&nbsp; QUANTUM CHEMICAL CALCULATIONS &nbsp;·&nbsp; STRUCTURE-BASED DRUG DESIGN &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; CHEMINFORMATICS &nbsp;·&nbsp; SYNTHETIC INORGANIC CHEMISTRY &nbsp;·&nbsp; REACTION OPTIMISATION &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; MASS SPECTROMETRY &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; ORCA &nbsp;·&nbsp; STRUCTURAL BIOINFORMATICS &nbsp;·&nbsp; METAL-DNA INTERACTIONS</span>
