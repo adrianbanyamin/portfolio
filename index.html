@@ -238,6 +238,41 @@
             font-style: italic;
         }
 
+        /* Big Name Hero */
+        .big-name {
+            font-size: 6rem;
+            line-height: 0.98;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .big-name span {
+            display: block;
+            color: var(--accent-blue);
+            font-style: italic;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-pills {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-pills .tag,
+        .hero-pills .tag-outline {
+            border-radius: 50px;
+            padding: 0.45rem 1rem;
+        }
+
         .badge-pill {
             display: inline-block;
             background-color: var(--accent-blue-bg);
@@ -273,6 +308,21 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .photo-card {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 16px 40px rgba(156,107,46,0.09);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
         }
 
         /* Right Stats Card */
@@ -1242,6 +1292,7 @@
         @media (max-width: 600px) {
             .cert-grid { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 2.6rem; }
+            .big-name { font-size: 3.4rem; }
         }
     </style>
 </head>
@@ -1306,47 +1357,65 @@
 
 <main>
     <!-- Hero / About Section -->
-    <section class="hero" id="about" style="border-top: none; padding-top: 1rem;">
+    <section id="about" style="border-top: none; padding-top: 1rem; padding-bottom: 0;">
+        <div class="section-header" style="margin-bottom: 2rem;">
+            <span>Chemistry · Computation · Drug Discovery</span>
+        </div>
+        <h1 class="big-name">Adrian<span>Banyamin</span></h1>
+        <p class="hero-tagline">Decoding molecular structure to help accelerate the discovery of new medicines.</p>
+        <div class="hero-pills">
+            <span class="tag">University of Bristol · MSci Chemistry</span>
+            <span class="tag tag-outline">Reading · Bioinorganic Research</span>
+            <span class="tag tag-outline">São Paulo · Cancer Research (2027)</span>
+        </div>
+        <div class="hero-actions" style="margin-bottom: 1rem;">
+            <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-outline">LinkedIn Profile →</a>
+            <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-outline">GitHub Repositories →</a>
+        </div>
+    </section>
+
+    <section class="hero" style="border-top: none; padding-top: 2rem;">
         <div class="hero-content">
             <div class="exp-keywords" style="margin-bottom: 1.25rem;">
                 <span class="exp-keywords-track">MOLECULAR MODELLING &nbsp;·&nbsp; QUANTUM CHEMICAL CALCULATIONS &nbsp;·&nbsp; STRUCTURE-BASED DRUG DESIGN &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; CHEMINFORMATICS &nbsp;·&nbsp; SYNTHETIC INORGANIC CHEMISTRY &nbsp;·&nbsp; REACTION OPTIMISATION &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; MASS SPECTROMETRY &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; ORCA &nbsp;·&nbsp; STRUCTURAL BIOINFORMATICS &nbsp;·&nbsp; METAL-DNA INTERACTIONS</span>
             </div>
-            <span class="badge-pill">University of Bristol · MSci Chemistry (Year in Industry)</span>
-            <h1>MSci Chemistry Student<span>Interests in Computational Chemistry & Structural Biology</span></h1>
+            <span class="badge-pill">About Me</span>
+            <h2 style="font-size: 2.2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15;">MSci Chemistry Student<span style="display: block; font-style: italic; color: var(--accent-blue);">Interests in Computational Chemistry & Structural Biology</span></h2>
             <p>Behind every breakthrough medicine lies a microscopic puzzle of atomic coordinates, thermodynamic forces, and structural conformations. My journey in science is driven by an unwavering fascination with how code can decode life. As an analytical chemistry student entering my second year at Bristol, I immerse myself in the intersection of high performance computing and biomolecular interaction.</p>
             <p>Rather than viewing programming and chemistry as separate disciplines, I treat them as a unified language. By leveraging custom Python architecture, structural parsing libraries like Biopython, and sophisticated modelling software tools, I build pipelines that accelerate therapeutic lead identification. My path spans prestigious research environments, taking me from unravelling ruthenium metal DNA interactions at the University of Reading, to engineering robust student architecture back at Bristol, with upcoming summer research internships in Brazil (2027) on the horizon.</p>
-            <div class="hero-actions">
-                <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-outline">LinkedIn Profile →</a>
-                <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-outline">GitHub Repositories →</a>
-            </div>
         </div>
-        <div class="stats-card">
-            <div class="stats-header">
-                <h3>Adrian Banyamin</h3>
-                <p>MSci Chemistry with Year in Industry</p>
+        <div>
+            <div class="photo-card">
+                <img src="images/adrian-headshot.png" alt="Adrian Banyamin">
             </div>
-            <div class="stat-grid-top">
-                <div class="stat-box">
-                    <div class="number">80%</div>
-                    <div class="label">Year One First Class Average</div>
+            <div class="stats-card">
+                <div class="stats-header">
+                    <h3>Adrian Banyamin</h3>
+                    <p>MSci Chemistry with Year in Industry</p>
                 </div>
-                <div class="stat-box">
-                    <div class="number">94%</div>
-                    <div class="label">Mathematics Average</div>
+                <div class="stat-grid-top">
+                    <div class="stat-box">
+                        <div class="number">80%</div>
+                        <div class="label">Year One First Class Average</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">94%</div>
+                        <div class="label">Mathematics Average</div>
+                    </div>
                 </div>
-            </div>
-            <div class="stat-box full-width">
-                <div class="number">11</div>
-                <div class="label">Verified Certifications</div>
-            </div>
-            <div class="stat-grid-bottom">
-                <div class="stat-box blue-tint">
-                    <div class="number">2 Summer</div>
-                    <div class="label">Research Internships (2026)</div>
+                <div class="stat-box full-width">
+                    <div class="number">11</div>
+                    <div class="label">Verified Certifications</div>
                 </div>
-                <div class="stat-box blue-tint">
-                    <div class="number" style="font-size: 1.4rem;">São Paulo, Brazil</div>
-                    <div class="label">Confirmed Cancer Research Internship</div>
+                <div class="stat-grid-bottom">
+                    <div class="stat-box blue-tint">
+                        <div class="number">2 Summer</div>
+                        <div class="label">Research Internships (2026)</div>
+                    </div>
+                    <div class="stat-box blue-tint">
+                        <div class="number" style="font-size: 1.4rem;">São Paulo, Brazil</div>
+                        <div class="label">Confirmed Cancer Research Internship</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1545,7 +1614,7 @@
                     <li>Collaborated with team members to test, debug, and refine tutorial engagement strategies, translating student feedback metrics into actionable UI/UX improvements.</li>
                 </ul>
                 <div class="exp-intro-box">
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">I wanted this internship because building a tool that indexes, searches, and surfaces the right information from a large body of data is close to the same underlying problem as computational drug discovery, where the challenge is also finding the meaningful signal inside a large body of structural or experimental data. Working in Python on real indexing and search logic, rather than just following a tutorial, was a chance to practise exactly the kind of data tooling that computational chemistry pipelines depend on, while contributing something genuinely useful to my own department.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">I wanted this internship because I had lived the problem myself. As a student, finding a single piece of past feedback on Blackboard meant manually digging through year after year of folders, scrolling past unrelated files just to track down one comment, and most students I knew gave up on looking rather than go through that. I wanted to fix it properly, both for myself and for everyone else quietly losing useful feedback to a filing system that made it too much hassle to find. Alongside building the dashboard, I worked directly with tutor groups, designing engagement activities and sessions so that feedback was more likely to be read and acted on in the first place, not just easier to search for after the fact.</p>
                 </div>
             </div>
         </div>
