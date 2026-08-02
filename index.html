@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Banyamin | Computational Chemistry & Structural Biology</title>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #F3EDE0;
@@ -25,7 +25,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
@@ -65,6 +65,23 @@
 
         h1, h2, h3, .serif-font {
             font-family: 'Newsreader', serif;
+        }
+
+        .gold-leaf-accent {
+            position: relative;
+        }
+
+        .gold-leaf-accent::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 90px;
+            height: 90px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cg fill='none' stroke='rgb(156,107,46)' stroke-width='2' stroke-linecap='round' opacity='0.35'%3E%3Cpath d='M85 10 Q60 30 62 55 Q64 78 40 88'/%3E%3Cpath d='M66 32 Q75 26 86 24'/%3E%3Cpath d='M63 52 Q72 47 82 44'/%3E%3Cpath d='M50 72 Q59 67 68 61'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            pointer-events: none;
+            z-index: 0;
         }
 
         header {
@@ -161,6 +178,7 @@
         .hero-content h1 span {
             color: var(--accent-blue);
             display: block;
+            font-style: italic;
         }
 
         .badge-pill {
@@ -667,6 +685,7 @@
             border-radius: 4px;
             font-size: 0.7rem;
             font-weight: 600;
+            font-family: monospace;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -676,7 +695,7 @@
             font-weight: 500;
             color: var(--text-main);
             line-height: 1.4;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             margin-bottom: 0.4rem;
         }
 
@@ -719,9 +738,14 @@
         }
 
         .skill-column h3 {
-            font-size: 1.35rem;
+            font-size: 1.05rem;
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            font-weight: 700;
+            font-family: monospace;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent-blue);
         }
 
         .pill-container {
@@ -734,8 +758,11 @@
             background: #F8FAFC;
             border: 1px solid var(--border-color);
             padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            border-radius: 8px;
+            font-size: 0.76rem;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
             color: var(--text-muted);
             transition: all 0.25s ease;
         }
@@ -748,56 +775,80 @@
             box-shadow: 0 6px 16px rgba(184, 115, 79, 0.15);
         }
 
-        /* Skills Section - Navy Full Bleed Treatment */
-        #skills {
+        /* Navy Full Bleed Treatment - reusable across sections */
+        .navy-section {
+            position: relative;
             background: var(--navy-bg);
             border-top: 3px solid rgba(201,164,107,0.35);
             margin-left: calc(50% - 50vw);
             margin-right: calc(50% - 50vw);
             width: 100vw;
             padding: 0;
+            overflow: hidden;
         }
 
-        .skills-inner {
+        .navy-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='none' stroke='rgb(201,164,107)' stroke-width='2' stroke-linecap='round' opacity='0.5'%3E%3Cpath d='M30 20 Q60 45 55 80 Q50 115 20 130'/%3E%3Cpath d='M45 55 Q55 48 68 46'/%3E%3Cpath d='M50 75 Q60 70 70 65'/%3E%3Cpath d='M35 105 Q45 100 55 93'/%3E%3C/g%3E%3Cg fill='none' stroke='rgb(201,164,107)' stroke-width='2' stroke-linecap='round' opacity='0.4'%3E%3Cpath d='M330 140 Q300 165 305 200 Q310 235 280 255'/%3E%3Cpath d='M312 170 Q322 163 335 160'/%3E%3Cpath d='M308 195 Q318 190 330 185'/%3E%3Cpath d='M290 225 Q300 220 310 213'/%3E%3C/g%3E%3Cg fill='none' stroke='rgb(201,164,107)' stroke-width='1.8' stroke-linecap='round' opacity='0.35'%3E%3Cpath d='M150 300 Q175 320 170 350 Q165 375 140 385'/%3E%3Cpath d='M162 320 Q170 314 182 312'/%3E%3Cpath d='M158 340 Q168 335 178 330'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .navy-inner {
+            position: relative;
+            z-index: 1;
             max-width: 1400px;
             margin: 0 auto;
             padding: 5rem 5%;
         }
 
-        #skills .section-header span {
+        .navy-section .section-header span {
             color: #C9A46B;
         }
 
-        #skills .section-header span::before {
+        .navy-section .section-header span::before {
             background: #C9A46B;
         }
 
-        #skills .section-header h2 {
+        .navy-section .section-header h2 {
             color: #F5EFE3;
             border-bottom-color: rgba(201,164,107,0.4);
         }
 
-        #skills .skill-column {
+        .navy-section .cert-card-box {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.12);
             box-shadow: none;
         }
 
-        #skills .skill-column h3 {
+        .navy-section .cert-card-box h4 {
             color: #F5EFE3;
         }
 
-        #skills .skill-pill {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.14);
+        .navy-section .cert-issuer-pill {
+            background: rgba(255,255,255,0.08);
             color: #C7D0DC;
         }
 
-        #skills .skill-pill:hover {
-            background: rgba(201,164,107,0.2);
-            color: #F5EFE3;
+        .navy-section .cert-desc {
+            color: #C7D0DC;
+        }
+
+        .navy-section .cert-bottom-row {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            color: #9AA7B8;
+        }
+
+        .navy-section .cert-id {
+            color: #C9A46B;
+        }
+
+        .navy-section .cert-card-box:hover {
             border-color: rgba(201,164,107,0.4);
-            box-shadow: none;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.25);
         }
 
         /* Footer / Contact - Centered Alignment Applied */
@@ -1152,7 +1203,7 @@
     <span class="bg-word" style="top:87%; left:45%; font-size:14px; --wr:-6deg; animation-duration:11s; animation-delay:3.8s;">MASS SPECTROMETRY</span>
     <span class="bg-word" style="top:92%; left:72%; font-size:16px; --wr:10deg; animation-duration:9s; animation-delay:1.6s;">AUTODOCK VINA</span>
     <span class="bg-word" style="top:12%; left:85%; font-size:21px; --wr:-11deg; animation-duration:15s; animation-delay:2.9s;">PLIP</span>
-    <span class="bg-word" style="top:27%; left:3%; font-size:14px; --wr:7deg; animation-duration:10s; animation-delay:0.9s;">BINDING AFFINITY</span>
+    <span class="bg-word" style="top:27%; left:3%; font-size:14px; --wr:7deg; animation-duration:10s; animation-delay:0.9s;">STRUCTURE-BASED DRUG DESIGN</span>
     <span class="bg-word" style="top:41%; left:40%; font-size:13px; --wr:-5deg; animation-duration:13s; animation-delay:3.1s;">HAEMOGLOBIN ALLOSTERY</span>
     <span class="bg-word" style="top:56%; left:2%; font-size:11px; --wr:8deg; animation-duration:12s; animation-delay:1.1s;">OXYGEN BINDING COOPERATIVITY</span>
     <span class="bg-word" style="top:65%; left:68%; font-size:14px; --wr:-9deg; animation-duration:11s; animation-delay:4.2s;">PROTEIN DATA BANK</span>
@@ -1161,6 +1212,16 @@
     <span class="bg-word" style="top:84%; left:30%; font-size:14px; --wr:9deg; animation-duration:12s; animation-delay:3.6s;">ELECTRONIC STRUCTURE</span>
     <span class="bg-word" style="top:47%; left:90%; font-size:12px; --wr:-10deg; animation-duration:13s; animation-delay:1.4s;">STRUCTURAL BIOINFORMATICS</span>
     <span class="bg-word" style="top:95%; left:20%; font-size:12px; --wr:5deg; animation-duration:11s; animation-delay:2.1s;">SYNTHETIC INORGANIC CHEMISTRY</span>
+    <span class="bg-word" style="top:3%; left:52%; font-size:13px; --wr:-6deg; animation-duration:12s; animation-delay:2.6s;">WESTERN BLOTTING</span>
+    <span class="bg-word" style="top:11%; left:35%; font-size:15px; --wr:8deg; animation-duration:10s; animation-delay:0.5s;">COMPUTATIONAL BIOIMAGING</span>
+    <span class="bg-word" style="top:22%; left:92%; font-size:12px; --wr:-9deg; animation-duration:14s; animation-delay:3.7s;">PROTEIN EXPRESSION ANALYSIS</span>
+    <span class="bg-word" style="top:31%; left:16%; font-size:14px; --wr:5deg; animation-duration:9s; animation-delay:1.8s;">UV-VIS SPECTROPHOTOMETRY</span>
+    <span class="bg-word" style="top:45%; left:24%; font-size:13px; --wr:-11deg; animation-duration:13s; animation-delay:2.3s;">THIN LAYER CHROMATOGRAPHY</span>
+    <span class="bg-word" style="top:52%; left:8%; font-size:18px; --wr:7deg; animation-duration:11s; animation-delay:4.1s;">GITHUB</span>
+    <span class="bg-word" style="top:61%; left:44%; font-size:16px; --wr:-8deg; animation-duration:10s; animation-delay:0.7s;">PYTHON</span>
+    <span class="bg-word" style="top:74%; left:78%; font-size:13px; --wr:6deg; animation-duration:12s; animation-delay:3.9s;">THERAPEUTIC LEAD IDENTIFICATION</span>
+    <span class="bg-word" style="top:88%; left:58%; font-size:14px; --wr:-7deg; animation-duration:14s; animation-delay:1.7s;">CELLULAR SIGNALLING</span>
+    <span class="bg-word" style="top:97%; left:82%; font-size:12px; --wr:9deg; animation-duration:11s; animation-delay:2.9s;">DATA VISUALISATION</span>
 </div>
 
 <header>
@@ -1194,7 +1255,7 @@
                 <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-outline">GitHub Repositories →</a>
             </div>
         </div>
-        <div class="stats-card">
+        <div class="stats-card gold-leaf-accent">
             <div class="stats-header">
                 <h3>Adrian Banyamin</h3>
                 <p>MSci Chemistry with Year in Industry</p>
@@ -1238,7 +1299,7 @@
             <span class="exp-keywords-track">HAEMOGLOBIN &nbsp;·&nbsp; BIOPYTHON &nbsp;·&nbsp; PDB STRUCTURAL ANALYSIS &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; DRUG DISCOVERY &nbsp;·&nbsp; ORCA DFT &nbsp;·&nbsp; SICKLE CELL THERAPEUTICS &nbsp;·&nbsp; OXYGEN BINDING COOPERATIVITY &nbsp;·&nbsp; QUANTUM CHEMISTRY</span>
         </div>
 
-        <div class="haem-outer-box">
+        <div class="haem-outer-box gold-leaf-accent">
             <div class="haem-tile-grid">
                 <!-- Part 1 -->
                 <div class="haem-tile">
@@ -1325,7 +1386,7 @@
             <h2>Research and Engineering Experience</h2>
         </div>
 
-        <div class="exp-card" style="display: block;">
+        <div class="exp-card gold-leaf-accent" style="display: block;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                     <span class="tag">Upcoming International Research</span>
@@ -1345,6 +1406,9 @@
                     <li>Applying computational bioimage analysis, biophysical data processing, and Python based quantitative modelling frameworks to investigate cellular structural changes.</li>
                     <li>Integrating structural bioinformatics pipelines (PyMOL, Biopython) to evaluate macromolecular interactions and support targeted mechanistic studies in cancer biology.</li>
                     <li>Executing core biochemical laboratory workflows including protein expression analysis, quantitative assay evaluations, and Western blotting to validate computational predictions and map cellular signalling targets.</li>
+                    <li>Preparing by reading the Bruni-Cardoso lab's published work on how basement membrane signalling, particularly laminin-111, regulates the balance between mammary epithelial quiescence and malignant growth, to build the background needed before the placement begins.</li>
+                    <li>Expecting to contribute to the lab's established research into how defective basement membrane signalling in malignant cells relates to tumour dormancy and cancer recurrence, though the exact scope of my contribution will only become clear once the placement is properly underway.</li>
+                    <li>Aiming to produce work substantial enough to be credited on a resulting publication from the group, working directly alongside Prof. Alexandre Bruni-Cardoso and his research team.</li>
                 </ul>
                 <div class="exp-intro-box">
                     <p style="color: var(--text-muted); font-size: 0.9rem;">I chose this placement because I wanted genuine exposure to the biomedicine side of drug discovery, the practical, hands on biochemistry that my chemistry degree does not really give me. My bioinorganic placement at Reading offered a first taste of applying chemistry directly to cancer research through the ruthenium and DNA work, and it left me wanting more of that connection between molecular science and disease biology, but this time from the biomedical rather than the synthetic side. This placement in São Paulo involves real biomedicine techniques such as Western blotting and protein expression analysis, alongside the computational and Python based work I already enjoy, which is exactly the kind of breadth I am looking for. I want to be thorough across the different fields that feed into drug discovery rather than staying narrowly in one lane, so I can properly work out where my strengths and interests sit before committing to a specific direction. Cancer research in particular is something I keep being drawn back to, and this placement is my chance to explore it properly from a biomedical angle.</p>
@@ -1352,7 +1416,7 @@
             </div>
         </div>
 
-        <div class="exp-card" style="display: block;">
+        <div class="exp-card gold-leaf-accent" style="display: block;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                     <span class="tag">Summer Internship 2026</span>
@@ -1390,7 +1454,7 @@
             </div>
         </div>
 
-        <div class="exp-card">
+        <div class="exp-card gold-leaf-accent">
             <div>
                 <span class="tag">Summer Internship 2026</span>
                 <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Systems Architecting Intern</h3>
@@ -1410,7 +1474,7 @@
             </div>
         </div>
 
-        <div class="exp-card">
+        <div class="exp-card gold-leaf-accent">
             <div>
                 <span class="tag">Leadership & Tutoring</span>
                 <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Private Chemistry Tutor</h3>
@@ -1427,7 +1491,7 @@
             </div>
         </div>
 
-        <div class="exp-card">
+        <div class="exp-card gold-leaf-accent">
             <div>
                 <span class="tag">Campus Leadership</span>
                 <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Student Ambassador</h3>
@@ -1445,7 +1509,8 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications">
+    <section id="certifications" class="navy-section">
+      <div class="navy-inner">
         <div class="section-header">
             <span>Continuous Professional Development</span>
             <h2>All 11 Verified Certifications</h2>
@@ -1617,18 +1682,18 @@
                 </div>
             </div>
         </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-      <div class="skills-inner">
         <div class="section-header">
             <span>Technical Arsenal</span>
             <h2>Tools and Capabilities</h2>
         </div>
 
         <div class="skills-grid">
-            <div class="skill-column">
+            <div class="skill-column gold-leaf-accent">
                 <h3>Software, Analysis & Data</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Python</span>
@@ -1649,7 +1714,7 @@
                 </div>
             </div>
 
-            <div class="skill-column">
+            <div class="skill-column gold-leaf-accent">
                 <h3>Research & Scientific Methodologies</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Structural Bioinformatics</span>
@@ -1669,7 +1734,7 @@
                 </div>
             </div>
 
-            <div class="skill-column">
+            <div class="skill-column gold-leaf-accent">
                 <h3>Leadership & Professional Skills</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Cross-Functional Communication</span>
@@ -1687,7 +1752,7 @@
                 </div>
             </div>
 
-            <div class="skill-column">
+            <div class="skill-column gold-leaf-accent">
                 <h3>University & Academic Competencies</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Rigorous Exam Preparation</span>
@@ -1701,7 +1766,6 @@
                 </div>
             </div>
         </div>
-      </div>
     </section>
 
     <!-- Education Section -->
@@ -1711,7 +1775,7 @@
             <h2>University of Bristol</h2>
         </div>
 
-        <div class="project-card" style="grid-template-columns: 1fr;">
+        <div class="project-card gold-leaf-accent" style="grid-template-columns: 1fr;">
             <div class="project-info" style="margin-bottom: 0;">
                 <span class="tag">University of Bristol</span>
                 <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">MSci Chemistry (with Year in Industry)</h3>
@@ -1732,7 +1796,7 @@
             </div>
         </div>
 
-        <div class="project-card" style="grid-template-columns: 1fr; margin-top: 1.5rem;">
+        <div class="project-card gold-leaf-accent" style="grid-template-columns: 1fr; margin-top: 1.5rem;">
             <div class="project-info" style="margin-bottom: 0;">
                 <span class="tag">Ranelagh Sixth Form</span>
                 <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem;">A-Levels: A*AA</h3>
