@@ -168,11 +168,13 @@
         }
 
         nav a {
-            text-decoration: none;
+            text-decoration: underline;
+            text-decoration-color: rgba(156,107,46,0.3);
+            text-underline-offset: 4px;
             color: var(--text-muted);
             font-size: 0.85rem;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s, text-decoration-color 0.2s;
             letter-spacing: 0.01em;
             white-space: nowrap;
             flex-shrink: 0;
@@ -180,6 +182,7 @@
 
         nav a:hover {
             color: var(--text-main);
+            text-decoration-color: rgba(156,107,46,0.7);
         }
 
         .cv-top-btn {
