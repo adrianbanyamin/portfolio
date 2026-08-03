@@ -203,6 +203,17 @@
             border-color: var(--text-main);
         }
 
+        .mobile-nav-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--text-main);
+            padding: 0.25rem;
+        }
+
         .contact-btn {
             background-color: var(--dark-bg);
             color: white;
@@ -1435,7 +1446,22 @@
             .haem-tile-grid { grid-template-columns: 1fr; }
             .stat-grid-top { grid-template-columns: 1fr !important; }
             .stat-grid-bottom { grid-template-columns: 1fr !important; }
-            nav { display: none; }
+            .mobile-nav-btn { display: none; }
+            header {
+                flex-wrap: wrap;
+                row-gap: 1rem;
+                padding: 1.5rem 5%;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: center;
+                gap: 0.6rem 1.1rem;
+            }
+            nav a, nav .cv-top-btn, nav .contact-btn {
+                font-size: 0.85rem;
+            }
         }
         @media (max-width: 640px) {
             .exp-body-grid { grid-template-columns: 1fr; }
@@ -1504,7 +1530,7 @@
 
 <header>
     <div class="logo">AB.</div>
-    <nav>
+    <nav id="mainNav">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Internships</a>
@@ -1690,7 +1716,7 @@
         <div class="exp-card" style="display: block;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <span class="tag">Upcoming International Research</span>
+                    <span class="tag">Confirmed · Upcoming International Research</span>
                     <span class="tag tag-outline">Cancer Biology</span>
                     <span class="tag tag-outline">Biomedicine</span>
                 </div>
@@ -1704,10 +1730,10 @@
 
             <div class="exp-body-grid">
                 <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Applying computational bioimage analysis, biophysical data processing, and Python based quantitative modelling frameworks to investigate cellular structural changes.</li>
-                    <li>Integrating structural bioinformatics pipelines (PyMOL, Biopython) to evaluate macromolecular interactions and support targeted mechanistic studies in cancer biology.</li>
-                    <li>Executing core biochemical laboratory workflows including protein expression analysis, quantitative assay evaluations, and Western blotting to validate computational predictions and map cellular signalling targets.</li>
+                    <li>Executing core biochemical laboratory workflows including protein expression analysis, quantitative assay evaluations, and Western blotting to map cellular signalling targets in cancer biology.</li>
                     <li>Preparing by reading the Bruni-Cardoso lab's published work on how basement membrane signalling, particularly laminin-111, regulates the balance between mammary epithelial quiescence and malignant growth, to build the background needed before the placement begins.</li>
+                    <li>Supporting this lab work computationally, applying bioimage analysis, biophysical data processing, and Python based quantitative modelling to help investigate the resulting cellular structural changes.</li>
+                    <li>Integrating structural bioinformatics pipelines (PyMOL, Biopython) to evaluate macromolecular interactions and cross-check them against the lab's mechanistic findings in cancer biology.</li>
                     <li>Expecting to contribute to the lab's established research into how defective basement membrane signalling in malignant cells relates to tumour dormancy and cancer recurrence, though the exact scope of my contribution will only become clear once the placement is properly underway.</li>
                     <li>Aiming to produce work substantial enough to be credited on a resulting publication from the group, working directly alongside Prof. Alexandre Bruni-Cardoso and his research team.</li>
                 </ul>
