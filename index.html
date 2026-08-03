@@ -396,6 +396,10 @@
             text-align: center;
             min-width: 0;
             overflow-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
         }
 
         .stat-box.full-width {
@@ -1606,7 +1610,7 @@
                 <div class="stat-grid-bottom">
                     <div class="stat-box blue-tint">
                         <div class="number">2 Summer</div>
-                        <div class="label">Cancer Research Internships (2026)</div>
+                        <div class="label">Research Internships (2026)</div>
                     </div>
                     <div class="stat-box blue-tint">
                         <div class="number" style="font-size: 1.4rem;">Confirmed Incoming</div>
@@ -2249,7 +2253,7 @@
     const labPages = [
         `<h4>Synthesis of Ru(DMSO)₄Cl₂</h4>
          <p>3.01 g of RuCl₃·H₂O was weighed out. DMSO (15 mL) was degassed for 3 minutes. The mixture was reacted and refluxed for 15 minutes at approximately 160°C. Reflux was stopped and the solution left open for 15 minutes to evaporate excess DMSO, yielding a dark black solution with a tint of orange around the meniscus.</p>
-         <img class="lab-photo" src="images/ru-dmso-reflux.jpg" alt="Reflux of RuCl3.H2O in DMSO producing a dark black solution" style="max-height: 420px; object-position: center 12%;">
+         <img class="lab-photo" src="images/ru-dmso-reflux.jpg" alt="Reflux of RuCl3.H2O in DMSO producing a dark black solution" style="max-width: 320px; max-height: 320px; margin: 0 auto; object-position: center 25%;">
          <p class="lab-caption">Reflux of RuCl₃·H₂O in DMSO, producing a dark black solution with a tint of orange around the meniscus.</p>`,
 
         `<p>Acetone (50 mL) was added to the cooled solution and left to crystallise. The product was filtered under reduced pressure and washed with acetone followed by diethyl ether, yielding a yellow precipitate of Ru(DMSO)₄Cl₂.</p>
@@ -2278,7 +2282,36 @@
          </div>`,
 
         `<h4>Microwave-Assisted Synthesis</h4>
-         <p>0.077 g of Ru(Phen)₂Cl₂ was weighed and added to a microwave reaction vessel, along with 0.0423 g of dppz (dipyrido[3,2-a:2',3'-c]phenazine). Water (3.5 mL) and ethanol (3.5 mL) were added, and the mixture was degassed with argon for 3 minutes to remove oxygen. The reaction was run in the microwave for 40 minutes at 150 W and 140°C. The product was isolated as a dark red-orange solution, consistent with the target [Ru(phen)₂(dppz)]²⁺ complex.</p>
+         <p>0.077 g of Ru(Phen)₂Cl₂ was weighed and added to a microwave reaction vessel, along with 0.0423 g of dppz (dipyrido[3,2-a:2',3'-c]phenazine). Water (3.5 mL) and ethanol (3.5 mL) were added, and the mixture was degassed with argon for 3 minutes to remove oxygen. The reaction was run in the microwave for 40 minutes at 150 W and 140°C. The product was isolated as a dark red-orange solution, consistent with the target [Ru(phen)₂(dppz)]²⁺ complex.</p>`,
+
+        `<h4>Anion Exchange: Isolating [Ru(phen)₂(dppz)](PF₆)₂</h4>
+         <p>Aqueous KPF₆ was added dropwise with swirling to the [Ru(phen)₂(dppz)]²⁺ solution. The mixture was rotary evaporated to remove the ethanol and water, precipitating a black solid: [Ru(phen)₂(dppz)]²⁺(PF₆⁻)₂.</p>
+         <img class="lab-photo" src="images/kpf6-added.jpg" alt="KPF6 added dropwise to the Ru(phen)2(dppz) solution" style="max-width: 320px; max-height: 320px; margin: 0 auto 0.4rem; object-position: center 40%;">
+         <p class="lab-caption" style="text-align: center; margin-bottom: 1rem;">KPF₆ added dropwise to the [Ru(phen)₂(dppz)]²⁺ solution.</p>`,
+
+        `<div class="lab-photo-row">
+             <div>
+                 <img class="lab-photo" src="images/kpf6-rotavap.jpg" alt="Rotary evaporation to remove ethanol and water">
+                 <p class="lab-caption">Rotary evaporation to remove the ethanol and water.</p>
+             </div>
+             <div>
+                 <img class="lab-photo" src="images/kpf6-after-rotavap.jpg" alt="Black solid after rotary evaporation">
+                 <p class="lab-caption">Black solid remaining after rotary evaporation.</p>
+             </div>
+         </div>`,
+
+        `<p>The solid was collected by Büchner filtration under reduced pressure.</p>
+         <p>The solid was washed three times with methanol (~10 mL each) and filtered into a clean side-arm flask, dissolving [Ru(phen)₂(dppz)](PF₆)₂ through into the flask. The methanol filtrate was centrifuged overnight to evaporate the methanol, leaving the pure product as a black solid.</p>
+         <div class="lab-photo-row">
+             <div>
+                 <img class="lab-photo" src="images/kpf6-buchner-filtration.jpg" alt="Buchner filtration of the black solid under reduced pressure">
+                 <p class="lab-caption">Büchner filtration under reduced pressure.</p>
+             </div>
+             <div>
+                 <img class="lab-photo" src="images/kpf6-methanol-wash.jpg" alt="Product dissolving into methanol during the wash">
+                 <p class="lab-caption">Methanol wash dissolving the product into the flask.</p>
+             </div>
+         </div>
          <p class="lab-caption" style="font-style: italic;">More entries will be added here as the internship continues.</p>`
     ];
 
