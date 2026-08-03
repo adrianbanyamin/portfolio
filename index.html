@@ -544,6 +544,56 @@
             text-align: right;
         }
 
+        /* Beyond the Lab Cards */
+        .beyond-card {
+            background: #FDFBF7;
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--navy-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 12px 34px rgba(156,107,46,0.06);
+        }
+
+        .beyond-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .beyond-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .beyond-highlight {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .beyond-highlight .num {
+            font-family: 'Newsreader', serif;
+            font-size: 1.5rem;
+            color: var(--navy-bg);
+            margin-bottom: 0.35rem;
+            line-height: 1.15;
+        }
+
+        .beyond-highlight .cap {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
         .exp-intro-box {
             background: #F5EEDF;
             border: 1px solid #E8DCC3;
@@ -929,6 +979,12 @@
             z-index: 0;
         }
 
+        .navy-strip {
+            height: 44px;
+            border-top: none;
+            margin-top: 0;
+        }
+
         .navy-inner {
             position: relative;
             z-index: 1;
@@ -1310,6 +1366,7 @@
         }
         @media (max-width: 640px) {
             .exp-body-grid { grid-template-columns: 1fr; }
+            .beyond-highlights { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
             .cert-grid { grid-template-columns: 1fr; }
@@ -1376,6 +1433,8 @@
         <a href="#contact" class="contact-btn">Get in Touch</a>
     </nav>
 </header>
+
+<div class="navy-section navy-strip"></div>
 
 <main>
     <!-- Hero / About Section -->
@@ -1651,36 +1710,53 @@
             <h2>Beyond the Lab</h2>
         </div>
 
-        <div class="exp-card">
-            <div>
-                <span class="tag">Leadership & Tutoring</span>
-                <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Private Chemistry Tutor</h3>
-                <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">Self-Employed, Bristol, UK</p>
-                <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Designed and curated over 200 bespoke practice examination questions to reinforce core chemical principles and improve problem-solving agility.</li>
-                    <li>Delivered clear, structured explanations of advanced theoretical concepts, breaking down complex mechanisms into manageable components for enhanced comprehension.</li>
-                    <li>Delivered evidence-based feedback on over 100 student inquiries, guiding learners through analytical reasoning processes to achieve accurate solutions.</li>
-                    <li>Developed personalised learning plans based on individual student performance data, targeting and remediating knowledge gaps before critical assessments.</li>
-                </ul>
-            </div>
-            <div class="exp-meta">
+        <div class="beyond-card">
+            <div class="beyond-card-header">
+                <div>
+                    <span class="tag">Leadership & Tutoring</span>
+                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Private Chemistry Tutor</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem;">Self-Employed, Bristol, UK</p>
+                </div>
                 <span class="date-badge">Sep 2025 - Present</span>
+            </div>
+            <div class="beyond-highlights">
+                <div class="beyond-highlight">
+                    <div class="num">200+</div>
+                    <div class="cap">Practice Questions Written</div>
+                </div>
+                <div class="beyond-highlight">
+                    <div class="num">100+</div>
+                    <div class="cap">Student Inquiries Answered</div>
+                </div>
+                <div class="beyond-highlight">
+                    <div class="num">1:1</div>
+                    <div class="cap">Personalised Learning Plans</div>
+                </div>
             </div>
         </div>
 
-        <div class="exp-card">
-            <div>
-                <span class="tag">Campus Leadership</span>
-                <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Student Ambassador</h3>
-                <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1rem;">University of Bristol, Bristol, UK</p>
-                <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Provided dedicated support to prospective students and offer-holders during Open Days, delivering guidance on course curricula, university life, and collegiate accommodation.</li>
-                    <li>Facilitated group discussions and interactive networking sessions, engaging diverse visitor groups to cultivate an inclusive institutional atmosphere.</li>
-                    <li>Represented the University of Bristol's academic excellence, communicating complex course structures and career pathways to audiences of students and parents.</li>
-                </ul>
-            </div>
-            <div class="exp-meta">
+        <div class="beyond-card">
+            <div class="beyond-card-header">
+                <div>
+                    <span class="tag">Campus Leadership</span>
+                    <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Student Ambassador</h3>
+                    <p style="color: var(--accent-blue); font-size: 0.9rem;">University of Bristol, Bristol, UK</p>
+                </div>
                 <span class="date-badge">Feb 2026 - Mar 2026</span>
+            </div>
+            <div class="beyond-highlights">
+                <div class="beyond-highlight">
+                    <div class="num">Open Days</div>
+                    <div class="cap">Prospective Student Support</div>
+                </div>
+                <div class="beyond-highlight">
+                    <div class="num">Group Sessions</div>
+                    <div class="cap">Networking & Discussions</div>
+                </div>
+                <div class="beyond-highlight">
+                    <div class="num">Campus Voice</div>
+                    <div class="cap">Course & Career Guidance</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1902,30 +1978,28 @@
                     <span class="skill-pill">Structure-Based Drug Design</span>
                     <span class="skill-pill">Cheminformatics</span>
                     <span class="skill-pill">Metal-Ligand Coordination Chemistry</span>
-                    <span class="skill-pill">Synthetic Inorganic Chemistry</span>
                     <span class="skill-pill">Reaction Optimisation</span>
-                    <span class="skill-pill">NMR Spectroscopy</span>
-                    <span class="skill-pill">X-Ray Crystallography</span>
-                    <span class="skill-pill">Mass Spectrometry (HRMS)</span>
                     <span class="skill-pill">Structure Elucidation</span>
                 </div>
             </div>
 
             <div class="skill-column">
-                <h3>Leadership & Professional Skills</h3>
+                <h3>Laboratory & Experimental Techniques</h3>
                 <div class="pill-container">
-                    <span class="skill-pill">Cross-Functional Communication</span>
-                    <span class="skill-pill">Stakeholder Briefings</span>
-                    <span class="skill-pill">Peer Mentorship</span>
-                    <span class="skill-pill">Collaborative Problem Solving</span>
-                    <span class="skill-pill">Public Speaking</span>
-                    <span class="skill-pill">Active Listening</span>
-                    <span class="skill-pill">Emotional Intelligence</span>
-                    <span class="skill-pill">Conflict Resolution</span>
-                    <span class="skill-pill">Project Management</span>
-                    <span class="skill-pill">Adaptability</span>
-                    <span class="skill-pill">Empathy & Inclusivity</span>
-                    <span class="skill-pill">Constructive Feedback</span>
+                    <span class="skill-pill">Synthetic Inorganic Chemistry</span>
+                    <span class="skill-pill">Microwave-Assisted Synthesis</span>
+                    <span class="skill-pill">Reflux Techniques</span>
+                    <span class="skill-pill">Vacuum Filtration</span>
+                    <span class="skill-pill">Fractional Crystallisation</span>
+                    <span class="skill-pill">Rotary Evaporation</span>
+                    <span class="skill-pill">Degassing</span>
+                    <span class="skill-pill">Thin-Layer Chromatography (TLC)</span>
+                    <span class="skill-pill">NMR Spectroscopy</span>
+                    <span class="skill-pill">X-Ray Crystallography</span>
+                    <span class="skill-pill">Mass Spectrometry (HRMS)</span>
+                    <span class="skill-pill">UV-Vis Spectrophotometry</span>
+                    <span class="skill-pill">Western Blotting</span>
+                    <span class="skill-pill">Protein Expression Analysis</span>
                 </div>
             </div>
 
@@ -1940,6 +2014,24 @@
                     <span class="skill-pill">Critical Analysis</span>
                     <span class="skill-pill">Time & Project Management</span>
                     <span class="skill-pill">Academic Writing</span>
+                </div>
+            </div>
+
+            <div class="skill-column" style="grid-column: span 2;">
+                <h3>Leadership & Professional Skills</h3>
+                <div class="pill-container">
+                    <span class="skill-pill">Cross-Functional Communication</span>
+                    <span class="skill-pill">Stakeholder Briefings</span>
+                    <span class="skill-pill">Peer Mentorship</span>
+                    <span class="skill-pill">Collaborative Problem Solving</span>
+                    <span class="skill-pill">Public Speaking</span>
+                    <span class="skill-pill">Active Listening</span>
+                    <span class="skill-pill">Emotional Intelligence</span>
+                    <span class="skill-pill">Conflict Resolution</span>
+                    <span class="skill-pill">Project Management</span>
+                    <span class="skill-pill">Adaptability</span>
+                    <span class="skill-pill">Empathy & Inclusivity</span>
+                    <span class="skill-pill">Constructive Feedback</span>
                 </div>
             </div>
         </div>
