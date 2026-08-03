@@ -979,12 +979,6 @@
             z-index: 0;
         }
 
-        .navy-strip {
-            height: 44px;
-            border-top: none;
-            margin-top: 0;
-        }
-
         .navy-inner {
             position: relative;
             z-index: 1;
@@ -1016,6 +1010,24 @@
 
         .navy-section .cert-card-box h4 {
             color: #F5EFE3;
+        }
+
+        .navy-section .big-name {
+            color: #F5EFE3;
+        }
+
+        .navy-section .hero-tagline {
+            color: #C7D0DC;
+        }
+
+        .navy-section .tag-navy {
+            background: #223252;
+            border: 1px solid rgba(201,164,107,0.4);
+            color: #F5EFE3;
+        }
+
+        .navy-section .tag-outline {
+            background: #F5EFE3;
         }
 
         .navy-section .cert-issuer-pill {
@@ -1434,11 +1446,10 @@
     </nav>
 </header>
 
-<div class="navy-section navy-strip"></div>
-
 <main>
     <!-- Hero / About Section -->
-    <section id="about" style="border-top: none; padding-top: 3rem; padding-bottom: 7rem;">
+    <section id="about" class="navy-section" style="border-top: none;">
+      <div class="navy-inner" style="padding-top: 3rem; padding-bottom: 4rem;">
         <div class="section-header" style="margin-bottom: 2rem;">
             <span>Chemistry · Computation · Structural Biology</span>
         </div>
@@ -1454,6 +1465,7 @@
             <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-outline">LinkedIn Profile →</a>
             <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-outline">GitHub Repositories →</a>
         </div>
+      </div>
     </section>
 
     <section class="hero" style="border-top: none; padding-top: 3rem;">
