@@ -1092,7 +1092,7 @@
             box-shadow: 0 12px 32px rgba(0,0,0,0.25);
         }
 
-        /* Footer / Contact - Centered Alignment Applied */
+        /* Footer / Contact - Centred Alignment Applied */
         footer {
             background: var(--navy-bg);
             color: white;
@@ -1582,7 +1582,7 @@
             <h2 style="font-size: 2.2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15;">MSci Chemistry Student<span style="display: block; font-style: italic; color: var(--accent-blue);">Interests in Computational Chemistry & Structural Biology</span></h2>
             <p>Behind every breakthrough medicine lies a microscopic puzzle of atomic coordinates, thermodynamic forces, and structural conformations. My journey in science is driven by an unwavering fascination with how code can decode life. As an analytical chemistry student entering my second year at Bristol, I immerse myself in the intersection of high performance computing and biomolecular interaction.</p>
             <p>Rather than treating programming and chemistry as separate disciplines, I use them as a single language. Outside of my formal placements, I built a full computational analysis of haemoglobin from scratch, starting by mapping its quaternary structure and allosteric transitions in PyMOL, before extending the project to dock the drug Voxelotor into its binding site using Python, to see first hand how a molecule's structure dictates whether it can actually treat sickle cell disease, rather than just reading about it in a textbook.</p>
-            <p>That same pull toward cancer research runs through my placements: unravelling ruthenium metal-DNA interactions built for cancer therapeutics at the University of Reading, an upcoming cancer biology placement at the University of São Paulo, and engineering a feedback search tool back at Bristol in between. My long-term goal is to help push computational chemistry further into actually shaping drug discovery, building on the ground it has already made rather than just describing it after the fact.</p>
+            <p>That same pull towards cancer research runs through my placements: unravelling ruthenium metal-DNA interactions built for cancer therapeutics at the University of Reading, an upcoming cancer biology placement at the University of São Paulo, and engineering a feedback search tool back at Bristol in between. My long-term goal is to help push computational chemistry further into actually shaping drug discovery, building on the ground it has already made rather than just describing it after the fact.</p>
         </div>
         <div>
             <div class="photo-card">
@@ -2253,7 +2253,9 @@
     const labPages = [
         `<h4>Synthesis of Ru(DMSO)₄Cl₂</h4>
          <p>3.01 g of RuCl₃·H₂O was weighed out. DMSO (15 mL) was degassed for 3 minutes. The mixture was reacted and refluxed for 15 minutes at approximately 160°C. Reflux was stopped and the solution left open for 15 minutes to evaporate excess DMSO, yielding a dark black solution with a tint of orange around the meniscus.</p>
-         <img class="lab-photo" src="images/ru-dmso-reflux.jpg" alt="Reflux of RuCl3.H2O in DMSO producing a dark black solution" style="max-width: 320px; max-height: 320px; margin: 0 auto; object-position: center 25%;">
+         <div style="width: 320px; max-width: 100%; aspect-ratio: 1 / 1; margin: 0 auto; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-color);">
+             <img class="lab-photo" src="images/ru-dmso-reflux.jpg" alt="Reflux of RuCl3.H2O in DMSO producing a dark black solution" style="width: 100%; height: 100%; max-width: none; max-height: none; border: none; border-radius: 0; object-position: center 22%; transform: scale(1.22);">
+         </div>
          <p class="lab-caption">Reflux of RuCl₃·H₂O in DMSO, producing a dark black solution with a tint of orange around the meniscus.</p>`,
 
         `<p>Acetone (50 mL) was added to the cooled solution and left to crystallise. The product was filtered under reduced pressure and washed with acetone followed by diethyl ether, yielding a yellow precipitate of Ru(DMSO)₄Cl₂.</p>
