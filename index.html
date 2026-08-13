@@ -1180,8 +1180,9 @@
             max-height: 340px;
             object-fit: contain;
             background: #F3EDE0;
-            border-radius: 12px;
+            border-radius: 18px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 6px 18px rgba(156,107,46,0.08);
             display: block;
         }
         .lab-caption {
@@ -2041,20 +2042,23 @@
         return `<div class="lab-photo-placeholder">📷<span>${label}</span></div>`;
     }
     const labPages = [
-        `<h4>Synthesis Fundamentals</h4>
-         <p>A large part of this placement involved carrying out a multistep synthesis of ruthenium coordination compounds, where the outcome of each stage depended directly on the quality of the one before it. Several of the intermediates were air and moisture sensitive, so accurate handling, weighing and reflux control were essential from the very first step. What developed most over the placement was my own judgement of reaction progress, recognising when a reaction needed more time and when it had failed outright.</p>
+        `<h4>Overview</h4>
+         <p>This placement covered the full route from synthesis through purification to structural characterisation for a series of ruthenium coordination compounds intended as building blocks for cancer therapeutics. Work moved from standard reflux chemistry through to microwave assisted synthesis for a later, more complex ligand, with each stage followed by crystallisation or rotary evaporation to isolate a clean product, and by thin layer chromatography and multinuclear NMR spectroscopy to confirm what had actually been made. Presenting results each week to a PhD researcher and senior faculty, and during one week to a group of around fifteen visiting researchers, meant the work had to be explained and defended as rigorously as it was carried out.</p>
+         <img class="lab-photo" src="images/reflux-second-stage.jpg" alt="Reflux setup used during the initial precursor synthesis">
+         <p class="lab-caption" style="text-align: center; margin-bottom: 1rem;">Reflux setup used during the initial precursor synthesis.</p>`,
+        `<h4>Synthesis, Purification and Characterisation</h4>
+         <p>A large part of this placement involved carrying out a multistep synthesis of ruthenium coordination compounds, where the outcome of each stage depended directly on the quality of the one before it. Several of the intermediates were air and moisture sensitive, so accurate handling, weighing and reflux control were essential from the very first step. Later stages moved to microwave assisted heating for a more complex ligand, where temperature, pressure and reaction time were far more tightly interdependent than in the earlier reflux chemistry. What developed most across both methods was my own judgement of reaction progress, recognising when a reaction needed more time and when it had failed outright.</p>
          <div class="lab-photo-row">
              <div>
-                 <img class="lab-photo" src="images/reflux-setup.jpg" alt="Reflux setup used during ruthenium precursor synthesis">
-                 <p class="lab-caption">Reflux setup used during ruthenium precursor synthesis.</p>
+                 <img class="lab-photo" src="images/reflux-setup.jpg" alt="A separate reflux synthesis for a later stage ligand">
+                 <p class="lab-caption">A separate reflux synthesis for a later stage ligand.</p>
              </div>
              <div>
-                 <img class="lab-photo" src="images/reflux-second-stage.jpg" alt="A separate reflux synthesis later in the placement">
-                 <p class="lab-caption">A separate reflux synthesis later in the placement.</p>
+                 <img class="lab-photo" src="images/post-microwave-tube.jpg" alt="Product solution taken straight from the microwave reaction vessel">
+                 <p class="lab-caption">Product solution taken straight from the microwave reaction vessel.</p>
              </div>
-         </div>`,
-        `<h4>Crystallisation and Isolation</h4>
-         <p>Producing a clean, well formed crystalline product depends on a single governing principle: dissolving the crude solid in the minimum volume of hot solvent required for full dissolution, then allowing the solution to cool slowly enough for an ordered crystal lattice to form, rather than the product oiling out or precipitating as an amorphous solid. Judging that minimum volume accurately, and resisting the temptation to add further solvent when dissolution appeared incomplete, required more iteration than expected. Vacuum filtration and washing demanded similar restraint, since an overly rapid wash removes product as readily as it removes impurities.</p>
+         </div>
+         <p>Producing a clean, well formed crystalline product depends on a single governing principle: dissolving the crude solid in the minimum volume of hot solvent required for full dissolution, then allowing the solution to cool slowly enough for an ordered crystal lattice to form, rather than the product oiling out or precipitating as an amorphous solid. Judging that minimum volume accurately, and resisting the temptation to add further solvent when dissolution appeared incomplete, required more iteration than expected.</p>
          <div class="lab-photo-row">
              <div>
                  <img class="lab-photo" src="images/filtration-first-product.jpg" alt="Vacuum filtration of an isolated product">
@@ -2064,21 +2068,18 @@
                  <img class="lab-photo" src="images/isolated-product-vial.jpg" alt="Isolated solid product after crystallisation">
                  <p class="lab-caption">Isolated solid product after crystallisation.</p>
              </div>
-         </div>`,
-        `<h4>Advanced Ligand Synthesis</h4>
-         <p>Later stages of the project involved synthesising structurally more complex ligands, which required a different experimental setup altogether: microwave assisted heating in place of standard reflux, with temperature, pressure and reaction time far more tightly interdependent than in the earlier chemistry. Understanding how adjusting one of those variables affected the other two, rather than working from a fixed set of parameters alone, changed my broader approach to troubleshooting reactions, beyond this particular synthesis.</p>
-         <div class="lab-photo-row">
+         </div>
+         <div class="lab-photo-row" style="margin-top: 1rem;">
              <div>
-                 <img class="lab-photo" src="images/post-microwave-tube.jpg" alt="Product solution taken straight from the microwave reaction vessel">
-                 <p class="lab-caption">Product solution taken straight from the microwave reaction vessel.</p>
+                 <img class="lab-photo" src="images/final-stage-filtration.jpg" alt="Filtration of the final stage product">
+                 <p class="lab-caption">Filtration of the final stage product.</p>
              </div>
              <div>
-                 <img class="lab-photo" src="images/product-solution-flask.jpg" alt="Product solution after workup">
-                 <p class="lab-caption">Product solution after workup.</p>
+                 <img class="lab-photo" src="images/final-stage-vial.jpg" alt="Isolated final stage product">
+                 <p class="lab-caption">Isolated final stage product.</p>
              </div>
-         </div>`,
-        `<h4>Purification and Characterisation</h4>
-         <p>Getting a final product clean enough to trust often took more work than making it in the first place: ion exchange steps to swap out counterions, rotary evaporation to drive off solvent without decomposing the product, and repeated recrystallisation when the first pass was not pure enough. Confirming what I had actually made relied on thin layer chromatography and multinuclear NMR spectroscopy, and learning to read a spectrum well enough to trust or question my own result was one of the most demanding parts of the placement.</p>
+         </div>
+         <p>Getting a final product clean enough to trust often took more work than making it in the first place: rotary evaporation to drive off solvent without decomposing the product, vacuum filtration and washing that demanded a light touch, since a rushed wash removes product as readily as it removes impurities, and repeated recrystallisation when the first pass was not pure enough. Confirming what I had actually made relied on thin layer chromatography and multinuclear NMR spectroscopy, and learning to read a spectrum well enough to trust or question my own result was one of the most demanding parts of the placement.</p>
          <img class="lab-photo" src="images/rotary-evaporation-setup.jpg" alt="Rotary evaporation setup used during workup">
          <p class="lab-caption" style="text-align: center; margin-bottom: 1rem;">Rotary evaporation setup used during workup.</p>
          <div class="lab-photo-row">
