@@ -1177,9 +1177,9 @@
         }
         .lab-photo {
             width: 100%;
-            max-height: 260px;
-            object-fit: cover;
-            object-position: center 30%;
+            max-height: 340px;
+            object-fit: contain;
+            background: #F3EDE0;
             border-radius: 12px;
             border: 1px solid var(--border-color);
             display: block;
@@ -2079,6 +2079,8 @@
          </div>`,
         `<h4>Purification and Characterisation</h4>
          <p>Getting a final product clean enough to trust often took more work than making it in the first place: ion exchange steps to swap out counterions, rotary evaporation to drive off solvent without decomposing the product, and repeated recrystallisation when the first pass was not pure enough. Confirming what I had actually made relied on thin layer chromatography and multinuclear NMR spectroscopy, and learning to read a spectrum well enough to trust or question my own result was one of the most demanding parts of the placement.</p>
+         <img class="lab-photo" src="images/rotary-evaporation-setup.jpg" alt="Rotary evaporation setup used during workup">
+         <p class="lab-caption" style="text-align: center; margin-bottom: 1rem;">Rotary evaporation setup used during workup.</p>
          <div class="lab-photo-row">
              <div>
                  <img class="lab-photo" src="images/purification-filtration.jpg" alt="Filtration step during purification">
@@ -2093,14 +2095,15 @@
          <p>Alongside the bench work, presenting results at weekly research meetings and taking feedback from a PhD researcher and senior faculty pushed me to explain my reasoning clearly under scrutiny, not just report what happened. Being honest when a result did not match what the wider team expected, and working through why rather than glossing over it, mattered just as much as the synthetic technique itself.</p>
          <p>That habit was tested properly during a week long research exchange, when around fifteen visiting researchers came to Reading to discuss ongoing work across several projects. Presenting my own findings to a room of people almost entirely outside my usual research group, and taking their questions seriously rather than treating the session as a formality, took some getting used to, but it is probably where I grew the most as a researcher during the whole placement.</p>
          <div class="lab-photo-row">
-             ${labPlaceholder('You at the bench or in the lab')}
              <div>
                  <img class="lab-photo" src="images/research-group-photo.jpg" alt="Group photo from the research exchange at Reading">
                  <p class="lab-caption">Group photo from the research exchange at Reading.</p>
              </div>
+             <div>
+                 <img class="lab-photo" src="images/research-team-dinner.jpg" alt="Research group together during the exchange">
+                 <p class="lab-caption">Research group together during the exchange.</p>
+             </div>
          </div>
-         <img class="lab-photo" src="images/research-team-dinner.jpg" alt="Research group together during the exchange" style="margin-top: 1rem; max-height: 280px; width: 100%; object-fit: cover;">
-         <p class="lab-caption" style="text-align: center;">Research group together during the exchange.</p>
          <p class="lab-caption" style="font-style: italic;">More reflections and photos will be added here as the placement continues.</p>`
     ];
     let labCurrentPage = 0;
