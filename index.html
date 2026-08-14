@@ -1191,6 +1191,47 @@
             margin-top: 0.4rem;
             margin-bottom: 0;
         }
+        .lab-stage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .lab-stage-card {
+            background: #F5EEDF;
+            border: 1px solid #E8DCC3;
+            border-radius: 16px;
+            padding: 1rem;
+        }
+        .lab-stage-card h5 {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #8A6320;
+            text-align: center;
+            margin: 0 0 0.6rem 0;
+        }
+        .lab-stage-card .lab-photo-row {
+            gap: 0.6rem;
+            margin-bottom: 0;
+        }
+        .lab-stage-card .lab-photo {
+            max-height: 130px;
+            border-radius: 10px;
+        }
+        .lab-stage-card .lab-caption {
+            font-size: 0.65rem;
+            text-align: center;
+            margin-top: 0.25rem;
+        }
+        .lab-stage-card .lab-photo-placeholder {
+            aspect-ratio: 1 / 1;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        @media (max-width: 640px) {
+            .lab-stage-grid { grid-template-columns: 1fr; }
+        }
         .lab-photo-placeholder {
             width: 100%;
             aspect-ratio: 4 / 3;
@@ -2042,54 +2083,60 @@
         return `<div class="lab-photo-placeholder">📷<span>${label}</span></div>`;
     }
     const labPages = [
-        `<h4>Overview</h4>
-         <p>This placement covered the full route from synthesis through purification to structural characterisation for a series of ruthenium coordination compounds intended as building blocks for cancer therapeutics. Work moved from standard reflux chemistry through to microwave assisted synthesis for a later, more complex ligand, with each stage followed by crystallisation or rotary evaporation to isolate a clean product, and by thin layer chromatography and multinuclear NMR spectroscopy to confirm what had actually been made. Presenting results each week to a PhD researcher and senior faculty, and during one week to a group of around fifteen visiting researchers, meant the work had to be explained and defended as rigorously as it was carried out.</p>
-         <img class="lab-photo" src="images/reflux-second-stage.jpg" alt="Reflux setup used during the initial precursor synthesis">
-         <p class="lab-caption" style="text-align: center; margin-bottom: 1rem;">Reflux setup used during the initial precursor synthesis.</p>`,
-        `<h4>Synthesis, Purification and Characterisation</h4>
-         <p>A large part of this placement involved carrying out a multistep synthesis of ruthenium coordination compounds, where the outcome of each stage depended directly on the quality of the one before it. Several of the intermediates were air and moisture sensitive, so accurate handling, weighing and reflux control were essential from the very first step. Later stages moved to microwave assisted heating for a more complex ligand, where temperature, pressure and reaction time were far more tightly interdependent than in the earlier reflux chemistry. What developed most across both methods was my own judgement of reaction progress, recognising when a reaction needed more time and when it had failed outright.</p>
-         <div class="lab-photo-row">
-             <div>
-                 <img class="lab-photo" src="images/reflux-setup.jpg" alt="A separate reflux synthesis for a later stage ligand">
-                 <p class="lab-caption">A separate reflux synthesis for a later stage ligand.</p>
+        `<h4>The Synthesis Route</h4>
+         <p>A photographic record of each isolated stage in the synthesis, from the initial precursor through to the final complex.</p>
+         <div class="lab-stage-grid">
+             <div class="lab-stage-card">
+                 <h5>Ru(DMSO)&#8324;Cl&#8322;</h5>
+                 <div class="lab-photo-row">
+                     <div>
+                         <img class="lab-photo" src="images/filtration-first-product.jpg" alt="First stage filtration">
+                         <p class="lab-caption">Filtration</p>
+                     </div>
+                     <div>
+                         <img class="lab-photo" src="images/isolated-product-vial.jpg" alt="First stage product">
+                         <p class="lab-caption">Isolated product</p>
+                     </div>
+                 </div>
              </div>
-             <div>
-                 <img class="lab-photo" src="images/post-microwave-tube.jpg" alt="Product solution taken straight from the microwave reaction vessel">
-                 <p class="lab-caption">Product solution taken straight from the microwave reaction vessel.</p>
+             <div class="lab-stage-card">
+                 <h5>Ru(phen)&#8322;Cl&#8322;</h5>
+                 <div class="lab-photo-row">
+                     <div>
+                         <img class="lab-photo" src="images/purification-filtration.jpg" alt="Second stage filtration">
+                         <p class="lab-caption">Filtration</p>
+                     </div>
+                     <div>
+                         <img class="lab-photo" src="images/final-product-vial.jpg" alt="Second stage product">
+                         <p class="lab-caption">Isolated product</p>
+                     </div>
+                 </div>
              </div>
-         </div>
-         <p>Producing a clean, well formed crystalline product depends on a single governing principle: dissolving the crude solid in the minimum volume of hot solvent required for full dissolution, then allowing the solution to cool slowly enough for an ordered crystal lattice to form, rather than the product oiling out or precipitating as an amorphous solid. Judging that minimum volume accurately, and resisting the temptation to add further solvent when dissolution appeared incomplete, required more iteration than expected.</p>
-         <div class="lab-photo-row">
-             <div>
-                 <img class="lab-photo" src="images/filtration-first-product.jpg" alt="Vacuum filtration of an isolated product">
-                 <p class="lab-caption">Vacuum filtration of an isolated product.</p>
+             <div class="lab-stage-card">
+                 <h5>dppz Ligand</h5>
+                 <div class="lab-photo-row">
+                     <div>
+                         <img class="lab-photo" src="images/dppz-filtration.jpg" alt="Third stage filtration">
+                         <p class="lab-caption">Filtration</p>
+                     </div>
+                     <div>
+                         <img class="lab-photo" src="images/dppz-vial.jpg" alt="Third stage product">
+                         <p class="lab-caption">Isolated product</p>
+                     </div>
+                 </div>
              </div>
-             <div>
-                 <img class="lab-photo" src="images/isolated-product-vial.jpg" alt="Isolated solid product after crystallisation">
-                 <p class="lab-caption">Isolated solid product after crystallisation.</p>
-             </div>
-         </div>
-         <div class="lab-photo-row" style="margin-top: 1rem;">
-             <div>
-                 <img class="lab-photo" src="images/final-stage-filtration.jpg" alt="Filtration of the final stage product">
-                 <p class="lab-caption">Filtration of the final stage product.</p>
-             </div>
-             <div>
-                 <img class="lab-photo" src="images/final-stage-vial.jpg" alt="Isolated final stage product">
-                 <p class="lab-caption">Isolated final stage product.</p>
-             </div>
-         </div>
-         <p>Getting a final product clean enough to trust often took more work than making it in the first place: rotary evaporation to drive off solvent without decomposing the product, vacuum filtration and washing that demanded a light touch, since a rushed wash removes product as readily as it removes impurities, and repeated recrystallisation when the first pass was not pure enough. Confirming what I had actually made relied on thin layer chromatography and multinuclear NMR spectroscopy, and learning to read a spectrum well enough to trust or question my own result was one of the most demanding parts of the placement.</p>
-         <img class="lab-photo" src="images/rotary-evaporation-setup.jpg" alt="Rotary evaporation setup used during workup">
-         <p class="lab-caption" style="text-align: center; margin-bottom: 1rem;">Rotary evaporation setup used during workup.</p>
-         <div class="lab-photo-row">
-             <div>
-                 <img class="lab-photo" src="images/purification-filtration.jpg" alt="Filtration step during purification">
-                 <p class="lab-caption">Filtration step during purification.</p>
-             </div>
-             <div>
-                 <img class="lab-photo" src="images/final-product-vial.jpg" alt="Final purified product">
-                 <p class="lab-caption">Final purified product.</p>
+             <div class="lab-stage-card">
+                 <h5>[Ru(phen)&#8322;(dppz)]&#178;&#8314;</h5>
+                 <div class="lab-photo-row">
+                     <div>
+                         <img class="lab-photo" src="images/final-stage-filtration.jpg" alt="Final stage filtration">
+                         <p class="lab-caption">Filtration</p>
+                     </div>
+                     <div>
+                         <img class="lab-photo" src="images/final-stage-vial.jpg" alt="Final stage product">
+                         <p class="lab-caption">Isolated product</p>
+                     </div>
+                 </div>
              </div>
          </div>`,
         `<h4>Working as Part of a Research Team</h4>
