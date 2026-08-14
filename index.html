@@ -1252,6 +1252,19 @@
         @media (max-width: 640px) {
             .lab-stage-grid { grid-template-columns: 1fr; }
         }
+        .lab-team-card {
+            background: #F1E9DB;
+            border: 1px solid #E3D2A9;
+            border-radius: 18px;
+            padding: 1.25rem;
+        }
+        .lab-team-card .lab-photo-row {
+            margin-bottom: 0;
+        }
+        .lab-team-card .lab-photo {
+            max-height: 220px;
+            border-radius: 14px;
+        }
         .lab-photo-placeholder {
             width: 100%;
             aspect-ratio: 4 / 3;
@@ -2104,7 +2117,7 @@
     }
     const labPages = [
         `<h4>The Synthesis Route</h4>
-         <p>A photographic record of each isolated stage in the synthesis, from the initial precursor through to the final complex.</p>
+         <p>A photographic record of some of the compounds isolated over the course of the placement.</p>
          <div class="lab-stage-grid">
              <div class="lab-stage-card">
                  <h5>Ru(DMSO)<sub>4</sub>Cl<sub>2</sub></h5>
@@ -2160,16 +2173,18 @@
              </div>
          </div>`,
         `<h4>Working as Part of a Research Team</h4>
-         <p>Alongside the bench work, presenting results at weekly research meetings and taking feedback from a PhD researcher and senior faculty pushed me to explain my reasoning clearly under scrutiny, not just report what happened. Being honest when a result did not match what the wider team expected, and working through why rather than glossing over it, mattered just as much as the synthetic technique itself.</p>
-         <p>That habit was tested properly during a week long research exchange, when around fifteen visiting researchers came to Reading to discuss ongoing work across several projects. Presenting my own findings to a room of people almost entirely outside my usual research group, and taking their questions seriously rather than treating the session as a formality, took some getting used to, but it is probably where I grew the most as a researcher during the whole placement.</p>
-         <div class="lab-photo-row">
-             <div>
-                 <img class="lab-photo" src="images/research-group-photo.jpg" alt="Group photo from the research exchange at Reading">
-                 <p class="lab-caption">Group photo from the research exchange at Reading.</p>
-             </div>
-             <div>
-                 <img class="lab-photo" src="images/research-team-dinner.jpg" alt="Research group together during the exchange">
-                 <p class="lab-caption">Research group together during the exchange.</p>
+         <p>Alongside the bench work, attending weekly research meetings and hearing how a PhD researcher and senior faculty explained and defended their results under scrutiny shaped how I thought about my own experimental design and interpretation. Seeing a result that did not match what the wider team expected worked through properly, rather than dismissed, showed how much that scrutiny matters alongside the synthetic technique itself.</p>
+         <p>That was reinforced during a week long research exchange, when around fifteen visiting researchers came to Reading to discuss ongoing work across several projects. Sitting in on discussions between people almost entirely outside my usual research group, and following the questions they raised about each other's work, gave a much broader sense of how research gets scrutinised and developed collaboratively.</p>
+         <div class="lab-team-card">
+             <div class="lab-photo-row">
+                 <div>
+                     <img class="lab-photo" src="images/research-group-photo.jpg" alt="Group photo from the research exchange at Reading">
+                     <p class="lab-caption">Group photo from the research exchange at Reading.</p>
+                 </div>
+                 <div>
+                     <img class="lab-photo" src="images/research-team-dinner.jpg" alt="Research group together during the exchange">
+                     <p class="lab-caption">Research group together during the exchange.</p>
+                 </div>
              </div>
          </div>
          <p class="lab-caption" style="font-style: italic;">More reflections and photos will be added here as the placement continues.</p>`
