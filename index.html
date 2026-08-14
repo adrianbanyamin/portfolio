@@ -1202,22 +1202,42 @@
             border-radius: 16px;
             padding: 1rem;
         }
+        .lab-stage-grid .lab-stage-card:nth-child(1) {
+            background: #FBF0D9;
+            border-color: #E9D6A0;
+        }
+        .lab-stage-grid .lab-stage-card:nth-child(2) {
+            background: #EBE2DA;
+            border-color: #D2C2AE;
+        }
+        .lab-stage-grid .lab-stage-card:nth-child(3) {
+            background: #EAF0EF;
+            border-color: #C9DAD7;
+        }
+        .lab-stage-grid .lab-stage-card:nth-child(4) {
+            background: #FBE2CC;
+            border-color: #E8B786;
+        }
         .lab-stage-card h5 {
             font-family: 'Newsreader', serif;
             font-style: italic;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #8A6320;
             text-align: center;
             margin: 0 0 0.6rem 0;
+        }
+        .lab-stage-card h5 sub,
+        .lab-stage-card h5 sup {
+            font-size: 0.68em;
         }
         .lab-stage-card .lab-photo-row {
             gap: 0.6rem;
             margin-bottom: 0;
         }
         .lab-stage-card .lab-photo {
-            max-height: 130px;
-            border-radius: 10px;
+            max-height: 155px;
+            border-radius: 12px;
         }
         .lab-stage-card .lab-caption {
             font-size: 0.65rem;
@@ -2087,7 +2107,7 @@
          <p>A photographic record of each isolated stage in the synthesis, from the initial precursor through to the final complex.</p>
          <div class="lab-stage-grid">
              <div class="lab-stage-card">
-                 <h5>Ru(DMSO)&#8324;Cl&#8322;</h5>
+                 <h5>Ru(DMSO)<sub>4</sub>Cl<sub>2</sub></h5>
                  <div class="lab-photo-row">
                      <div>
                          <img class="lab-photo" src="images/filtration-first-product.jpg" alt="First stage filtration">
@@ -2100,7 +2120,7 @@
                  </div>
              </div>
              <div class="lab-stage-card">
-                 <h5>Ru(phen)&#8322;Cl&#8322;</h5>
+                 <h5>Ru(phen)<sub>2</sub>Cl<sub>2</sub></h5>
                  <div class="lab-photo-row">
                      <div>
                          <img class="lab-photo" src="images/purification-filtration.jpg" alt="Second stage filtration">
@@ -2126,14 +2146,14 @@
                  </div>
              </div>
              <div class="lab-stage-card">
-                 <h5>[Ru(phen)&#8322;(dppz)]&#178;&#8314;</h5>
+                 <h5>[Ru(Phen)<sub>2</sub>(dppz)](PF<sub>6</sub>)<sub>2</sub></h5>
                  <div class="lab-photo-row">
                      <div>
-                         <img class="lab-photo" src="images/final-stage-filtration.jpg" alt="Final stage filtration">
+                         <img class="lab-photo" src="images/kpf6-buchner-filtration.jpg" alt="Final stage filtration">
                          <p class="lab-caption">Filtration</p>
                      </div>
                      <div>
-                         <img class="lab-photo" src="images/final-stage-vial.jpg" alt="Final stage product">
+                         <img class="lab-photo" src="images/kpf6-after-rotavap.jpg" alt="Final stage product">
                          <p class="lab-caption">Isolated product</p>
                      </div>
                  </div>
