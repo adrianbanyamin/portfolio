@@ -1508,7 +1508,7 @@
                 </div>
                 <div class="stat-grid-top">
                     <div class="stat-box">
-                        <div class="number">80%</div>
+                        <div class="number">78.7%</div>
                         <div class="label">Year One First Class Average</div>
                     </div>
                     <div class="stat-box">
@@ -1610,7 +1610,7 @@
                     <span class="tag tag-outline">Cancer Biology</span>
                     <span class="tag tag-outline">Biomedicine</span>
                 </div>
-                <span class="date-badge">Jun 2027 - Jul 2027</span>
+                <span class="date-badge">Jun 2027 - Aug 2027</span>
             </div>
             <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Cancer Research Intern</h3>
             <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 0.3rem;">University of São Paulo (USP), São Paulo, Brazil</p>
@@ -1649,8 +1649,8 @@
                     <li>Characterised the complex, [Ru(phen)<sub>2</sub>Cl<sub>2</sub>], Ru(DMSO)<sub>4</sub>Cl<sub>2</sub>, and dppz by thin-layer chromatography (TLC) and multinuclear NMR spectroscopy, with high-resolution mass spectrometry (HRMS) still to commence.</li>
                     <li>Resolved the complex into its Δ and Λ enantiomers via HPLC, then used UV-Vis spectrophotometry to standardise both enantiomer solutions to a working concentration of 200 μM.</li>
                     <li>Investigated enantiomer-selective DNA binding by monitoring luminescence intensity of each enantiomer in the presence of B-DNA and G-quadruplex structures, to assess binding affinity and selectivity.</li>
-                    <li>Grew single crystals of each enantiomer to support X-ray crystallographic structure determination, still to commence, and applied PyMOL and custom Python scripts to model complex geometry and coordination state.</li>
-                    <li>Collaborated across a week-long research exchange with approximately 50 visiting researchers, including international collaborators such as Dr. Shuntaro Takahashi and Dr. Hisae Tateishi-Karimata, evaluating ruthenium-complex characterisation data and reaction optimisation strategies.</li>
+                    <li>Grew single crystals of each enantiomer and handed them off for X-ray crystallographic structure determination, to be completed by the group after my placement ends and I return to Bristol, and applied PyMOL and custom Python scripts to model complex geometry and coordination state.</li>
+                    <li>Collaborated across a week-long research exchange with approximately 30 visiting researchers, including international collaborators such as Dr. Shuntaro Takahashi and Dr. Hisae Tateishi-Karimata, evaluating ruthenium-complex characterisation data and reaction optimisation strategies.</li>
                     <li>Attended weekly technical meetings with senior professors and peers to review structural analysis updates and troubleshoot reaction issues, with contributions slated for forthcoming peer-reviewed publication.</li>
                 </ul>
                 <div class="exp-intro-box">
@@ -2011,7 +2011,7 @@
                 <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 1.5rem;">2025 - Present | Bristol, United Kingdom</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
                     <div class="stat-box" style="text-align: left; padding: 1.5rem;">
-                        <div class="number">80%</div>
+                        <div class="number">78.7%</div>
                         <div class="label" style="text-align: left;">Year One First Class Average</div>
                     </div>
                     <div class="stat-box" style="text-align: left; padding: 1.5rem;">
@@ -2019,7 +2019,7 @@
                         <div class="label" style="text-align: left;">Mathematics Average</div>
                     </div>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">First Class Honours (Year 1): Achieved an overall average grade of 80%, with modules including Materials Chemistry, Biochemistry, and Advanced Experimental Laboratory Techniques, plus an overall average of 94% across all mathematics coursework and examinations.</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">First Class Honours (Year 1): Achieved an overall average grade of 78.7%, with modules including Materials Chemistry, Biochemistry, and Advanced Experimental Laboratory Techniques, plus an overall average of 94% across all mathematics coursework and examinations.</p>
             </div>
         </div>
         <div class="project-card" style="grid-template-columns: 1fr; margin-top: 1.5rem;">
@@ -2080,7 +2080,7 @@
         <div class="modal-body" id="haemModalBody"></div>
         <div class="modal-pagination">
             <button class="page-arrow" id="haemPrevBtn" onclick="haemPrevPage()">←</button>
-            <span id="haemPageIndicator">Part 1 · Page 1 of 6</span>
+            <span id="haemPageIndicator">Part 1 · Page 1 of 7</span>
             <button class="page-arrow" id="haemNextBtn" onclick="haemNextPage()">→</button>
         </div>
     </div>
@@ -2097,7 +2097,7 @@
     const labPages = [
         `<h4>Working as Part of a Research Team</h4>
          <p>Alongside the bench work, attending weekly research meetings and hearing how a PhD researcher and senior faculty explained and defended their results under scrutiny shaped how I thought about my own experimental design and interpretation. Seeing a result that did not match what the wider team expected worked through properly, rather than dismissed, showed how much that scrutiny matters alongside the synthetic technique itself.</p>
-         <p>That was reinforced during a week long research exchange, when approximately 50 visiting researchers came to Reading to discuss ongoing work across several projects. Sitting in on discussions between people almost entirely outside my usual research group, and following the questions they raised about each other's work, gave a much broader sense of how research gets scrutinised and developed collaboratively.</p>
+         <p>That was reinforced during a week long research exchange, when approximately 30 visiting researchers came to Reading to discuss ongoing work across several projects. Sitting in on discussions between people almost entirely outside my usual research group, and following the questions they raised about each other's work, gave a much broader sense of how research gets scrutinised and developed collaboratively.</p>
          <div class="lab-team-card">
              <div class="lab-photo-row">
                  <div>
@@ -2165,6 +2165,111 @@
              <h4>Handling Missing Structural Data</h4>
              <p>The first real obstacle was that 1HHO.pdb only explicitly records chains A and B. Chains C and D, which complete the biological tetramer, are simply absent from the file. My routine detects this at parse time and, for those two chains, substitutes the coordinate data already extracted from chain A for C and chain B for D.</p>
              <p>I want to be precise about what that actually means, since it would be easy to describe it more grandly than it deserves. This is not a formal crystallographic symmetry operation with a rotation and translation matrix applied to generate new, independent coordinates. It is a direct substitution, based on the accepted biological assumption that the two alpha beta dimers making up the tetramer are structurally equivalent to one another. That assumption is reasonable and widely used, but it does mean the C and D results for the oxygen bound state are not independent measurements, they are copies. I have kept that limitation visible here rather than presenting it as more sophisticated than it is.</p>`,
+            `<h4>Implementation</h4>
+             <p>Below is the actual script used to generate every number in the tables on the next page: it extracts the proximal histidine, distal histidine, haem ring, and iron coordinates for each subunit, substitutes the missing chains as described on the previous page, computes the pocket width as the distance between the proximal and distal histidine centres, and prints a chain-by-chain comparison between the two structures.</p>
+             <pre>from Bio.PDB import PDBParser
+import numpy as np
+
+def get_imidazole_center(residue):
+    ring_atoms = ['CG', 'ND1', 'CD2', 'CE1', 'NE2']
+    coords = []
+    for name in ring_atoms:
+        if name in residue:
+            coords.append(residue[name].get_coord())
+
+    if len(coords) &lt; 5:
+        return None
+    return np.mean(coords, axis=0)
+
+def get_heme_center(residue):
+    nitrogen_atoms = ['NA', 'NB', 'NC', 'ND']
+    coords = []
+    for name in nitrogen_atoms:
+        if name in residue:
+            coords.append(residue[name].get_coord())
+
+    if len(coords) &lt; 4:
+        return None
+    return np.mean(coords, axis=0)
+
+def run_analysis():
+    parser = PDBParser(QUIET=True)
+    files = ['1A3N.pdb', '1HHO.pdb']
+
+    mapping = {
+        'A': {'prox': 87, 'dist': 58, 'type': 'alpha'},
+        'B': {'prox': 92, 'dist': 63, 'type': 'beta'},
+        'C': {'prox': 87, 'dist': 58, 'type': 'alpha'},
+        'D': {'prox': 92, 'dist': 63, 'type': 'beta'}
+    }
+
+    saved_widths = {'1A3N.pdb': {}, '1HHO.pdb': {}}
+    print("Pocket coordinate generation tables:")
+    for filename in files:
+        structure = parser.get_structure('protein', filename)
+        model = structure[0]
+
+        print(f"\nData for file: {filename}")
+
+        for chain_id in ['A', 'B', 'C', 'D']:
+            lookup_chain = chain_id
+            if chain_id not in model:
+                if chain_id == 'C': lookup_chain = 'A'
+                if chain_id == 'D': lookup_chain = 'B'
+                print(f"  [Notice: missing chain {chain_id}, copying from chain {lookup_chain}]")
+
+            chain = model[lookup_chain]
+            res_nums = mapping[chain_id]
+
+            prox_res = chain[(' ', res_nums['prox'], ' ')]
+            prox_coords = get_imidazole_center(prox_res)
+
+            dist_res = chain[(' ', res_nums['dist'], ' ')]
+            dist_coords = get_imidazole_center(dist_res)
+
+            heme_coords = None
+            iron_coords = None
+            for residue in chain:
+                if 'HEM' in residue.get_resname():
+                    heme_coords = get_heme_center(residue)
+                    if 'FE' in residue:
+                        iron_coords = residue['FE'].get_coord()
+                    break
+
+            print(f"chain {chain_id} coordinates:")
+            print(f"  proximal histidine: {prox_coords}")
+            print(f"  distal histidine: {dist_coords}")
+            print(f"  haem ring: {heme_coords}")
+            print(f"  iron atom: {iron_coords}")
+
+            if prox_coords is not None and dist_coords is not None:
+                width = np.linalg.norm(prox_coords - dist_coords)
+                saved_widths[filename][chain_id] = width
+                print(f"  pocket width: {width:.4f} A")
+            print("")
+
+    print("\nComparing baseline vs oxygen bound states:")
+    for chain_id in ['A', 'B', 'C', 'D']:
+        w_baseline = saved_widths['1A3N.pdb'].get(chain_id)
+        w_bound = saved_widths['1HHO.pdb'].get(chain_id)
+        subunit_type = mapping[chain_id]['type']
+
+        print(f"chain {chain_id} ({subunit_type}) results:")
+        if w_baseline and w_bound:
+            delta = w_bound - w_baseline
+            print(f"  baseline width: {w_baseline:.4f} A")
+            print(f"  oxygen bound width: {w_bound:.4f} A")
+            print(f"  total change: {delta:.4f} A")
+
+            if abs(delta) &gt;= 0.1:
+                print("  result: the pocket changed shape significantly.")
+            else:
+                print("  result: the pocket didn't shift much.")
+        print("")
+
+if __name__ == "__main__":
+    run_analysis()</pre>
+             <p>The proximal and distal histidine residue numbers are hard-coded per chain type (alpha: 87/58, beta: 92/63), since these are fixed, well-known positions in the haemoglobin sequence rather than something the script needs to search for. Everything downstream, the coordinate extraction, the chain substitution, and the pocket width comparison printed on the next page, runs directly from this.</p>`,
             `<h4>Geometric Extraction</h4>
              <p>To describe the pocket without relying on a single atom, the pipeline calculates four reference points per subunit, each the mean position of a small set of named atoms rather than a single coordinate:</p>
              <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
