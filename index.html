@@ -1215,6 +1215,41 @@
             color: var(--text-main);
             line-height: 1.5;
         }
+        .reading-gallery {
+            display: flex;
+            gap: 0.9rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 0.25rem 0 0.75rem 0;
+            margin: 1.25rem 0 0.5rem 0;
+        }
+        .reading-gallery figure {
+            flex: 0 0 auto;
+            margin: 0;
+            scroll-snap-align: start;
+            width: 300px;
+        }
+        .reading-gallery figure.portrait { width: 180px; }
+        .reading-gallery img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 6px 18px rgba(156,107,46,0.08);
+            display: block;
+        }
+        .reading-gallery figcaption {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+            line-height: 1.4;
+        }
+        @media (max-width: 640px) {
+            .reading-gallery figure { width: 240px; }
+            .reading-gallery figure.portrait { width: 120px; }
+            .reading-gallery img { height: 170px; }
+        }
         .lab-photo-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1751,6 +1786,28 @@
                 <div class="exp-intro-box">
                     <p style="color: var(--text-muted); font-size: 0.9rem;">At the University of Reading, I carried out a bioinorganic chemistry research placement focused on synthesising and characterising ruthenium polypyridyl complexes. The broader aim of the project was to develop ruthenium complexes that could be structurally modified to selectively target DNA and G-quadruplex structures, as a potential route to disrupting the uncontrolled cell division characteristic of cancer. Working alongside a PhD researcher and senior faculty, I contributed across the pipeline, from synthesis and purification through to enantiomer resolution, binding studies and docking, and the results are feeding into a manuscript in preparation.</p>
                 </div>
+            </div>
+            <div class="reading-gallery">
+                <figure class="portrait">
+                    <a href="images/post-microwave-tube.jpg" target="_blank" rel="noopener"><img src="images/post-microwave-tube.jpg" alt="cis-[Ru(phen)2Cl2], the deep red precursor I synthesised en route to the final complex" loading="lazy"></a>
+                    <figcaption>cis-[Ru(phen)<sub>2</sub>Cl<sub>2</sub>], the deep red precursor I synthesised en route to the final complex</figcaption>
+                </figure>
+                <figure>
+                    <a href="images/IMG_20260805_161843.jpg" target="_blank" rel="noopener"><img src="images/IMG_20260805_161843.jpg" alt="Research exchange meeting on the ruthenium–DNA project with visiting researchers from Japan and other UK universities" loading="lazy"></a>
+                    <figcaption>Research exchange meeting on the ruthenium–DNA project with visiting researchers from Japan and other UK universities</figcaption>
+                </figure>
+                <figure>
+                    <a href="images/IMG-20260806-WA0006.jpg" target="_blank" rel="noopener"><img src="images/IMG-20260806-WA0006.jpg" alt="Research exchange dinner with the wider research group and visiting researchers" loading="lazy"></a>
+                    <figcaption>Research exchange dinner with the wider research group and visiting researchers</figcaption>
+                </figure>
+                <figure>
+                    <a href="images/IMG_20260901_161018.jpg" target="_blank" rel="noopener"><img src="images/IMG_20260901_161018.jpg" alt="International research symposium, with visiting scientists from 7 countries presenting their work" loading="lazy"></a>
+                    <figcaption>International research symposium, with visiting scientists from 7 countries presenting their work</figcaption>
+                </figure>
+                <figure>
+                    <a href="images/IMG_20260916_132842.jpg" target="_blank" rel="noopener"><img src="images/IMG_20260916_132842.jpg" alt="Farewell, Reading: the end of an unforgettable summer" loading="lazy"></a>
+                    <figcaption>Farewell, Reading: the end of an unforgettable summer</figcaption>
+                </figure>
             </div>
             <div class="exp-nested-trigger" onclick="openLabNotebook()">
                 <span class="lab-notebook-icon">📓</span>
