@@ -1340,6 +1340,9 @@
             padding: 1.25rem;
         }
         .lab-team-card .lab-photo-row {
+            margin-bottom: 1.25rem;
+        }
+        .lab-team-card .lab-photo-row:last-child {
             margin-bottom: 0;
         }
         .lab-team-card .lab-photo {
@@ -1786,28 +1789,6 @@
                 <div class="exp-intro-box">
                     <p style="color: var(--text-muted); font-size: 0.9rem;">At the University of Reading, I carried out a bioinorganic chemistry research placement focused on synthesising and characterising ruthenium polypyridyl complexes. The broader aim of the project was to develop ruthenium complexes that could be structurally modified to selectively target DNA and G-quadruplex structures, as a potential route to disrupting the uncontrolled cell division characteristic of cancer. Working alongside a PhD researcher and senior faculty, I contributed across the pipeline, from synthesis and purification through to enantiomer resolution, binding studies and docking, and the results are feeding into a manuscript in preparation.</p>
                 </div>
-            </div>
-            <div class="reading-gallery">
-                <figure class="portrait">
-                    <a href="images/post-microwave-tube.jpg" target="_blank" rel="noopener"><img src="images/post-microwave-tube.jpg" alt="cis-[Ru(phen)2Cl2], the deep red precursor I synthesised en route to the final complex" loading="lazy"></a>
-                    <figcaption>cis-[Ru(phen)<sub>2</sub>Cl<sub>2</sub>], the deep red precursor I synthesised en route to the final complex</figcaption>
-                </figure>
-                <figure>
-                    <a href="images/IMG_20260805_161843.jpg" target="_blank" rel="noopener"><img src="images/IMG_20260805_161843.jpg" alt="Research exchange meeting on the ruthenium–DNA project with visiting researchers from Japan and other UK universities" loading="lazy"></a>
-                    <figcaption>Research exchange meeting on the ruthenium–DNA project with visiting researchers from Japan and other UK universities</figcaption>
-                </figure>
-                <figure>
-                    <a href="images/IMG-20260806-WA0006.jpg" target="_blank" rel="noopener"><img src="images/IMG-20260806-WA0006.jpg" alt="Research exchange dinner with the wider research group and visiting researchers" loading="lazy"></a>
-                    <figcaption>Research exchange dinner with the wider research group and visiting researchers</figcaption>
-                </figure>
-                <figure>
-                    <a href="images/IMG_20260901_161018.jpg" target="_blank" rel="noopener"><img src="images/IMG_20260901_161018.jpg" alt="International research symposium, with visiting scientists from 7 countries presenting their work" loading="lazy"></a>
-                    <figcaption>International research symposium, with visiting scientists from 7 countries presenting their work</figcaption>
-                </figure>
-                <figure>
-                    <a href="images/IMG_20260916_132842.jpg" target="_blank" rel="noopener"><img src="images/IMG_20260916_132842.jpg" alt="Farewell, Reading: the end of an unforgettable summer" loading="lazy"></a>
-                    <figcaption>Farewell, Reading: the end of an unforgettable summer</figcaption>
-                </figure>
             </div>
             <div class="exp-nested-trigger" onclick="openLabNotebook()">
                 <span class="lab-notebook-icon">📓</span>
@@ -2262,12 +2243,32 @@
          <div class="lab-team-card">
              <div class="lab-photo-row">
                  <div>
+                     <img class="lab-photo" src="images/post-microwave-tube.jpg" alt="cis-[Ru(phen)2Cl2], the deep red precursor I synthesised en route to the final complex">
+                     <p class="lab-caption">cis-[Ru(phen)<sub>2</sub>Cl<sub>2</sub>], the deep red precursor I synthesised en route to the final complex.</p>
+                 </div>
+                 <div>
+                     <img class="lab-photo" src="images/IMG_20260805_161843.jpg" alt="Research exchange meeting on the ruthenium–DNA project with visiting researchers from Japan and other UK universities">
+                     <p class="lab-caption">Research exchange meeting on the ruthenium–DNA project with visiting researchers from Japan and other UK universities.</p>
+                 </div>
+             </div>
+             <div class="lab-photo-row">
+                 <div>
+                     <img class="lab-photo" src="images/IMG-20260806-WA0006.jpg" alt="Research exchange dinner with the wider research group and visiting researchers">
+                     <p class="lab-caption">Research exchange dinner with the wider research group and visiting researchers.</p>
+                 </div>
+                 <div>
+                     <img class="lab-photo" src="images/IMG_20260901_161018.jpg" alt="International research symposium, with visiting scientists from 7 countries presenting their work">
+                     <p class="lab-caption">International research symposium, with visiting scientists from 7 countries presenting their work.</p>
+                 </div>
+             </div>
+             <div class="lab-photo-row">
+                 <div>
                      <img class="lab-photo" src="images/research-group-photo.jpg" alt="Group photo from the research briefings at Reading">
                      <p class="lab-caption">Group photo from the research briefings at Reading.</p>
                  </div>
                  <div>
-                     <img class="lab-photo" src="images/research-team-dinner.jpg" alt="Research group together during the briefings">
-                     <p class="lab-caption">Research group together during the briefings.</p>
+                     <img class="lab-photo" src="images/IMG_20260916_132842.jpg" alt="Farewell, Reading: the end of an unforgettable summer">
+                     <p class="lab-caption">Farewell, Reading: the end of an unforgettable summer.</p>
                  </div>
              </div>
          </div>`
