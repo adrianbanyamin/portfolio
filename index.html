@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Banyamin | Chemistry & Drug Discovery Portfolio</title>
-    <meta name="description" content="MSci Chemistry student portfolio covering my projects and research placements, including a haemoglobin docking project (AutoDock Vina, PyMOL, Biopython) and lab placements in ruthenium-DNA chemistry and cancer biology, alongside a growing interest in computational chemistry and drug discovery.">
+    <meta name="description" content="MSci Chemistry student portfolio covering machine learning and molecular modelling projects for drug discovery, including a logD prediction and active-learning study (RDKit, scikit-learn, SHAP) and a haemoglobin docking project (AutoDock Vina, PyMOL, Biopython), alongside research placements in ruthenium-DNA chemistry and cancer biology.">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -705,6 +705,7 @@
             margin-top: auto;
             align-self: flex-start;
             transition: all 0.2s;
+            text-decoration: none;
         }
         .haem-full-link:hover {
             background: var(--accent-blue-bg);
@@ -722,6 +723,40 @@
             object-fit: contain;
             background: #1a1a1a;
             display: block;
+        }
+        /* ML Project */
+        .ml-results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .ml-results-table th, .ml-results-table td {
+            text-align: left;
+            padding: 0.45rem 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+        .ml-results-table th {
+            background: var(--accent-blue-bg);
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.66rem;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+        .ml-results-table tr.ml-best td {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        .ml-figure {
+            width: 100%;
+            height: auto;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: block;
+            margin-bottom: 0.75rem;
         }
         .tag {
             display: inline-block;
@@ -1414,40 +1449,40 @@
 </script>
 <div class="bg-words" aria-hidden="true">
     <span class="bg-word" style="top:4%; left:6%; font-size:15px; --wr:-9deg; animation-duration:11s; animation-delay:0s;">COMPUTATIONAL CHEMISTRY</span>
-    <span class="bg-word" style="top:9%; left:62%; font-size:17px; --wr:7deg; animation-duration:13s; animation-delay:1.5s;">STRUCTURAL BIOLOGY</span>
+    <span class="bg-word" style="top:9%; left:62%; font-size:17px; --wr:7deg; animation-duration:13s; animation-delay:1.5s;">MACHINE LEARNING</span>
     <span class="bg-word" style="top:14%; left:28%; font-size:14px; --wr:-5deg; animation-duration:10s; animation-delay:3s;">MOLECULAR MODELLING</span>
     <span class="bg-word" style="top:19%; left:78%; font-size:16px; --wr:10deg; animation-duration:14s; animation-delay:0.8s;">CHEMINFORMATICS</span>
     <span class="bg-word" style="top:24%; left:10%; font-size:18px; --wr:-8deg; animation-duration:12s; animation-delay:2.2s;">DRUG DISCOVERY</span>
-    <span class="bg-word" style="top:29%; left:48%; font-size:20px; --wr:6deg; animation-duration:9s; animation-delay:4s;">BIOPYTHON</span>
+    <span class="bg-word" style="top:29%; left:48%; font-size:20px; --wr:6deg; animation-duration:9s; animation-delay:4s;">RDKIT</span>
     <span class="bg-word" style="top:33%; left:88%; font-size:19px; --wr:-12deg; animation-duration:15s; animation-delay:1s;">PYMOL</span>
     <span class="bg-word" style="top:43%; left:65%; font-size:15px; --wr:-6deg; animation-duration:13s; animation-delay:0.4s;">NMR SPECTROSCOPY</span>
-    <span class="bg-word" style="top:48%; left:4%; font-size:13px; --wr:7deg; animation-duration:10s; animation-delay:2.7s;">X-RAY CRYSTALLOGRAPHY</span>
+    <span class="bg-word" style="top:48%; left:4%; font-size:13px; --wr:7deg; animation-duration:10s; animation-delay:2.7s;">SCAFFOLD SPLITS</span>
     <span class="bg-word" style="top:53%; left:55%; font-size:15px; --wr:-9deg; animation-duration:12s; animation-delay:1.9s;">MOLECULAR DOCKING</span>
     <span class="bg-word" style="top:58%; left:82%; font-size:13px; --wr:11deg; animation-duration:14s; animation-delay:0.2s;">COORDINATION CHEMISTRY</span>
     <span class="bg-word" style="top:6%; left:40%; font-size:14px; --wr:-10deg; animation-duration:13s; animation-delay:4.5s;">CANCER THERAPEUTICS</span>
     <span class="bg-word" style="top:72%; left:15%; font-size:12px; --wr:6deg; animation-duration:10s; animation-delay:1.3s;">METAL-DNA INTERACTIONS</span>
     <span class="bg-word" style="top:77%; left:60%; font-size:15px; --wr:-8deg; animation-duration:12s; animation-delay:2.5s;">RUTHENIUM COMPLEXES</span>
-    <span class="bg-word" style="top:82%; left:8%; font-size:13px; --wr:9deg; animation-duration:14s; animation-delay:0.6s;">REACTION OPTIMISATION</span>
-    <span class="bg-word" style="top:87%; left:45%; font-size:14px; --wr:-6deg; animation-duration:11s; animation-delay:3.8s;">MASS SPECTROMETRY</span>
+    <span class="bg-word" style="top:82%; left:8%; font-size:13px; --wr:9deg; animation-duration:14s; animation-delay:0.6s;">ACTIVE LEARNING</span>
+    <span class="bg-word" style="top:87%; left:45%; font-size:14px; --wr:-6deg; animation-duration:11s; animation-delay:3.8s;">RANDOM FORESTS</span>
     <span class="bg-word" style="top:92%; left:72%; font-size:16px; --wr:10deg; animation-duration:9s; animation-delay:1.6s;">AUTODOCK VINA</span>
-    <span class="bg-word" style="top:12%; left:85%; font-size:21px; --wr:-11deg; animation-duration:15s; animation-delay:2.9s;">PLIP</span>
+    <span class="bg-word" style="top:12%; left:85%; font-size:21px; --wr:-11deg; animation-duration:15s; animation-delay:2.9s;">SHAP</span>
     <span class="bg-word" style="top:27%; left:3%; font-size:14px; --wr:7deg; animation-duration:10s; animation-delay:0.9s;">STRUCTURE-BASED DRUG DESIGN</span>
     <span class="bg-word" style="top:41%; left:40%; font-size:13px; --wr:-5deg; animation-duration:13s; animation-delay:3.1s;">HAEMOGLOBIN ALLOSTERY</span>
-    <span class="bg-word" style="top:56%; left:2%; font-size:11px; --wr:8deg; animation-duration:12s; animation-delay:1.1s;">OXYGEN BINDING COOPERATIVITY</span>
+    <span class="bg-word" style="top:56%; left:2%; font-size:11px; --wr:8deg; animation-duration:12s; animation-delay:1.1s;">LIPOPHILICITY PREDICTION</span>
     <span class="bg-word" style="top:65%; left:68%; font-size:14px; --wr:-9deg; animation-duration:11s; animation-delay:4.2s;">PROTEIN DATA BANK</span>
     <span class="bg-word" style="top:35%; left:6%; font-size:13px; --wr:6deg; animation-duration:14s; animation-delay:0.3s;">SICKLE CELL THERAPEUTICS</span>
-    <span class="bg-word" style="top:18%; left:52%; font-size:13px; --wr:-7deg; animation-duration:10s; animation-delay:2.4s;">SPIN STATE ENERGETICS</span>
-    <span class="bg-word" style="top:84%; left:30%; font-size:14px; --wr:9deg; animation-duration:12s; animation-delay:3.6s;">ELECTRONIC STRUCTURE</span>
+    <span class="bg-word" style="top:18%; left:52%; font-size:13px; --wr:-7deg; animation-duration:10s; animation-delay:2.4s;">UNCERTAINTY ESTIMATION</span>
+    <span class="bg-word" style="top:84%; left:30%; font-size:14px; --wr:9deg; animation-duration:12s; animation-delay:3.6s;">MOLECULAR DESCRIPTORS</span>
     <span class="bg-word" style="top:47%; left:90%; font-size:12px; --wr:-10deg; animation-duration:13s; animation-delay:1.4s;">STRUCTURAL BIOINFORMATICS</span>
     <span class="bg-word" style="top:95%; left:20%; font-size:12px; --wr:5deg; animation-duration:11s; animation-delay:2.1s;">SYNTHETIC INORGANIC CHEMISTRY</span>
     <span class="bg-word" style="top:3%; left:52%; font-size:13px; --wr:-6deg; animation-duration:12s; animation-delay:2.6s;">WESTERN BLOTTING</span>
     <span class="bg-word" style="top:11%; left:35%; font-size:15px; --wr:8deg; animation-duration:10s; animation-delay:0.5s;">COMPUTATIONAL BIOIMAGING</span>
-    <span class="bg-word" style="top:22%; left:92%; font-size:12px; --wr:-9deg; animation-duration:14s; animation-delay:3.7s;">PROTEIN EXPRESSION ANALYSIS</span>
+    <span class="bg-word" style="top:22%; left:92%; font-size:12px; --wr:-9deg; animation-duration:14s; animation-delay:3.7s;">METALDOCK</span>
     <span class="bg-word" style="top:31%; left:16%; font-size:14px; --wr:5deg; animation-duration:9s; animation-delay:1.8s;">UV-VIS SPECTROPHOTOMETRY</span>
-    <span class="bg-word" style="top:45%; left:24%; font-size:13px; --wr:-11deg; animation-duration:13s; animation-delay:2.3s;">THIN LAYER CHROMATOGRAPHY</span>
+    <span class="bg-word" style="top:45%; left:24%; font-size:13px; --wr:-11deg; animation-duration:13s; animation-delay:2.3s;">CHIRAL HPLC</span>
     <span class="bg-word" style="top:61%; left:44%; font-size:16px; --wr:-8deg; animation-duration:10s; animation-delay:0.7s;">PYTHON</span>
-    <span class="bg-word" style="top:74%; left:78%; font-size:13px; --wr:6deg; animation-duration:12s; animation-delay:3.9s;">THERAPEUTIC LEAD IDENTIFICATION</span>
-    <span class="bg-word" style="top:88%; left:58%; font-size:14px; --wr:-7deg; animation-duration:14s; animation-delay:1.7s;">CELLULAR SIGNALLING</span>
+    <span class="bg-word" style="top:74%; left:78%; font-size:13px; --wr:6deg; animation-duration:12s; animation-delay:3.9s;">SCIKIT-LEARN</span>
+    <span class="bg-word" style="top:88%; left:58%; font-size:14px; --wr:-7deg; animation-duration:14s; animation-delay:1.7s;">G-QUADRUPLEX DNA</span>
     <span class="bg-word" style="top:97%; left:82%; font-size:12px; --wr:9deg; animation-duration:11s; animation-delay:2.9s;">DATA VISUALISATION</span>
 </div>
 <header>
@@ -1460,7 +1495,7 @@
         <a href="#certifications">Certifications</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
-        <a href="https://drive.google.com/file/d/1mxg8oQgeKgGd11_fcKfDuIQbpF2TY4_4/view?usp=sharing" target="_blank" class="cv-top-btn">CV ↗</a>
+        <a href="https://drive.google.com/file/d/18bcKySYNqtmUi-GQ2xrJP5q08szXE3c7/view?usp=sharing" target="_blank" class="cv-top-btn">CV ↗</a>
         <a href="#contact" class="contact-btn">Get in Touch</a>
     </nav>
 </header>
@@ -1469,14 +1504,15 @@
     <section id="about" class="navy-section" style="border-top: none;">
       <div class="navy-inner" style="padding-top: 3rem; padding-bottom: 4rem;">
         <div class="section-header" style="margin-bottom: 2rem;">
-            <span>Chemistry · Computation · Structural Biology</span>
+            <span>Chemistry · Machine Learning · Drug Discovery</span>
         </div>
         <p class="name-kicker">Adrian</p>
         <h1 class="big-name">Banyamin</h1>
-        <p class="hero-tagline" style="margin-bottom: 2.25rem;">Combining computational modelling and synthetic chemistry to understand how molecules work, and how that understanding feeds into drug discovery.</p>
+        <p class="hero-tagline" style="margin-bottom: 2.25rem;">Using machine learning, molecular modelling and hands-on synthesis to understand how molecules behave, and how that understanding feeds into drug discovery.</p>
         <div class="hero-pills">
             <span class="tag tag-navy">University of Bristol · MSci Chemistry</span>
-            <span class="tag tag-bronze">Reading · Bioinorganic Research</span>
+            <span class="tag tag-bronze">logD Machine Learning · Personal Project</span>
+            <span class="tag tag-outline">Reading · Bioinorganic Research</span>
             <span class="tag tag-outline">São Paulo · Cancer Research (2027)</span>
             <span class="tag tag-outline">Haemoglobin Docking · Personal Project</span>
         </div>
@@ -1489,13 +1525,13 @@
     <section class="hero" style="border-top: none; padding-top: 3rem;">
         <div class="hero-content">
             <div class="exp-keywords" style="margin-bottom: 1.25rem;">
-                <span class="exp-keywords-track">MOLECULAR MODELLING &nbsp;·&nbsp; STRUCTURE-BASED DRUG DESIGN &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; CHEMINFORMATICS &nbsp;·&nbsp; SYNTHETIC INORGANIC CHEMISTRY &nbsp;·&nbsp; REACTION OPTIMISATION &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; MASS SPECTROMETRY &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; STRUCTURAL BIOINFORMATICS &nbsp;·&nbsp; METAL-DNA INTERACTIONS</span>
+                <span class="exp-keywords-track">CHEMINFORMATICS &nbsp;·&nbsp; MACHINE LEARNING &nbsp;·&nbsp; RDKIT &nbsp;·&nbsp; SCIKIT-LEARN &nbsp;·&nbsp; MOLECULAR MODELLING &nbsp;·&nbsp; MOLECULAR DOCKING &nbsp;·&nbsp; STRUCTURE-BASED DRUG DESIGN &nbsp;·&nbsp; SYNTHETIC INORGANIC CHEMISTRY &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; CHIRAL HPLC &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; METAL-DNA INTERACTIONS</span>
             </div>
             <span class="badge-pill">About Me</span>
-            <h2 style="font-size: 2.2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15;">MSci Chemistry Student<span style="display: block; font-style: italic; color: var(--accent-blue);">Growing Interest in Computational Chemistry & Drug Discovery</span></h2>
-            <p>I'm an analytical chemistry student entering my second year at Bristol, with a growing focus on computational chemistry and structural biology, particularly how they apply to drug discovery. I like combining code with chemistry to work out how molecules and proteins actually behave, and I'm increasingly interested in how machine learning and AI are being used to speed up and improve drug discovery more broadly.</p>
-            <p>Outside of my formal placements, I built a full computational analysis of haemoglobin from scratch, starting by mapping its quaternary structure and allosteric transitions using Biopython, before extending the project to dock the drug Voxelotor into its binding site using Python and rendering the resulting complex in PyMOL, to see first hand how a molecule's structure dictates whether it can actually treat sickle cell disease.</p>
-            <p>My placements reflect that same interest in applying chemistry and computation to real therapeutic problems: ruthenium metal-DNA interactions with potential as cancer therapeutics at the University of Reading, an upcoming cancer biology placement at the University of São Paulo, and a feedback search tool built back at Bristol in between. I don't want to stay narrowly focused on one disease area though. I'm keen to explore drug discovery across different diseases and therapeutic areas, and I'm particularly drawn to where computational chemistry, computational biology, and machine learning are heading in that space as a whole.</p>
+            <h2 style="font-size: 2.2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15;">MSci Chemistry Student<span style="display: block; font-style: italic; color: var(--accent-blue);">Cheminformatics, Molecular Modelling & Drug Discovery</span></h2>
+            <p>I'm a second-year MSci Chemistry student at Bristol focused on computational chemistry and machine learning for small-molecule drug discovery. I like combining code with chemistry to work out how molecules actually behave, and then checking whether a model's answer makes physical sense. I'm looking for a year in industry in cheminformatics or computational chemistry.</p>
+            <p>Outside my placements, I've built two personal projects. The most recent is a machine learning study predicting lipophilicity (logD) for 4,200 drug-like compounds with RDKit and scikit-learn, tested on a scaffold split, with uncertainty estimation, a simulated active-learning design cycle and SHAP interpretation. Before that, I built a computational analysis of haemoglobin with Biopython, measuring how its haem pocket contracts on oxygenation, then docked the sickle cell drug voxelotor into its binding site with AutoDock Vina and PyMOL.</p>
+            <p>My placements follow the same interest in applying chemistry and computation to real therapeutic problems: synthesising and docking ruthenium complexes that target DNA and G-quadruplex structures at the University of Reading, an upcoming cancer biology placement at the University of São Paulo, and a Python search tool built at Bristol in between. I'm keen to explore drug discovery across different therapeutic areas, and I'm particularly drawn to where cheminformatics, computational chemistry and machine learning are heading.</p>
         </div>
         <div>
             <div class="photo-card">
@@ -1517,13 +1553,13 @@
                     </div>
                 </div>
                 <div class="stat-box full-width">
-                    <div class="number">11</div>
-                    <div class="label">Verified Certifications</div>
+                    <div class="number">2</div>
+                    <div class="label">Published Personal Projects (ML &amp; Docking)</div>
                 </div>
                 <div class="stat-grid-bottom">
                     <div class="stat-box blue-tint">
                         <div class="number">2 Summer</div>
-                        <div class="label">Research Internships (2026)</div>
+                        <div class="label">Internships (2026)</div>
                     </div>
                     <div class="stat-box blue-tint">
                         <div class="number" style="font-size: 1.4rem;">Confirmed Incoming</div>
@@ -1533,10 +1569,69 @@
             </div>
         </div>
     </section>
-    <!-- Projects Section -->
+    <!-- Projects Section: logD Machine Learning -->
     <section id="projects">
         <div class="section-header">
-            <span>Independent Portfolio</span>
+            <span>Personal Projects</span>
+            <h2>Machine Learning for logD Prediction</h2>
+            <span class="tag tag-outline" style="margin-top: 1.5rem; margin-left: 1rem; display: inline-flex;">Personal Project · Sep 2026</span>
+        </div>
+        <div class="exp-keywords" style="margin-bottom: 2rem;">
+            <span class="exp-keywords-track">CHEMINFORMATICS &nbsp;·&nbsp; RDKIT &nbsp;·&nbsp; SCIKIT-LEARN &nbsp;·&nbsp; RANDOM FORESTS &nbsp;·&nbsp; SCAFFOLD SPLITS &nbsp;·&nbsp; UNCERTAINTY ESTIMATION &nbsp;·&nbsp; ACTIVE LEARNING &nbsp;·&nbsp; SHAP &nbsp;·&nbsp; LIPOPHILICITY &nbsp;·&nbsp; DMPK</span>
+        </div>
+        <div class="haem-outer-box">
+            <div class="haem-tile-grid">
+                <div class="haem-tile">
+                    <h4 class="haem-tile-title">Project Overview</h4>
+                    <p class="haem-tile-desc">logD, a molecule's octanol/water distribution at pH 7.4, affects how a drug crosses membranes, dissolves and is cleared, so being able to estimate it before a compound is made is useful in lead optimisation. I wanted to answer two questions: how well does a simple model generalise to chemical series it has never seen, and if the model chooses which compounds to "measure" next, does it need less data?</p>
+                    <p class="haem-tile-desc">I used the public Lipophilicity dataset (4,200 compounds measured by AstraZeneca and deposited in ChEMBL), turned each molecule into 2,048-bit Morgan fingerprints and 205 RDKit descriptors, and trained random forest models in scikit-learn. Every model was compared against a baseline that simply predicts the average, and tested on a Bemis-Murcko scaffold split so that the test compounds have core structures the model has never seen.</p>
+                    <a class="haem-full-link" href="https://github.com/adrianbanyamin/logd-active-learning" target="_blank">💻 View the code and write-up on GitHub →</a>
+                </div>
+                <div class="haem-tile">
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                        <span class="tag">Results</span>
+                        <span class="tag tag-outline">Model Performance</span>
+                    </div>
+                    <table class="ml-results-table">
+                        <tr><th>Features</th><th>Split</th><th>RMSE ↓</th><th>R² ↑</th></tr>
+                        <tr><td>Mean baseline</td><td>Scaffold</td><td>1.23</td><td>0.00</td></tr>
+                        <tr><td>Fingerprints</td><td>Random</td><td>0.83</td><td>0.51</td></tr>
+                        <tr><td>Fingerprints</td><td>Scaffold</td><td>1.01</td><td>0.32</td></tr>
+                        <tr><td>Descriptors</td><td>Random</td><td>0.71</td><td>0.65</td></tr>
+                        <tr class="ml-best"><td>Descriptors</td><td>Scaffold</td><td>0.85</td><td>0.52</td></tr>
+                    </table>
+                    <div class="haem-contributions-box">
+                        <h5 class="haem-tile-subhead">Key Findings</h5>
+                        <ul class="haem-tile-list">
+                            <li>Performance dropped on the scaffold split for both feature sets, showing a random split overstates how well a model would do on a new chemical series.</li>
+                            <li>Descriptors beat fingerprints, and the gap widened on new scaffolds, consistent with logD depending on whole-molecule properties such as lipophilicity, polarity and ionisation.</li>
+                            <li>Tree-spread uncertainty was only weakly linked to error (r = 0.25), although the most uncertain quarter of predictions had a mean error of 0.81 against 0.49 for the least uncertain quarter.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="haem-tile">
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                        <span class="tag">Active Learning</span>
+                        <span class="tag tag-outline">Simulated Design Cycle</span>
+                    </div>
+                    <img class="ml-figure" src="https://raw.githubusercontent.com/adrianbanyamin/logd-active-learning/main/figures/active_learning.png" alt="Active learning curves comparing uncertainty-based and random compound selection">
+                    <p class="haem-tile-desc">Starting from 5% of the training set, the model picked 50 compounds per round for 20 rounds, either the ones it was most uncertain about or at random, over 3 seeds. Uncertainty-based selection did not beat random selection (final RMSE 0.902 ± 0.030 against 0.899 ± 0.008). Both strategies recovered about 87% of the full-data improvement using only 35% of the training data.</p>
+                </div>
+                <div class="haem-tile">
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                        <span class="tag">Interpretation</span>
+                        <span class="tag tag-outline">SHAP</span>
+                    </div>
+                    <img class="ml-figure" src="https://raw.githubusercontent.com/adrianbanyamin/logd-active-learning/main/figures/shap_summary.png" alt="SHAP summary plot showing the most important descriptors">
+                    <p class="haem-tile-desc">Calculated LogP was by far the most important feature. Carboxylic acid groups lowered predicted logD by roughly 0.8 to 1.0 units, which fits with acids being largely ionised at pH 7.4, the main difference between logD and logP. More hydrogen-bond donors also lowered predictions. In effect, the model learned logD as lipophilicity minus a penalty for ionisation and polarity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section: Haemoglobin -->
+    <section id="haemoglobin">
+        <div class="section-header">
+            <span>Personal Projects</span>
             <h2>Haemoglobin Computational Analysis</h2>
             <span class="tag tag-outline" style="margin-top: 1.5rem; margin-left: 1rem; display: inline-flex;">Personal Project</span>
         </div>
@@ -1553,12 +1648,12 @@
                     </div>
                     <h4 class="haem-tile-title">Haemoglobin Structural Dynamics Analysis</h4>
                     <p class="haem-tile-keywords">Biopython &nbsp;·&nbsp; PDB 1A3N/1HHO &nbsp;·&nbsp; 3D Euclidean Distance</p>
-                    <p class="haem-tile-desc">This module contains the computational pipeline developed to quantify the conformational transition of haemoglobin upon oxygen binding. By processing PDB structural data (1A3N deoxyhaemoglobin baseline and 1HHO oxyhaemoglobin), the pipeline maps precise sub-angstrom movements within the haem pocket, providing a quantitative bridge between static crystal structures and dynamic biophysical transitions. A key data engineering challenge involved incomplete coordinate data in 1HHO.pdb, which only explicitly records chains A and B; a dynamic routine was implemented to synthesise coordinate data for the C and D chains using the protein's internal symmetry relationships, ensuring a complete tetrameric analysis despite gaps in the raw structural data.</p>
+                    <p class="haem-tile-desc">This module contains the computational pipeline developed to quantify the conformational transition of haemoglobin upon oxygen binding. By processing PDB structural data (1A3N deoxyhaemoglobin baseline and 1HHO oxyhaemoglobin), the pipeline maps precise sub-angstrom movements within the haem pocket, providing a quantitative bridge between static crystal structures and dynamic biophysical transitions. A key data challenge involved incomplete coordinate data in 1HHO.pdb, which only explicitly records chains A and B; the missing C and D chains were filled by substituting the equivalent A and B chain coordinates, based on the accepted equivalence of haemoglobin's two alpha beta dimers, so the analysis could cover the full tetramer.</p>
                     <div class="haem-contributions-box">
                         <h5 class="haem-tile-subhead">Key Contributions</h5>
                         <ul class="haem-tile-list">
                             <li>Parsed PDB coordinate files (1A3N, 1HHO) via Biopython to extract proximal histidine, distal histidine, haem ring, and iron atom geometries.</li>
-                            <li>Resolved incomplete 1HHO chain data by synthesising C and D subunit coordinates from the protein's internal symmetry.</li>
+                            <li>Handled incomplete 1HHO chain data by substituting C and D subunit coordinates from the equivalent alpha beta dimer, with that assumption stated explicitly.</li>
                             <li>Calculated 3D Euclidean distances between proximal and distal histidine centres across all four subunits.</li>
                             <li>Quantified significant structural contraction in three of four subunits (up to -0.37 Å), against one subunit falling below threshold.</li>
                             <li>Related the measured contraction to the mechanical linkage driving the T-to-R quaternary transition.</li>
@@ -1588,7 +1683,7 @@
                             <li>Developed custom Biopython scripts to parse structural data from the 1HHO protein and the Voxelotor ligand.</li>
                             <li>Programmatically identified the exact N terminal valine binding site rather than a general pocket centroid.</li>
                             <li>Rendered 3D docking visualisations of the Voxelotor haemoglobin interaction in PyMOL.</li>
-                            <li>Docked Voxelotor with AutoDock Vina, obtaining a best pose binding affinity of -6.9 kcal/mol across nine candidate poses.</li>
+                            <li>Docked Voxelotor with AutoDock Vina, obtaining a top pose docking score of -6.9 kcal/mol across nine candidate poses, noting that Vina's non-covalent scoring cannot capture Voxelotor's covalent mechanism.</li>
                             <li>Profiled the resulting complex with PLIP, identifying six hydrogen bonding residues, five hydrophobic contacts, and one pi cation interaction.</li>
                         </ul>
                     </div>
@@ -1601,7 +1696,7 @@
     <section id="experience">
         <div class="section-header">
             <span>Placements & Research</span>
-            <h2>Research Internships</h2>
+            <h2>Internships</h2>
         </div>
         <div class="exp-card" style="display: block;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
@@ -1615,17 +1710,17 @@
             <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Cancer Research Intern</h3>
             <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 0.3rem;">University of São Paulo (USP), São Paulo, Brazil</p>
             <div class="exp-keywords">
-                <span class="exp-keywords-track">CANCER BIOLOGY &nbsp;·&nbsp; WESTERN BLOTTING &nbsp;·&nbsp; PROTEIN EXPRESSION ANALYSIS &nbsp;·&nbsp; COMPUTATIONAL BIOIMAGING &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; BIOPYTHON &nbsp;·&nbsp; CELLULAR SIGNALLING &nbsp;·&nbsp; THERAPEUTIC PATHWAYS &nbsp;·&nbsp; BIOMEDICINE</span>
+                <span class="exp-keywords-track">CANCER BIOLOGY &nbsp;·&nbsp; WESTERN BLOTTING &nbsp;·&nbsp; PROTEIN EXPRESSION ANALYSIS &nbsp;·&nbsp; COMPUTATIONAL BIOIMAGING &nbsp;·&nbsp; AI TOOLS &nbsp;·&nbsp; PYTHON &nbsp;·&nbsp; CELLULAR SIGNALLING &nbsp;·&nbsp; THERAPEUTIC PATHWAYS &nbsp;·&nbsp; BIOMEDICINE</span>
             </div>
             <div class="exp-body-grid">
                 <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Confirmed incoming computational and biochemistry research placement focusing on molecular mechanisms of cellular abnormalities and therapeutic pathways, under the supervision of Prof. Alexandre Bruni-Cardoso.</li>
+                    <li>Confirmed incoming research placement focusing on molecular mechanisms of cellular abnormalities and therapeutic pathways, under the supervision of Prof. Alexandre Bruni-Cardoso.</li>
                     <li>The core lab work will involve protein expression analysis, quantitative assay evaluations, and Western blotting to map cellular signalling targets in cancer biology.</li>
-                    <li>The computational side of the placement will likely involve quantitative bioimage analysis, with the specifics depending on the lab's needs once underway.</li>
-                    <li>Plan to bring in structural bioinformatics tools such as PyMOL and Biopython to evaluate protein structure where relevant.</li>
+                    <li>The computational side of the placement is planned to include bioimage analysis using AI tools, with the specifics depending on the lab's needs once underway.</li>
+                    <li>Plan to bring in Python and structural bioinformatics tools such as PyMOL and Biopython where relevant.</li>
                 </ul>
                 <div class="exp-intro-box">
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">This placement came about after I emailed Prof. Alexandre Bruni-Cardoso directly, having read into his lab's research on cellular signalling and cancer biology. It gives me exposure to biomedical techniques such as Western blotting and protein expression analysis, alongside the computational work I already enjoy from my other placements. Building a broad grounding across the different disciplines that feed into drug discovery, from synthetic chemistry through to cell biology and computation, is something I want to keep developing.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">This placement came about after I emailed Prof. Alexandre Bruni-Cardoso directly, having read into his lab's research on cellular signalling and cancer biology. It gives me exposure to biomedical techniques such as Western blotting and protein expression analysis, alongside the computational work I already enjoy from my projects and other placements. Building a broad grounding across the different disciplines that feed into drug discovery, from synthetic chemistry through to cell biology and computation, is something I want to keep developing.</p>
                 </div>
             </div>
         </div>
@@ -1633,28 +1728,28 @@
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.5rem;">
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                     <span class="tag">Summer Internship 2026</span>
-                    <span class="tag tag-outline">Full Synthetic To Computational Pipeline</span>
-                    <span class="tag tag-outline">Publication In Progress</span>
+                    <span class="tag tag-outline">Synthesis To Docking Pipeline</span>
+                    <span class="tag tag-outline">Manuscript In Preparation</span>
                 </div>
                 <span class="date-badge">Jul 2026 - Sep 2026</span>
             </div>
             <h3 style="font-size: 1.5rem; font-weight: 400; margin-top: 0.2rem;">Summer Bioinorganic Research Intern</h3>
             <p style="color: var(--accent-blue); font-size: 0.9rem; margin-bottom: 0.3rem;">University of Reading, Reading, UK</p>
             <div class="exp-keywords">
-                <span class="exp-keywords-track">CANCER RESEARCH &nbsp;·&nbsp; METAL-DNA INTERACTIONS &nbsp;·&nbsp; DRUG DISCOVERY &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; X-RAY CRYSTALLOGRAPHY &nbsp;·&nbsp; HPLC &nbsp;·&nbsp; LUMINESCENCE SPECTROSCOPY &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; COMPUTATIONAL MODELLING &nbsp;·&nbsp; THERAPEUTIC DESIGN &nbsp;·&nbsp; BIOINORGANIC CHEMISTRY</span>
+                <span class="exp-keywords-track">CANCER RESEARCH &nbsp;·&nbsp; METAL-DNA INTERACTIONS &nbsp;·&nbsp; G-QUADRUPLEX DNA &nbsp;·&nbsp; NMR SPECTROSCOPY &nbsp;·&nbsp; CHIRAL HPLC &nbsp;·&nbsp; UV-VIS SPECTROPHOTOMETRY &nbsp;·&nbsp; LUMINESCENCE SPECTROSCOPY &nbsp;·&nbsp; CRYSTAL GROWTH &nbsp;·&nbsp; METALDOCK &nbsp;·&nbsp; PYMOL &nbsp;·&nbsp; BIOINORGANIC CHEMISTRY</span>
             </div>
             <div class="exp-body-grid">
                 <ul style="color: var(--text-muted); font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <li>Synthesised the ruthenium coordination complex [Ru(phen)<sub>2</sub>(dppz)]Cl<sub>2</sub> via techniques including high-temperature reflux, microwave-assisted synthesis, and rotary evaporation, as a candidate DNA-targeting cancer therapeutic.</li>
-                    <li>Characterised the complex, [Ru(phen)<sub>2</sub>Cl<sub>2</sub>], Ru(DMSO)<sub>4</sub>Cl<sub>2</sub>, and dppz by thin-layer chromatography (TLC) and multinuclear NMR spectroscopy, with high-resolution mass spectrometry (HRMS) still to commence.</li>
-                    <li>Resolved the complex into its Δ and Λ enantiomers via HPLC, then used UV-Vis spectrophotometry to standardise both enantiomer solutions to a working concentration of 200 μM.</li>
-                    <li>Investigated enantiomer-selective DNA binding by monitoring luminescence intensity of each enantiomer in the presence of B-DNA and G-quadruplex structures, to assess binding affinity and selectivity.</li>
-                    <li>Grew single crystals of each enantiomer and handed them off for X-ray crystallographic structure determination, to be completed by the group after my placement ends and I return to Bristol, and applied PyMOL and custom Python scripts to model complex geometry and coordination state.</li>
-                    <li>Collaborated across a week-long research exchange with approximately 30 visiting researchers, including international collaborators such as Dr. Shuntaro Takahashi and Dr. Hisae Tateishi-Karimata, evaluating ruthenium-complex characterisation data and reaction optimisation strategies.</li>
-                    <li>Attended weekly technical meetings with senior professors and peers to review structural analysis updates and troubleshoot reaction issues, with contributions slated for forthcoming peer-reviewed publication.</li>
+                    <li>Prepared and purified precursor compounds ([Ru(phen)<sub>2</sub>(dppz)]Cl<sub>2</sub> from RuCl<sub>3</sub>·3H<sub>2</sub>O) across four synthetic steps via inert-atmosphere reflux and microwave-assisted synthesis (yields 31.6–85.6%), completing a COSHH risk assessment ahead of each stage.</li>
+                    <li>Purified intermediates by rotary evaporation, recrystallisation and filtration, characterising each by TLC, <sup>1</sup>H NMR and IR spectroscopy (HRMS pending).</li>
+                    <li>Resolved the racemic salt into Δ and Λ enantiomers via chiral HPLC, confirming anion exchange to the chloride salt by loss of the PF<sub>6</sub><sup>−</sup> signal in <sup>19</sup>F NMR.</li>
+                    <li>Developed and applied a quantitative UV-Vis method to determine enantiomer concentration in aqueous solution (absorbance 0.052–0.240 at approximately 440 nm, standardised to 200 μM), extending it to the 10,11-dimethyl-dppz analogue.</li>
+                    <li>Investigated enantiomer- and substituent-dependent DNA and c-MYC G-quadruplex binding by luminescence titration, and grew single crystals of each enantiomer for X-ray crystallographic structure determination.</li>
+                    <li>Docked both enantiomers against a DNA duplex and the c-MYC G-quadruplex with MetalDock, comparing predicted poses with AutoDock Vina and PyMOL.</li>
+                    <li>Attended week-long research briefings with approximately 50 visiting researchers from the UK, France, the Czech Republic, Italy, Japan, India and Germany, and weekly group meetings with a PhD researcher and senior faculty.</li>
                 </ul>
                 <div class="exp-intro-box">
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">At the University of Reading, I carried out a bioinorganic chemistry research placement focused on synthesising and characterising ruthenium-based transition-metal coordination complexes. The broader aim of the project was to develop ruthenium complexes that could be structurally modified to selectively target DNA, particularly the major and minor grooves, as a potential route to disrupting the uncontrolled cell division characteristic of cancer. Working closely alongside a PhD researcher and senior faculty, I contributed across the synthetic and analytical pipeline, from initial synthesis through to structural characterisation and computational modelling.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">At the University of Reading, I carried out a bioinorganic chemistry research placement focused on synthesising and characterising ruthenium polypyridyl complexes. The broader aim of the project was to develop ruthenium complexes that could be structurally modified to selectively target DNA and G-quadruplex structures, as a potential route to disrupting the uncontrolled cell division characteristic of cancer. Working alongside a PhD researcher and senior faculty, I contributed across the pipeline, from synthesis and purification through to enantiomer resolution, binding studies and docking, and the results are feeding into a manuscript in preparation.</p>
                 </div>
             </div>
             <div class="exp-nested-trigger" onclick="openLabNotebook()">
@@ -1923,36 +2018,43 @@
         </div>
         <div class="skills-grid">
             <div class="skill-column">
-                <h3>Software, Analysis & Data</h3>
+                <h3>Programming, Data & Machine Learning</h3>
                 <div class="pill-container">
                     <span class="skill-pill">Python</span>
-                    <span class="skill-pill">Excel</span>
-                    <span class="skill-pill">Data Analysis</span>
-                    <span class="skill-pill">Data Visualisation</span>
-                    <span class="skill-pill">GitHub</span>
-                    <span class="skill-pill">Technical Documentation</span>
-                    <span class="skill-pill">Graphing</span>
-                    <span class="skill-pill">Numerical Analysis</span>
-                    <span class="skill-pill">Statistical Interpretation</span>
-                    <span class="skill-pill">Version Control</span>
-                    <span class="skill-pill">Biopython</span>
-                    <span class="skill-pill">PyMOL</span>
+                    <span class="skill-pill">pandas</span>
                     <span class="skill-pill">NumPy</span>
+                    <span class="skill-pill">scikit-learn</span>
+                    <span class="skill-pill">RDKit</span>
+                    <span class="skill-pill">SHAP</span>
+                    <span class="skill-pill">Matplotlib</span>
+                    <span class="skill-pill">Biopython</span>
+                    <span class="skill-pill">Jupyter Notebooks</span>
+                    <span class="skill-pill">VS Code</span>
+                    <span class="skill-pill">Git & GitHub</span>
                     <span class="skill-pill">Command-Line Interfaces</span>
+                    <span class="skill-pill">LaTeX</span>
+                    <span class="skill-pill">HTML</span>
+                    <span class="skill-pill">Excel</span>
+                    <span class="skill-pill">Data Visualisation</span>
                 </div>
             </div>
             <div class="skill-column">
-                <h3>Research & Scientific Methodologies</h3>
+                <h3>Cheminformatics & Modelling</h3>
                 <div class="pill-container">
-                    <span class="skill-pill">Structural Bioinformatics</span>
-                    <span class="skill-pill">Molecular Modelling</span>
-                    <span class="skill-pill">Molecular Docking</span>
-                    <span class="skill-pill">Binding Free Energy Analysis</span>
-                    <span class="skill-pill">Structure-Based Drug Design</span>
                     <span class="skill-pill">Cheminformatics</span>
+                    <span class="skill-pill">Molecular Fingerprints & Descriptors</span>
+                    <span class="skill-pill">Random Forest Regression</span>
+                    <span class="skill-pill">Scaffold-Split Validation</span>
+                    <span class="skill-pill">Uncertainty Estimation</span>
+                    <span class="skill-pill">Active Learning</span>
+                    <span class="skill-pill">Model Interpretation (SHAP)</span>
+                    <span class="skill-pill">Molecular Docking (AutoDock Vina)</span>
+                    <span class="skill-pill">Metal-Complex Docking (MetalDock)</span>
+                    <span class="skill-pill">PyMOL</span>
+                    <span class="skill-pill">PLIP</span>
+                    <span class="skill-pill">Structural Bioinformatics</span>
+                    <span class="skill-pill">Structure-Based Drug Design</span>
                     <span class="skill-pill">Metal-Ligand Coordination Chemistry</span>
-                    <span class="skill-pill">Reaction Optimisation</span>
-                    <span class="skill-pill">Structure Elucidation</span>
                 </div>
             </div>
             <div class="skill-column">
@@ -1960,17 +2062,19 @@
                 <div class="pill-container">
                     <span class="skill-pill">Synthetic Inorganic Chemistry</span>
                     <span class="skill-pill">Microwave-Assisted Synthesis</span>
-                    <span class="skill-pill">Reflux Techniques</span>
+                    <span class="skill-pill">Inert-Atmosphere Reflux</span>
                     <span class="skill-pill">Vacuum Filtration</span>
-                    <span class="skill-pill">Fractional Crystallisation</span>
+                    <span class="skill-pill">Recrystallisation</span>
                     <span class="skill-pill">Rotary Evaporation</span>
                     <span class="skill-pill">Degassing</span>
                     <span class="skill-pill">Thin-Layer Chromatography (TLC)</span>
-                    <span class="skill-pill">NMR Spectroscopy</span>
-                    <span class="skill-pill">X-Ray Crystallography</span>
+                    <span class="skill-pill">Multinuclear NMR Spectroscopy</span>
+                    <span class="skill-pill">IR Spectroscopy</span>
+                    <span class="skill-pill">Chiral HPLC</span>
                     <span class="skill-pill">UV-Vis Spectrophotometry</span>
-                    <span class="skill-pill">HPLC Chromatography</span>
                     <span class="skill-pill">Luminescence Spectroscopy</span>
+                    <span class="skill-pill">Single-Crystal Growth</span>
+                    <span class="skill-pill">COSHH Risk Assessment</span>
                 </div>
             </div>
             <div class="skill-column">
@@ -1980,10 +2084,10 @@
                     <span class="skill-pill">Advanced Coursework Execution</span>
                     <span class="skill-pill">Problem-Solving Agility</span>
                     <span class="skill-pill">Mathematical Modelling</span>
-                    <span class="skill-pill">Laboratory Technique Mastery</span>
                     <span class="skill-pill">Critical Analysis</span>
                     <span class="skill-pill">Time & Project Management</span>
                     <span class="skill-pill">Academic Writing</span>
+                    <span class="skill-pill">Technical Documentation</span>
                 </div>
             </div>
             <div class="skill-column" style="grid-column: span 2;">
@@ -2019,7 +2123,7 @@
                         <div class="label" style="text-align: left;">Mathematics Average</div>
                     </div>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">First Class Honours (Year 1): Achieved an overall average grade of 78.7%, with modules including Materials Chemistry, Biochemistry, and Advanced Experimental Laboratory Techniques, plus an overall average of 94% across all mathematics coursework and examinations.</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">First class standard in Year 1: achieved an overall average grade of 78.7%, with modules including Materials Chemistry, Biochemistry, and Advanced Experimental Laboratory Techniques, plus an overall average of 94% across all mathematics coursework and examinations.</p>
             </div>
         </div>
         <div class="project-card" style="grid-template-columns: 1fr; margin-top: 1.5rem;">
@@ -2035,13 +2139,13 @@
 <footer id="contact">
     <div class="footer-content">
         <h2>Get In Touch</h2>
-        <p>If you work in computational chemistry, structural biology, or drug discovery and want to compare notes, I would genuinely like to hear from you.</p>
-        <p style="font-size: 0.95rem; color: #CBD5E0; margin-bottom: 2.5rem; text-align: center;">Right now my focus is securing a strong year in industry placement, and building genuine experience wherever that path within therapeutics and drug discovery leads.</p>
+        <p>If you work in cheminformatics, computational chemistry, or drug discovery and want to compare notes, I would like to hear from you.</p>
+        <p style="font-size: 0.95rem; color: #CBD5E0; margin-bottom: 2.5rem; text-align: center;">Right now my focus is securing a year in industry placement in cheminformatics or computational chemistry, and building experience wherever that path within drug discovery leads.</p>
         <div class="footer-actions">
             <a href="mailto:adrian.banyamin@gmail.com" class="btn-light">Email Me</a>
             <a href="https://linkedin.com/in/adrian-banyamin" target="_blank" class="btn-dark-outline">LinkedIn Profile</a>
             <a href="https://github.com/adrianbanyamin" target="_blank" class="btn-dark-outline">GitHub Repositories</a>
-            <a href="https://drive.google.com/file/d/1mxg8oQgeKgGd11_fcKfDuIQbpF2TY4_4/view?usp=sharing" target="_blank" class="btn-dark-outline">View CV ↗</a>
+            <a href="https://drive.google.com/file/d/18bcKySYNqtmUi-GQ2xrJP5q08szXE3c7/view?usp=sharing" target="_blank" class="btn-dark-outline">View CV ↗</a>
         </div>
     </div>
 </footer>
@@ -2070,7 +2174,7 @@
     <div class="modal-box">
         <div class="modal-top-row">
             <div class="modal-tags">
-                <span class="tag">Independent Portfolio</span>
+                <span class="tag">Personal Project</span>
                 <span class="tag tag-outline">Haemoglobin Computational Analysis</span>
             </div>
             <button class="modal-close" onclick="closeHaemModal()">×</button>
@@ -2097,20 +2201,19 @@
     const labPages = [
         `<h4>Working as Part of a Research Team</h4>
          <p>Alongside the bench work, attending weekly research meetings and hearing how a PhD researcher and senior faculty explained and defended their results under scrutiny shaped how I thought about my own experimental design and interpretation. Seeing a result that did not match what the wider team expected worked through properly, rather than dismissed, showed how much that scrutiny matters alongside the synthetic technique itself.</p>
-         <p>That was reinforced during a week long research exchange, when approximately 30 visiting researchers came to Reading to discuss ongoing work across several projects. Sitting in on discussions between people almost entirely outside my usual research group, and following the questions they raised about each other's work, gave a much broader sense of how research gets scrutinised and developed collaboratively.</p>
+         <p>That was reinforced during week-long research briefings, when approximately 50 visiting researchers from the UK, France, the Czech Republic, Italy, Japan, India and Germany came to Reading to discuss ongoing work across several projects. Sitting in on discussions between people almost entirely outside my usual research group, and following the questions they raised about each other's work, gave a much broader sense of how research gets scrutinised and developed collaboratively.</p>
          <div class="lab-team-card">
              <div class="lab-photo-row">
                  <div>
-                     <img class="lab-photo" src="images/research-group-photo.jpg" alt="Group photo from the research exchange at Reading">
-                     <p class="lab-caption">Group photo from the research exchange at Reading.</p>
+                     <img class="lab-photo" src="images/research-group-photo.jpg" alt="Group photo from the research briefings at Reading">
+                     <p class="lab-caption">Group photo from the research briefings at Reading.</p>
                  </div>
                  <div>
-                     <img class="lab-photo" src="images/research-team-dinner.jpg" alt="Research group together during the exchange">
-                     <p class="lab-caption">Research group together during the exchange.</p>
+                     <img class="lab-photo" src="images/research-team-dinner.jpg" alt="Research group together during the briefings">
+                     <p class="lab-caption">Research group together during the briefings.</p>
                  </div>
              </div>
-         </div>
-         <p class="lab-caption" style="font-style: italic;">More reflections and photos will be added here as the placement continues.</p>`
+         </div>`
     ];
     let labCurrentPage = 0;
     function renderLabPage() {
@@ -2384,16 +2487,16 @@ print("Anchor point:", coords)</pre>
              <h4>Results Summary</h4>
              <table>
                 <tr><th>Metric</th><th>Value</th></tr>
-                <tr><td>Best Vina binding affinity</td><td>-6.9 kcal/mol</td></tr>
+                <tr><td>Best Vina docking score</td><td>-6.9 kcal/mol</td></tr>
                 <tr><td>Hydrogen bonding residues</td><td>6</td></tr>
                 <tr><td>Hydrophobic contact residues</td><td>5</td></tr>
                 <tr><td>Pi cation interactions</td><td>1</td></tr>
                 <tr><td>Salt bridges</td><td>0</td></tr>
              </table>`,
             `<h4>Interpreting the Results</h4>
-             <p>A binding affinity of -6.9 kcal/mol is a moderate, credible result, consistent with Voxelotor's known pharmacology as a mild allosteric modifier rather than an extremely tight binder. This fits the drug's actual mechanism, since Voxelotor is designed to nudge the oxygen binding equilibrium of haemoglobin rather than lock the protein rigidly in one state. The hydrogen bonding network to ALA 76, HIS 77, and ASP 79 on one chain, together with contacts to LYS 40, LEU 48, and HIS 50 on the neighbouring chain, places the ligand right at the interface between two subunits, consistent with a mechanism that works by stabilising the quaternary R state rather than by burying itself deep inside a single isolated pocket.</p>
+             <p>A docking score of -6.9 kcal/mol is a moderate, credible result, consistent with Voxelotor's known pharmacology as a mild allosteric modifier rather than an extremely tight binder. This fits the drug's actual mechanism, since Voxelotor is designed to nudge the oxygen binding equilibrium of haemoglobin rather than lock the protein rigidly in one state. The hydrogen bonding network to ALA 76, HIS 77, and ASP 79 on one chain, together with contacts to LYS 40, LEU 48, and HIS 50 on the neighbouring chain, places the ligand right at the interface between two subunits, consistent with a mechanism that works by stabilising the quaternary R state rather than by burying itself deep inside a single isolated pocket.</p>
              <h4>Limitations</h4>
-             <p>This analysis is built on a single top scoring pose rather than an ensemble, and the Vina scoring function, while widely used and validated, typically correlates with experimental binding affinity to within a couple of kcal/mol rather than reproducing it exactly. The PLIP contact map represents one static structural snapshot, not a dynamic picture of the interaction over time, so no individual residue contribution can be claimed with certainty without further validation, such as targeted mutagenesis.</p>
+             <p>This analysis is built on a single top scoring pose rather than an ensemble, and the Vina scoring function, while widely used and validated, typically correlates with experimental binding affinity to within a couple of kcal/mol rather than reproducing it exactly. Vina also scores non-covalent binding only, so it cannot capture the covalent bond Voxelotor forms with the N terminal valine. The PLIP contact map represents one static structural snapshot, not a dynamic picture of the interaction over time, so no individual residue contribution can be claimed with certainty without further validation, such as targeted mutagenesis.</p>
              <h4>What This Project Demonstrates</h4>
              <p>An earlier version of this analysis attempted to condense the interaction data into a single headline binding energy using a hand built weighted formula. That number looked impressive but did not hold up under scrutiny, since the real published scoring methods it was loosely based on require inputs, such as buried lipophilic surface area, that I could not properly calculate or verify. Rather than keep a bigger, unverifiable number, I replaced it with the real, defensible Vina score and rebuilt the interaction analysis directly from the raw PLIP and docking output. This is the same lesson from Part 1 applied under more pressure, a modest result I can defend is worth more than an impressive one I cannot.</p>`
         ]
